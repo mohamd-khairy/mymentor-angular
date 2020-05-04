@@ -32,10 +32,7 @@
               "src/vendor/jquery/jquery.min.js",
               "src/vendor/bootstrap/js/bootstrap.bundle.min.js",
               "src/vendor/jquery-easing/jquery.easing.min.js",
-              "src/vendor/js/sb-admin-2.min.js",
-              "src/vendor/chart.js/Chart.min.js",
-              "src/vendor/js/demo/chart-area-demo.js",
-              "src/vendor/js/demo/chart-pie-demo.js"
+              "src/vendor/js/sb-admin-2.min.js"
             ]
           },
           "configurations": {
