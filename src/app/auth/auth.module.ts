@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, LoginComponent],
   imports: [
+    FormsModule,
     CommonModule,
     RouterModule.forChild(routes)
   ]
