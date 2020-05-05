@@ -5,10 +5,34 @@ import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
-export interface User{
+export interface UserLogin{
   email: string,
   password: string
 }
+
+export interface UserRegister{
+  first_name: string,
+  last_name: string,
+  email: string,
+  mobile: number,
+  password: string,
+  cpassword: string
+}
+
+export interface UserForgotPassword{
+  email: string,
+}
+
+export interface UserVerifyEmail{
+  token: string,
+}
+
+export interface UserResetPassword{
+  code: string,
+  newPassword: string,
+  cnewPassword: string,
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +45,14 @@ export class AuthService {
       private router: Router
     ) { }
 
-  login_api(user: User){
+  login_api(user: UserLogin){
     return this.http.post(environment.apiUrl + 'auth/login' , user)
                     .pipe(catchError(this.errorHandler));
+  }
+  
+  login_ui(data) {
+    localStorage.setItem('user', JSON.stringify(data));
+    this.router.navigateByUrl('/dashboard');
   }
 
   logout_api(){
@@ -37,9 +66,25 @@ export class AuthService {
     this.router.navigateByUrl('login');
   }
 
-  login_ui(data) {
-    localStorage.setItem('user', JSON.stringify(data));
-    this.router.navigateByUrl('/dashboard');
+
+  register_api(user: UserRegister){
+    return this.http.post(environment.apiUrl + 'auth/register' , user)
+                    .pipe(catchError(this.errorHandler));
+  }
+
+  forgotPassword_api(user: UserForgotPassword){
+    return this.http.post(environment.apiUrl + 'auth/forget/password' , user)
+                    .pipe(catchError(this.errorHandler));
+  }
+
+  resetPassword_api(user: UserResetPassword){
+    return this.http.post(environment.apiUrl + 'auth/reset/password' , user)
+                    .pipe(catchError(this.errorHandler));
+  }
+
+  verifyEmail_api(user: UserVerifyEmail){
+    return this.http.get(environment.apiUrl + 'auth/verify?token='+user)
+                    .pipe(catchError(this.errorHandler));
   }
 
   get user() {
