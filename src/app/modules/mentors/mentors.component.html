@@ -1,17 +1,17 @@
-    <div class="col-md-12 pb-4">
+    <div class="col-md-12 pb-4" *ngFor="let mentor of mentorDate">
       <div class="card shadow h-100 py-2">
         <div class="card-body" style="display: flex;">
             <div class="float-left pr-4">
               <div class="text-center">
                 <div class="p-2">
-                  <img alt="Stefan Georg, PHP mentor and developer" class="img-circle" style="border-radius: 50%;width: 110px;hight:110px;"
-                    src="https://www.filepicker.io/api/file/LVgMnOgSPmFQuaIFaAKA" title="Stefan Georg">
+                  <img alt="Stefan Georg, PHP mentor and developer" class="img-circle" style="border-radius: 50%;width: 110px;height:110px;"
+                  [src]="mentor.profile.photo" title="{{mentor.name}}">
                 </div>
-                <div class="rate p-2" style="color: black;">
-                  <strong>USD $31.00</strong>
-                  <small>/15min</small>
+                <div class="rate p-2" style="color: black;" *ngIf="mentor.job">
+                  <strong>{{mentor.job ? (mentor.job.session_price | currency) : ''}}</strong>
+                  <small>/{{mentor.job ? mentor.job.session_duration : ''}} {{mentor.job ? (mentor.job.session_duration_type | uppercase) : ''}}</small>
                 </div>
-                <a class="btn btn-success" style="border-bottom: none;
+                <a class="btn btn-success" style="border-bottom: none;color: aliceblue;
                 border-radius: 4px;
                 padding: 0.2 .8em 0.2 .8em;
                 min-width: 180px;" href="/stefangeorg">
@@ -22,439 +22,46 @@
             <div class="float-right pl-2" >
                 <div style="display: flex;">
                   <a class="name" href="/stefangeorg">
-                    Stefan Georg
+                    {{mentor.name}}
                   </a>
                   <span class="ratingNum">
-                    5.0
+                    {{mentor.rate}}.0
                   </span>
                   <div class="ratings">
-                    <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span>
+                    <span *ngFor="let star of mentor.rate"> ★ </span>
                   </div>
                   <img style="width:57px;height: 17px;margin: 4px"
                     src="https://cdn.codementor.io/assets/picked_badge-218b57ed8a55b17ae445142b3c9bf313f34f836180536a30376b933f3e222bf7.png"
                     alt="Picked badge">
                     <span class="online">
-                      <i class="fa fa-circle"></i>ONLINE
+                      <!-- <i class="fa fa-circle"></i>ONLINE -->
                     </span>
                 </div>
-                <div class="headLine">
+                <div class="headLine" *ngIf="mentor.job">
                   <small>
-                    Senior Full Stack Software Developer
+                    {{ mentor.job ? mentor.job.current_job : ''}} at {{ mentor.job ? mentor.job.current_company : ''}}
                   </small>
                 </div>
-                <div class="language">
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      German
+                <div class="language" *ngIf="mentor.job">
+                  <div class="badge customizeBadge m-2"  *ngFor="let lang of mentor.job.available_langs">
+                    <span class="removeDec" >
+                      {{lang}}
                     </span>
                   </div>
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      English
-                    </span>
-                  </div>
+                  
                 </div>
                 <div class="about">
-                  I've been coding since age of 15, starting with perl, moving to php, and finally to python. I've
-                  been a freelancer working in the US, New Zealand, Vietnam, and now working in Germany.
-
-                  I'm...
+                  {{mentor.job ? mentor.job.brief : ''}}
                 </div>
                 <div class="expertise">
-                  <div class="badge skill ">
+
+                  <div class="badge skill m-2" *ngFor="let skill of mentor.skills">
                     <a class="removeDec" href="/python-experts">
-                      Python
+                      {{skill.skill_name}}
                     </a>
                   </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/vue-experts">
-                      Vue
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/javascript-experts">
-                      JavaScript
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/postgresql-experts">
-                      Postgresql
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/linux-experts">
-                      Linux
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/server-experts">
-                      Server
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/mysql-experts">
-                      MySQL
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/jquery-experts">
-                      jQuery
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/django-experts">
-                      Django
-                    </a>
-                  </div>
-                </div>
-              
-            </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-md-12 pb-4">
-      <div class="card shadow h-100 py-2">
-        <div class="card-body" style="display: flex;">
-            <div class="float-left pr-4">
-              <div class="text-center">
-                <div class="p-2">
-                  <img alt="Stefan Georg, PHP mentor and developer" class="img-circle" style="border-radius: 50%;width: 110px;hight:110px;"
-                    src="https://www.filepicker.io/api/file/LVgMnOgSPmFQuaIFaAKA" title="Stefan Georg">
-                </div>
-                <div class="rate p-2" style="color: black;">
-                  <strong>USD $31.00</strong>
-                  <small>/15min</small>
-                </div>
-                <a class="btn btn-success" style="border-bottom: none;
-                border-radius: 4px;
-                padding: 0.2 .8em 0.2 .8em;
-                min-width: 180px;" href="/stefangeorg">
-                  View Profile
-                </a>
-              </div>
-            </div>
-            <div class="float-right pl-2" >
-                <div style="display: flex;">
-                  <a class="name" href="/stefangeorg">
-                    Stefan Georg
-                  </a>
-                  <span class="ratingNum">
-                    5.0
-                  </span>
-                  <div class="rating">
-                    <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span>
-                  </div>
-                  <img style="width:57px;height: 17px;margin: 4px"
-                    src="https://cdn.codementor.io/assets/picked_badge-218b57ed8a55b17ae445142b3c9bf313f34f836180536a30376b933f3e222bf7.png"
-                    alt="Picked badge">
-                    <span class="online">
-                      <i class="fa fa-circle"></i>ONLINE
-                    </span>
-                </div>
-                <div class="headLine">
-                  <small>
-                    Senior Full Stack Software Developer
-                  </small>
-                </div>
-                <div class="language">
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      German
-                    </span>
-                  </div>
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      English
-                    </span>
-                  </div>
-                </div>
-                <div class="about">
-                  I've been coding since age of 15, starting with perl, moving to php, and finally to python. I've
-                  been a freelancer working in the US, New Zealand, Vietnam, and now working in Germany.
-
-                  I'm...
-                </div>
-                <div class="expertise">
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/python-experts">
-                      Python
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/vue-experts">
-                      Vue
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/javascript-experts">
-                      JavaScript
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/postgresql-experts">
-                      Postgresql
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/linux-experts">
-                      Linux
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/server-experts">
-                      Server
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/mysql-experts">
-                      MySQL
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/jquery-experts">
-                      jQuery
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/django-experts">
-                      Django
-                    </a>
-                  </div>
-                </div>
-              
-            </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="col-md-12 pb-4">
-      <div class="card shadow h-100 py-2">
-        <div class="card-body" style="display: flex;">
-            <div class="float-left pr-4">
-              <div class="text-center">
-                <div class="p-2">
-                  <img alt="Stefan Georg, PHP mentor and developer" class="img-circle" style="border-radius: 50%;width: 110px;hight:110px;"
-                    src="https://www.filepicker.io/api/file/LVgMnOgSPmFQuaIFaAKA" title="Stefan Georg">
-                </div>
-                <div class="rate p-2" style="color: black;">
-                  <strong>USD $31.00</strong>
-                  <small>/15min</small>
-                </div>
-                <a class="btn btn-success" style="border-bottom: none;
-                border-radius: 4px;
-                padding: 0.2 .8em 0.2 .8em;
-                min-width: 180px;" href="/stefangeorg">
-                  View Profile
-                </a>
-              </div>
-            </div>
-            <div class="float-right pl-2" >
-                <div style="display: flex;">
-                  <a class="name" href="/stefangeorg">
-                    Stefan Georg
-                  </a>
-                  <span class="ratingNum">
-                    5.0
-                  </span>
-                  <div class="rating">
-                    <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span>
-                  </div>
-                  <img style="width:57px;height: 17px;margin: 4px"
-                    src="https://cdn.codementor.io/assets/picked_badge-218b57ed8a55b17ae445142b3c9bf313f34f836180536a30376b933f3e222bf7.png"
-                    alt="Picked badge">
-                    <span class="online">
-                      <i class="fa fa-circle"></i>ONLINE
-                    </span>
-                </div>
-                <div class="headLine">
-                  <small>
-                    Senior Full Stack Software Developer
-                  </small>
-                </div>
-                <div class="language">
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      German
-                    </span>
-                  </div>
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      English
-                    </span>
-                  </div>
-                </div>
-                <div class="about">
-                  I've been coding since age of 15, starting with perl, moving to php, and finally to python. I've
-                  been a freelancer working in the US, New Zealand, Vietnam, and now working in Germany.
-
-                  I'm...
-                </div>
-                <div class="expertise">
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/python-experts">
-                      Python
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/vue-experts">
-                      Vue
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/javascript-experts">
-                      JavaScript
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/postgresql-experts">
-                      Postgresql
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/linux-experts">
-                      Linux
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/server-experts">
-                      Server
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/mysql-experts">
-                      MySQL
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/jquery-experts">
-                      jQuery
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/django-experts">
-                      Django
-                    </a>
-                  </div>
-                </div>
-              
-            </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-md-12 pb-4">
-      <div class="card shadow h-100 py-2">
-        <div class="card-body" style="display: flex;">
-            <div class="float-left pr-4">
-              <div class="text-center">
-                <div class="p-2">
-                  <img alt="Stefan Georg, PHP mentor and developer" class="img-circle" style="border-radius: 50%;width: 110px;hight:110px;"
-                    src="https://www.filepicker.io/api/file/LVgMnOgSPmFQuaIFaAKA" title="Stefan Georg">
-                </div>
-                <div class="rate p-2" style="color: black;">
-                  <strong>USD $31.00</strong>
-                  <small>/15min</small>
-                </div>
-                <a class="btn btn-success" style="border-bottom: none;
-                border-radius: 4px;
-                padding: 0.2 .8em 0.2 .8em;
-                min-width: 180px;" href="/stefangeorg">
-                  View Profile
-                </a>
-              </div>
-            </div>
-            <div class="float-right pl-2" >
-                <div style="display: flex;">
-                  <a class="name" href="/stefangeorg">
-                    Stefan Georg
-                  </a>
-                  <span class="ratingNum">
-                    5.0
-                  </span>
-                  <div class="rating">
-                    <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span> <span> ★ </span>
-                  </div>
-                  <img style="width:57px;height: 17px;margin: 4px"
-                    src="https://cdn.codementor.io/assets/picked_badge-218b57ed8a55b17ae445142b3c9bf313f34f836180536a30376b933f3e222bf7.png"
-                    alt="Picked badge">
-                    <span class="online">
-                      <i class="fa fa-circle"></i>ONLINE
-                    </span>
-                </div>
-                <div class="headLine">
-                  <small>
-                    Senior Full Stack Software Developer
-                  </small>
-                </div>
-                <div class="language">
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      German
-                    </span>
-                  </div>
-                  <div class="badge customizeBadge">
-                    <span class="removeDec">
-                      English
-                    </span>
-                  </div>
-                </div>
-                <div class="about">
-                  I've been coding since age of 15, starting with perl, moving to php, and finally to python. I've
-                  been a freelancer working in the US, New Zealand, Vietnam, and now working in Germany.
-
-                  I'm...
-                </div>
-                <div class="expertise">
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/python-experts">
-                      Python
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/vue-experts">
-                      Vue
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/javascript-experts">
-                      JavaScript
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/postgresql-experts">
-                      Postgresql
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/linux-experts">
-                      Linux
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/server-experts">
-                      Server
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/mysql-experts">
-                      MySQL
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/jquery-experts">
-                      jQuery
-                    </a>
-                  </div>
-                  <div class="badge skill ">
-                    <a class="removeDec" href="/django-experts">
-                      Django
-                    </a>
-                  </div>
+               
+                 
                 </div>
               
             </div>

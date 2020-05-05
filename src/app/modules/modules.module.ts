@@ -4,6 +4,7 @@ import { DashboradComponent } from './dashborad/dashborad.component';
 import { MentorsComponent } from './mentors/mentors.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MasterComponent } from '../layouts/master/master.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ]
 })
