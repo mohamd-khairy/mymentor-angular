@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <form class="user" #formData="ngForm" (ngSubmit)="update_profile_data(formData)">
+
+            <div class="row">
+            <div class="col-lg-5 d-none d-lg-block bg-register-image">
+                <div class="form-group">
+                    <input type="file" (change)="onFileChanged($event)" name="photo"  required>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="p-5">
+                <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Complete Personal Data!</h1>
+                    <div class="alert alert-danger" *ngIf="errorMsg">
+                        {{errorMsg}}
+                    </div>
+                    <div class="alert alert-success" *ngIf="successMsg">
+                        {{successMsg}}
+                    </div>
+                </div>
+                    <div class="form-group row">
+                    <div class="col-sm-4 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user" #first_name="ngModel" name="first_name" ngModel required
+                        id="exampleFirstName" placeholder="First Name">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control form-control-user" #middle_name="ngModel" name="middle_name" ngModel required
+                        id="exampleLastName" placeholder="Middle Name">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control form-control-user" #last_name="ngModel" name="last_name" ngModel required
+                        id="exampleLastName" placeholder="Last Name">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <input type="number" class="form-control form-control-user" #mobile="ngModel" name="mobile" ngModel required
+                    id="exampleInputphone" placeholder="Mobile Number">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control form-control-user" #phone_number="ngModel" name="phone_number" ngModel required
+                        id="exampleInputphone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user" #country="ngModel" name="country" ngModel required
+                        id="exampleInputPassword" placeholder="country">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" #city="ngModel" name="city" ngModel required
+                        id="exampleRepeatPassword" placeholder="city">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" #addres="ngModel" name="addres" ngModel required
+                        id="exampleInputphone" placeholder="address">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" class="form-control form-control-user" #postal_code="ngModel" name="postal_code" ngModel required
+                        id="exampleInputphone" placeholder="Postal Code">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="date" class="form-control form-control-user" #date_of_birth="ngModel" name="date_of_birth" ngModel required
+                        id="exampleInputphone" placeholder="date of birth">
+                    </div>
+
+                    
+                    
+                    <div class="form-group">
+                        <input type="checkbox" name="marital_status" #marital_status="ngModel" ngModel placeholder="marital status"> Completed
+                    </div>
+
+                    <div class="form-group">
+                        <input type="radio" name="gender" value="male" #gender="ngModel" ngModel > Male
+                        <input type="radio" name="gender" value="female" #gender="ngModel" ngModel > female
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                    Update Profile
+                    </button>
+                
+                </div>
+            </div>
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>

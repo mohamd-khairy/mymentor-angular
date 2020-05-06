@@ -5,6 +5,13 @@ import { MentorsComponent } from './mentors/mentors.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MasterComponent } from '../layouts/master/master.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SessionsComponent } from './sessions/sessions.component';
+import { PersonalDataComponent } from './personal-data/personal-data.component';
+import { EducationDataComponent } from './education-data/education-data.component';
+import { ExperienceDataComponent } from './experience-data/experience-data.component';
+import { PaymentDataComponent } from './payment-data/payment-data.component';
+import { SettingsComponent } from './settings/settings.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -23,6 +30,30 @@ const routes: Routes = [
       {
         path: 'mentor',
         component: MentorsComponent
+      },
+      {
+        path: 'session',
+        component: SessionsComponent
+      },
+      {
+        path: 'user/personal-data',
+        component: PersonalDataComponent
+      },
+      {
+        path: 'user/education-data',
+        component: EducationDataComponent
+      },
+      {
+        path: 'user/experience-data',
+        component: ExperienceDataComponent
+      },
+      {
+        path: 'user/payment-data',
+        component: PaymentDataComponent
+      },
+      {
+        path: 'user/settings',
+        component: SettingsComponent
       }
     ]
   }
@@ -31,11 +62,18 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     DashboradComponent,
-    MentorsComponent
+    MentorsComponent,
+    SessionsComponent,
+    PersonalDataComponent,
+    EducationDataComponent,
+    ExperienceDataComponent,
+    PaymentDataComponent,
+    SettingsComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ]
 })

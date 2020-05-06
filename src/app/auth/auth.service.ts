@@ -52,6 +52,7 @@ export class AuthService {
   
   login_ui(data) {
     localStorage.setItem('user', JSON.stringify(data));
+    this.me();
     this.router.navigateByUrl('/dashboard');
   }
 
@@ -90,6 +91,19 @@ export class AuthService {
 
   get user() {
     return JSON.parse(localStorage.getItem('user'));
+  }
+
+  get userData() {
+    return JSON.parse(localStorage.getItem('userData'));
+  }
+
+  me() {
+    return this.http.post(environment.apiUrl + 'auth/me',{}).subscribe(
+      data => {
+        let AlluserData = JSON.parse(JSON.stringify(data))
+        localStorage.setItem('userData', JSON.stringify(AlluserData.data));
+      }
+    )
   }
 
   isAuthed(): boolean {
