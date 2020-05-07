@@ -15,7 +15,8 @@
           <!-- Topbar -->
           <app-header></app-header>
           <!-- End of Topbar -->
-  
+          <mat-progress-bar *ngIf="globals.progressBar" mode="indeterminate" style="margin-top: -25px;margin-bottom: 25px;"></mat-progress-bar>
+
           <!-- Begin Page Content -->
           <router-outlet></router-outlet>
           <!-- /.container-fluid -->

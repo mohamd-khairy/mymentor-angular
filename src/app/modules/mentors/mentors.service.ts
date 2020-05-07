@@ -16,9 +16,7 @@ export class MentorsService {
   {
     return this.http.get(environment.apiUrl + 'most_popular_mentor')
                     .pipe(catchError(this.errorHandler));
-
   }
-
 
   errorHandler(error: HttpErrorResponse){
     return throwError(error);

@@ -12,6 +12,7 @@ import { ExperienceDataComponent } from './experience-data/experience-data.compo
 import { PaymentDataComponent } from './payment-data/payment-data.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FormsModule } from '@angular/forms';
+import { Globals } from '../globals';
 
 const routes: Routes = [
   {
@@ -74,7 +75,8 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes),
+  ],
+  providers: [Globals ]
 })
 export class ModulesModule { }
