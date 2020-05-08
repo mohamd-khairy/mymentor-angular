@@ -11,6 +11,8 @@ export class MentorsComponent implements OnInit {
 
   mentorDate;
 
+  Arr= Array;
+
   constructor(private mentorService: MentorsService, public globals: Globals) { }
 
   ngOnInit(): void {

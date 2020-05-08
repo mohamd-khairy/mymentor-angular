@@ -4,6 +4,7 @@ import { Router, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Globals } from 'src/app/globals';
 import { PersonalData } from './personal-data';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-personal-data',
@@ -19,7 +20,10 @@ export class PersonalDataComponent implements OnInit {
 
   profileData ;
 
-  constructor(public globals: Globals ,private personalService: PersonalService , private router: Router) { }
+  constructor(public globals: Globals ,
+              private personalService: PersonalService ,
+              private router: Router,
+              private authService: AuthService) { }
   
 
   ngOnInit(): void {
@@ -69,8 +73,10 @@ export class PersonalDataComponent implements OnInit {
           if(this.selectedFile){
             this.personalService.upload_file(file).subscribe(
               res => {
-                console.log(res);
                 this.successMsg = "Personal Data Updated Successfully";
+                let response = JSON.parse(JSON.stringify(res)).data;
+                console.log(response);
+                this.profileData.photo = response.photo;
               },
               err => {
                 console.log(err);
@@ -78,6 +84,7 @@ export class PersonalDataComponent implements OnInit {
               }
             )
           }
+          this.authService.me();
       },
       err => {
         console.log(err);

@@ -28,7 +28,7 @@ export class  EducationDataComponent implements OnInit {
 
         console.log(this.educationsData);
         this.globals.stop();
-        this.successMsg = "Education Data Saved Successfully";
+        this.successMsg = "Education Data returned Successfully";
       },
       err => {
         console.log(err);

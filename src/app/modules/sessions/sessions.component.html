@@ -1,1 +1,73 @@
-<p>sessions works!</p>
+<!-- Card -->
+<div class="row col-md-12">
+    <div class="card col-md-4 ml-4 mb-4 border-bottom-primary" *ngFor="let session of sessionData">
+
+    <!-- Card image -->
+    <div class="view overlay">
+      <img class="card-img-top rounded-circle mx-auto d-block p-2 " style="width: 200px;height:200px;"
+       [src]="session.photo" alt="Card image cap">
+    </div>
+  
+    <!-- Card content -->
+    <div class="card-body">
+  
+      <!-- Title -->
+      <h5 class="card-title font-weight-bold text-primary text-center text-capitalize"><a>{{session.user.name}}</a></h5>
+      <!-- Data -->
+      <ul class="list-unstyled list-inline rating mb-0 text-center">
+        <li class="list-inline-item mr-0" *ngFor="let i of Arr(session.user.rate).fill(1)">
+            <i class="fas fa-star amber-text" style="color: gold;"> </i></li>
+        <li class="list-inline-item"><p class="text-muted pl-1">{{session.user.rate}}.0 (413)</p></li>
+      </ul>
+
+      <hr class="my-4">
+
+      <p class="lead">
+          <strong class=" m-0 font-weight-bold text-dark text-center text-capitalize">{{session.topic.topic}}</strong>
+          <small class="text-dark"> , {{session.topic.subject.substring(0,30)}}{{ session.topic.subject.length > 30 ? "..." : ""}}</small>
+        </p>
+
+      <ul class="list-unstyled list-inline d-flex justify-content-between mb-4 mt-4">
+        <li class="list-inline-item mr-0" >
+            <div class="chip mr-0">
+                <span class="alert alert-danger">
+                    $ {{session.session_price}} <small>/ {{session.session_duration}}  {{session.session_duration_type}} </small>
+                </span>
+            </div>
+        </li>
+        <li class="list-inline-item mr-0" >
+            <small class="chip mr-0"><span class="alert alert-info">{{session.topic.category.name}}</span></small>
+        </li>
+      </ul>
+
+      <!-- Text -->
+      <p class="card-text">{{session.topic.details}}</p>
+
+      <hr class="my-4">
+      <p class="lead"><strong>Available Days</strong></p>
+      <ul class="list-unstyled list-inline d-flex mb-0">
+
+        <small class="m-1" *ngFor="let day of session.available_days">
+            <span class="alert alert-primary">{{day}}</span></small>
+
+      </ul>
+
+      <hr class="my-4">
+      <p class="lead"><strong>Available Language</strong></p>
+      <ul class="list-unstyled list-inline d-flex mb-0">
+
+        <small class="m-1" *ngFor="let lang of session.available_langs">
+            <span class="alert alert-warning">{{lang}}</span></small>
+
+      </ul>
+
+      <hr class="my-4">
+
+      <!-- Button -->
+      <a href="#" class="btn btn-primary deep-purple-text p-1 mx-0 mb-0">Book Now</a>
+  
+    </div>
+  
+    </div>
+</div>
+  <!-- Card -->
