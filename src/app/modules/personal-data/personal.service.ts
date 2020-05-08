@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
 
 export interface Profile{
   first_name: string,
@@ -26,11 +27,18 @@ export interface Profile{
 })
 export class PersonalService {
 
-  constructor(private http: HttpClient , private router: Router) { }
+  constructor(private http: HttpClient , private router: Router, private authService: AuthService) { }
 
   profile_api(data: Profile)
   {
     return this.http.post(environment.apiUrl + 'profile' , data)
+                    .pipe(catchError(this.errorHandler));
+  }
+
+  
+  get_profile_api()
+  {
+    return this.http.get(environment.apiUrl + 'profile/'+this.authService.userData.id)
                     .pipe(catchError(this.errorHandler));
   }
 

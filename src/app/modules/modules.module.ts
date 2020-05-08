@@ -13,6 +13,7 @@ import { PaymentDataComponent } from './payment-data/payment-data.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FormsModule } from '@angular/forms';
 import { Globals } from '../globals';
+import { AddEducationDataComponent } from './education-data/add-education-data/add-education-data.component';
 
 const routes: Routes = [
   {
@@ -42,8 +43,9 @@ const routes: Routes = [
       },
       {
         path: 'user/education-data',
-        component: EducationDataComponent
+        component: EducationDataComponent,
       },
+      {path: 'user/education-data/add', component: AddEducationDataComponent},
       {
         path: 'user/experience-data',
         component: ExperienceDataComponent
@@ -69,7 +71,8 @@ const routes: Routes = [
     EducationDataComponent,
     ExperienceDataComponent,
     PaymentDataComponent,
-    SettingsComponent
+    SettingsComponent,
+    AddEducationDataComponent
   ],
   imports: [
     CommonModule,

@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 
 export interface IEducation{
   education_name: string,
@@ -21,10 +22,16 @@ export interface IEducation{
 })
 export class EducationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private authService: AuthService) { }
 
   education_api(data: IEducation){
     return this.http.post(environment.apiUrl + 'education' , data)
+      .pipe(catchError(this.errorHandler));
+
+  }
+
+  get_education_api(){
+    return this.http.get(environment.apiUrl + 'education?user_id='+ this.authService.userData.id)
       .pipe(catchError(this.errorHandler));
 
   }

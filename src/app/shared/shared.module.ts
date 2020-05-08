@@ -5,6 +5,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { Globals } from '../globals';
 
 
 
@@ -23,6 +24,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     SidebarComponent
-  ]
+  ],
+  providers: [Globals]
 })
 export class SharedModule { }

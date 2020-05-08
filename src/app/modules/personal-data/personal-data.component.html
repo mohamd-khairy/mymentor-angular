@@ -5,7 +5,7 @@
         <form class="user" #formData="ngForm" (ngSubmit)="update_profile_data(formData)">
 
             <div class="row">
-            <div class="col-lg-5 d-none d-lg-block bg-register-image">
+            <div class="col-lg-5 d-none d-lg-block " style="background-image: url({{profileData.photo}}); background-repeat: no-repeat;">
                 <div class="form-group">
                     <input type="file" (change)="onFileChanged($event)" name="photo"  required>
                 </div>
@@ -23,60 +23,60 @@
                 </div>
                     <div class="form-group row">
                     <div class="col-sm-4 mb-3 mb-sm-0">
-                        <input type="text" class="form-control form-control-user" #first_name="ngModel" name="first_name" ngModel required
+                        <input type="text" class="form-control form-control-user" #first_name="ngModel" name="first_name" [(ngModel)]="profileData.first_name" required
                         id="exampleFirstName" placeholder="First Name">
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control form-control-user" #middle_name="ngModel" name="middle_name" ngModel required
+                        <input type="text" class="form-control form-control-user" #middle_name="ngModel" name="middle_name" [(ngModel)]="profileData.middle_name" required
                         id="exampleLastName" placeholder="Middle Name">
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control form-control-user" #last_name="ngModel" name="last_name" ngModel required
+                        <input type="text" class="form-control form-control-user" #last_name="ngModel" name="last_name" [(ngModel)]="profileData.last_name" required
                         id="exampleLastName" placeholder="Last Name">
                     </div>
                     </div>
                     <div class="form-group">
-                    <input type="number" class="form-control form-control-user" #mobile="ngModel" name="mobile" ngModel required
+                    <input type="number" class="form-control form-control-user" #mobile="ngModel" name="mobile" [(ngModel)]="profileData.mobile" required
                     id="exampleInputphone" placeholder="Mobile Number">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control form-control-user" #phone_number="ngModel" name="phone_number" ngModel required
+                        <input type="number" class="form-control form-control-user" #phone_number="ngModel" name="phone_number" [(ngModel)]="profileData.phone_number" required
                         id="exampleInputphone" placeholder="Phone Number">
                     </div>
                     <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input type="text" class="form-control form-control-user" #country="ngModel" name="country" ngModel required
+                        <input type="text" class="form-control form-control-user" #country="ngModel" name="country" [(ngModel)]="profileData.country" required
                         id="exampleInputPassword" placeholder="country">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control form-control-user" #city="ngModel" name="city" ngModel required
+                        <input type="text" class="form-control form-control-user" #city="ngModel" name="city" [(ngModel)]="profileData.city" required
                         id="exampleRepeatPassword" placeholder="city">
                     </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" #addres="ngModel" name="addres" ngModel required
+                        <input type="text" class="form-control form-control-user" #addres="ngModel" name="address" [(ngModel)]="profileData.address" required
                         id="exampleInputphone" placeholder="address">
                     </div>
 
                     <div class="form-group">
-                        <input type="number" class="form-control form-control-user" #postal_code="ngModel" name="postal_code" ngModel required
+                        <input type="number" class="form-control form-control-user" #postal_code="ngModel" name="postal_code" [(ngModel)]="profileData.postal_code" required
                         id="exampleInputphone" placeholder="Postal Code">
                     </div>
 
                     <div class="form-group">
-                        <input type="date" class="form-control form-control-user" #date_of_birth="ngModel" name="date_of_birth" ngModel required
+                        <input type="date" class="form-control form-control-user" #date_of_birth="ngModel" name="date_of_birth" [(ngModel)]="profileData.date_of_birth" required
                         id="exampleInputphone" placeholder="date of birth">
                     </div>
 
                     
                     
                     <div class="form-group">
-                        <input type="checkbox" name="marital_status" #marital_status="ngModel" ngModel placeholder="marital status"> Completed
+                        <input type="checkbox" name="marital_status" #marital_status="ngModel" [(ngModel)]="profileData.marital_status" placeholder="marital status"> Completed
                     </div>
 
                     <div class="form-group">
-                        <input type="radio" name="gender" value="male" #gender="ngModel" ngModel > Male
-                        <input type="radio" name="gender" value="female" #gender="ngModel" ngModel > female
+                        <input type="radio" name="gender" value="male" #gender="ngModel" [(ngModel)]="profileData.gender" > Male
+                        <input type="radio" name="gender" value="female" #gender="ngModel" [(ngModel)]="profileData.gender" > female
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-user btn-block">

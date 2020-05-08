@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +10,7 @@ export class SidebarComponent implements OnInit {
 
   toggle = null
 
-  constructor() { }
+  constructor(public globals: Globals) { }
 
   ngOnInit(): void {
   }

@@ -1,78 +1,50 @@
-<div class="container">
-    <div class="card o-hidden border-0 shadow-lg my-5">
-      <div class="card-body p-0">
-        <!-- Nested Row within Card Body -->
-        <form class="user" #formData="ngForm" (ngSubmit)="update_education_data(formData)">
+ <!-- DataTales Example -->
+ <div class="card shadow m-4">
+    <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Education Data</h6>
+            <button routerLink="/user/education-data/add" class="m-0 btn btn-primary" style="float:right;">Add Education</button>
+    </div>
+    <div class="card-body">
 
-            <div class="row">
-            <div class="col-lg-12">
-                <div class="p-5">
-                <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Complete Education Data!</h1>
-                    <div class="alert alert-danger" *ngIf="errorMsg">
-                        {{errorMsg}}
-                    </div>
-                    <div class="alert alert-success" *ngIf="successMsg">
-                        {{successMsg}}
-                    </div>
-                </div>
-                    <div class="form-group row">
-                        <input type="text" class="form-control form-control-user" #education_name="ngModel" name="education_name" ngModel required
-                        id="exampleFirstName" placeholder="Education Name">
-                    </div>
-                   
-                    <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input type="text" class="form-control form-control-user" #university="ngModel" name="university" ngModel required
-                        id="exampleInputPassword" placeholder="university">
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control form-control-user" #faculty="ngModel" name="faculty" ngModel required
-                        id="exampleRepeatPassword" placeholder="faculty">
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-user" #department="ngModel" name="department" ngModel required
-                        id="exampleInputphone" placeholder="department">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-user" #degree="ngModel" name="degree" ngModel required
-                        id="exampleInputphone" placeholder="degree">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea class="form-control form-control-user" #details="ngModel" name="details" ngModel required
-                        id="exampleInputphone" placeholder="details"></textarea>
-                    </div>
-
-                    
-                    <div class="form-group">
-                        <input type="checkbox" name="present1" #present1="ngModel" ngModel placeholder="marital status"> Present
-                    </div>
-
-                    <div class="form-group">
-                        <input type="date" class="form-control form-control-user" #start_date="ngModel" name="start_date" ngModel required
-                        id="exampleInputphone" placeholder="Start Date">
-                    </div>
-
-                    <div class="form-group" *ngIf="!formData.value.present">
-                        <input type="date" class="form-control form-control-user" #end_date="ngModel" name="end_date" ngModel required
-                        id="exampleInputphone" placeholder="End Date">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-user btn-block">
-                        Save Education Date
-                    </button>
-                
-                </div>
-            </div>
-            </div>
-
-        </form>
-
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Education Name</th>
+              <th>University</th>
+              <th>Faculty</th>
+              <th>Department</th>
+              <th>Degree</th>
+              <th>Present</th>
+              <th>Start date</th>
+              <th>End date</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Education Name</th>
+              <th>University</th>
+              <th>Faculty</th>
+              <th>Department</th>
+              <th>Degree</th>
+              <th>Present</th>
+              <th>Start date</th>
+              <th>End date</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr *ngFor="let education of educationsData">
+                <td>{{education.education_name}}</td>
+                <td>{{education.university}}</td>
+                <td>{{education.faculty}}</td>
+                <td>{{education.department}}</td>
+                <td>{{education.degree}}</td>
+                <td>{{education.present? "still learning" : "end learning"}}</td>
+                <td>{{education.start_date}}</td>
+                <td>{{education.end_date}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
   </div>

@@ -1,4 +1,5 @@
-    <div class="col-md-12 pb-4" *ngFor="let mentor of mentorDate">
+  <div class="row col-md-12">
+    <div class="col-md-6 pb-4" *ngFor="let mentor of mentorDate">
       <div class="card shadow h-100 py-2">
         <div class="card-body" style="display: flex;">
             <div class="float-left pr-4">
@@ -41,7 +42,7 @@
                     src="https://cdn.codementor.io/assets/picked_badge-218b57ed8a55b17ae445142b3c9bf313f34f836180536a30376b933f3e222bf7.png"
                     alt="Picked badge">
                     <span class="online">
-                      <!-- <i class="fa fa-circle"></i>ONLINE -->
+                      <i class="fa fa-circle"></i>ONLINE
                     </span>
                 </div>
                 <div class="headLine" *ngIf="mentor.job">
@@ -75,3 +76,4 @@
         </div>
       </div>
     </div>
+  </div>

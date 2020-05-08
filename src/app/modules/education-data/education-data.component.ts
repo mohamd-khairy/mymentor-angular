@@ -1,34 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { EducationService } from './education.service';
+import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-education-data',
   templateUrl: './education-data.component.html',
   styleUrls: ['./education-data.component.css']
 })
-export class EducationDataComponent implements OnInit {
+export class  EducationDataComponent implements OnInit {
 
   errorMsg = '';
   successMsg = '';
 
-  constructor(private educationService: EducationService) { }
+  public educationsData;
+
+  constructor(private educationService: EducationService, public globals: Globals) { }
 
   ngOnInit(): void {
+    this.globals.start();
+    this.educations();
   }
 
-
-  update_education_data(formData: NgForm){
-    
-    const newData = Object.assign({}, formData.value, {
-      present: formData.value.present1 ? true : false
-    });
-
-    delete newData.present1;
-
-    this.educationService.education_api(newData).subscribe(
+  educations(){
+    this.educationService.get_education_api().subscribe(
       res => {
-        console.log(res);
+        this.educationsData = JSON.parse(JSON.stringify(res)).data;
+
+        console.log(this.educationsData);
+        this.globals.stop();
         this.successMsg = "Education Data Saved Successfully";
       },
       err => {
@@ -37,6 +36,5 @@ export class EducationDataComponent implements OnInit {
       }
     )
   }
-
-
 }
+

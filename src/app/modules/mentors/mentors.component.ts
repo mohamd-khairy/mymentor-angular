@@ -14,16 +14,16 @@ export class MentorsComponent implements OnInit {
   constructor(private mentorService: MentorsService, public globals: Globals) { }
 
   ngOnInit(): void {
-    this.globals.progressBar = true;
+    this.globals.start();
     this.getMentors_api();
   }
 
   getMentors_api(){
+    
     this.mentorService.getMentors().subscribe(
       res => {
-        this.globals.progressBar = false;
+        this.globals.stop();
         this.mentorDate =  JSON.parse(JSON.stringify(res)).data;
-        console.log(this.mentorDate);
       },
       err => {
         console.log(err);
