@@ -22,7 +22,7 @@
                 <a class="btn btn-success" style="border-bottom: none;color: aliceblue;
                 border-radius: 4px;
                 padding: 0.2 .8em 0.2 .8em;
-                min-width: 180px;" href="/stefangeorg">
+                min-width: 180px;" routerLink="/mentor/profile">
                   View Profile
                 </a>
               </div>
@@ -62,7 +62,7 @@
                 <div class="expertise">
 
                   <div class="badge skill m-2" *ngFor="let skill of mentor.skills">
-                    <a class="removeDec" href="/python-experts">
+                    <a class="removeDec" href="#">
                       {{skill.skill_name}}
                     </a>
                   </div>

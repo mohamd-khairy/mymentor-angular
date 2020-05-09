@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { Globals } from '../globals';
 import { AddEducationDataComponent } from './education-data/add-education-data/add-education-data.component';
 import { AddExperienceDataComponent } from './experience-data/add-experience-data/add-experience-data.component';
+import { MentorProfileComponent } from './mentors/mentor-profile/mentor-profile.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
         path: 'mentor',
         component: MentorsComponent
       },
+      {path: 'mentor/profile', component: MentorProfileComponent},
       {
         path: 'session',
         component: SessionsComponent
@@ -75,7 +77,8 @@ const routes: Routes = [
     PaymentDataComponent,
     SettingsComponent,
     AddEducationDataComponent,
-    AddExperienceDataComponent
+    AddExperienceDataComponent,
+    MentorProfileComponent
   ],
   imports: [
     CommonModule,
