@@ -5,6 +5,7 @@ import { ModulesModule } from 'src/app/modules/modules.module';
 import { MasterComponent } from './master.component';
 import { RouterModule } from '@angular/router';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { GlobalModulesModule } from 'src/app/global-modules/global-modules.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     CommonModule,
     SharedModule,
     ModulesModule,
+    GlobalModulesModule,
     RouterModule,
     MatProgressBarModule
   ]
