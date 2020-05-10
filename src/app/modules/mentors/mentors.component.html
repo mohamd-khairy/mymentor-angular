@@ -5,12 +5,12 @@
             <div class="float-left pr-2">
               <div class="text-center">
                 <div class="p-2" *ngIf="mentor.profile.photo">
-                  <img alt="Stefan Georg, PHP mentor and developer" class="img-circle" style="border-radius: 50%;width: 110px;height:110px;"
+                  <img  class="img-circle" style="border-radius: 50%;width: 110px;height:110px;"
                   [src]="mentor.profile.photo" title="{{mentor.name}}">
                 </div>
 
                 <div class="p-2" *ngElse>
-                  <img alt="Stefan Georg, PHP mentor and developer" class="img-circle" style="border-radius: 50%;width: 110px;height:110px;"
+                  <img  class="img-circle" style="border-radius: 50%;width: 110px;height:110px;"
                   src="https://img.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg?size=338&ext=jpg" title="{{mentor.name}}">
                 </div>
 
@@ -19,12 +19,12 @@
                   <strong>{{mentor.job ? (mentor.job.session_price | currency) : ''}}</strong>
                   <small>/{{mentor.job ? mentor.job.session_duration : ''}} {{mentor.job ? (mentor.job.session_duration_type | uppercase) : ''}}</small>
                 </div>
-                <a class="btn btn-success" style="border-bottom: none;color: aliceblue;
-                border-radius: 4px;
-                padding: 0.2 .8em 0.2 .8em;
-                min-width: 180px;" routerLink="/mentor/profile">
-                  View Profile
-                </a>
+
+                  <a class="btn btn-success view"  routerLink="/mentor/profile">
+                    View Profile
+                  </a>
+                
+
               </div>
             </div>
             <div class="float-right pl-1" >
@@ -70,6 +70,16 @@
                  
                 </div>
               
+                
+                <div class="schedule">
+                  <a class="btn btn-primary" style="border-bottom: none;color: aliceblue;
+                  border-radius: 4px;
+                  padding: 0.2 .8em 0.2 .8em;
+                  min-width: 180px;" routerLink="/">
+                    Schedule Meeting
+                  </a>
+                </div>
+               
             </div>
         </div>
       </div>

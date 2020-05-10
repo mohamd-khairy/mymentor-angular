@@ -15,13 +15,15 @@ const routes: Routes = [
     path: '',
     canActivate:[RedirectIfAuthGuard],
     children: [
-    {path: 'login',component: LoginComponent},
-    {path: 'register',component: RegisterComponent},
-    {path: 'forgot-password' , component: ForgetPasswordComponent},
-    {path: 'reset-password/:token' , component: ResetPasswordComponent},
-    {path: 'verify-email' , component: VerifyEmailComponent},
+      {path: 'login',component: LoginComponent},
+      {path: 'register',component: RegisterComponent},
+      {path: 'forgot-password' , component: ForgetPasswordComponent},
+      {path: 'reset-password/:token' , component: ResetPasswordComponent},
+      {path: 'verify-email' , component: VerifyEmailComponent}
     ]
-  }
+  },
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

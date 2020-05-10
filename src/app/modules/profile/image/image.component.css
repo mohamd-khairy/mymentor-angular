@@ -1,0 +1,138 @@
+.jBmtQD {
+    color: rgb(255, 255, 255);
+    min-width: 70px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 1;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: rgb(0, 159, 198);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 159, 198);
+    border-image: initial;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px 14px;
+}
+.ja-DXIV > :last-child {
+    margin-bottom: -1px;
+}
+.llLYWd {
+    display: flex;
+    padding: 0px 40px 20px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.iHhYZb {
+    display: inline-block;
+    flex: 1 1 0%;
+}
+a {
+    color: #00b5e2;
+    cursor: pointer;
+    text-decoration: none;
+}
+.cfWcOo {
+    display: inline-flex;
+}
+.cfWcOo .cui-tooltip__trigger {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.idcmWx {
+    min-width: 56px;
+    margin-left: 20px;
+    padding: 5px 0px;
+}
+.kVERMx {
+    color: rgb(51, 51, 51);
+    min-width: 70px;
+    width: auto;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 1;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 230);
+    border-image: initial;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px 14px;
+}
+
+.eTmFYj {
+    display: inline-flex;
+    margin: 0px;
+}
+
+.eTmFYj svg {
+    width: 24px;
+    height: 24px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.__react_component_tooltip.place-bottom {
+    margin-top: 10px;
+}
+.__react_component_tooltip.type-dark {
+    color: #fff;
+    background-color: #222;
+}
+.cfWcOo .__react_component_tooltip {
+    max-width: 200px;
+    line-height: 18px;
+    background: rgb(51, 51, 51);
+    padding: 8px 16px;
+}
+.__react_component_tooltip {
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 13px;
+    left: -999em;
+    opacity: 0;
+    padding: 8px 21px;
+    position: fixed;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+    top: -999em;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.hrJVXQ {
+    position: relative;
+    line-height: 1.42em;
+    background: rgb(255, 255, 255);
+    padding: 32px 40px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.hrJVXQ .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 54, 72);
+    margin-bottom: 20px;
+}

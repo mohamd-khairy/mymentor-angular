@@ -670,6 +670,23 @@ small.jsx-3823654774 {
   padding: 5px;
   top: 1.5em;
 }
+
+.schedule {
+    font-weight: bold;
+    font-size: 9px;
+    position: absolute;
+    right: 20px;
+    padding: 5px;
+    bottom: 2.5em;
+  }
+  .view{
+    border-bottom: none;
+    color: aliceblue;
+    border-radius: 4px;
+    padding: 0.2 .8em 0.2 .8em;
+    min-width: 180px;
+  }
+
 small {
     font-size: 80%;
     margin-top: 5px;

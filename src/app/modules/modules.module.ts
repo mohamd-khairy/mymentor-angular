@@ -18,6 +18,11 @@ import { PersonalDataComponent } from './personal/personal-data/personal-data.co
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './profile/about/about.component';
 import { SkillsComponent } from './profile/skills/skills.component';
+import { ExperienceComponent } from './profile/experience/experience.component';
+import { EducationComponent } from './profile/education/education.component';
+import { ReviewComponent } from './profile/review/review.component';
+import { SocialComponent } from './profile/social/social.component';
+import { ImageComponent } from './profile/image/image.component';
 
 const routes: Routes = [
   {
@@ -82,7 +87,12 @@ const routes: Routes = [
     AddExperienceDataComponent,
     AboutComponent,
     SkillsComponent,
-    ProfileComponent
+    ProfileComponent,
+    ExperienceComponent,
+    EducationComponent,
+    ReviewComponent,
+    SocialComponent,
+    ImageComponent
   ],
   imports: [
     CommonModule,
