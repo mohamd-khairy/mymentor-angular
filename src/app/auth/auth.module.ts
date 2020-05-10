@@ -8,21 +8,20 @@ import { FormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { RedirectIfAuthGuard } from '../redirect-if-auth.guard';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {path: 'forgot-password' , component: ForgetPasswordComponent},
-  {path: 'reset-password/:token' , component: ResetPasswordComponent},
-  {path: 'verify-email' , component: VerifyEmailComponent},
-  {path: '404', component: NotFoundComponent},
-  {path: '**', redirectTo: '/404'}
+    path: '',
+    canActivate:[RedirectIfAuthGuard],
+    children: [
+    {path: 'login',component: LoginComponent},
+    {path: 'register',component: RegisterComponent},
+    {path: 'forgot-password' , component: ForgetPasswordComponent},
+    {path: 'reset-password/:token' , component: ResetPasswordComponent},
+    {path: 'verify-email' , component: VerifyEmailComponent},
+    ]
+  }
 ];
 
 @NgModule({

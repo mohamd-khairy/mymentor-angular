@@ -6,16 +6,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { MasterComponent } from '../layouts/master/master.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SessionsComponent } from './sessions/sessions.component';
-import { PersonalDataComponent } from './personal-data/personal-data.component';
-import { EducationDataComponent } from './education-data/education-data.component';
-import { ExperienceDataComponent } from './experience-data/experience-data.component';
-import { PaymentDataComponent } from './payment-data/payment-data.component';
+import { EducationDataComponent } from './personal/education-data/education-data.component';
+import { ExperienceDataComponent } from './personal/experience-data/experience-data.component';
+import { PaymentDataComponent } from './personal/payment-data/payment-data.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FormsModule } from '@angular/forms';
 import { Globals } from '../globals';
-import { AddEducationDataComponent } from './education-data/add-education-data/add-education-data.component';
-import { AddExperienceDataComponent } from './experience-data/add-experience-data/add-experience-data.component';
-import { MentorProfileComponent } from './mentors/mentor-profile/mentor-profile.component';
+import { AddEducationDataComponent } from './personal/education-data/add-education-data/add-education-data.component';
+import { AddExperienceDataComponent } from './personal/experience-data/add-experience-data/add-experience-data.component';
+import { PersonalDataComponent } from './personal/personal-data/personal-data.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AboutComponent } from './profile/about/about.component';
+import { SkillsComponent } from './profile/skills/skills.component';
 
 const routes: Routes = [
   {
@@ -35,7 +37,7 @@ const routes: Routes = [
         path: 'mentor',
         component: MentorsComponent
       },
-      {path: 'mentor/profile', component: MentorProfileComponent},
+      {path: 'mentor/profile', component: ProfileComponent},
       {
         path: 'session',
         component: SessionsComponent
@@ -78,7 +80,9 @@ const routes: Routes = [
     SettingsComponent,
     AddEducationDataComponent,
     AddExperienceDataComponent,
-    MentorProfileComponent
+    AboutComponent,
+    SkillsComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

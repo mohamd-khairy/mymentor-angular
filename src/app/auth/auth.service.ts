@@ -97,6 +97,10 @@ export class AuthService {
     return JSON.parse(localStorage.getItem('userData'));
   }
 
+  get userType() {
+    return JSON.parse(localStorage.getItem('userData')).user_type.user_type_name;
+  }
+
   me() {
     return this.http.post(environment.apiUrl + 'auth/me',{}).subscribe(
       data => {
