@@ -9,8 +9,8 @@ import { Globals } from 'src/app/globals';
 })
 export class  EducationDataComponent implements OnInit {
 
-  errorMsg = '';
-  successMsg = '';
+  public errorMsg = '';
+  public successMsg = '';
 
   public educationsData;
 

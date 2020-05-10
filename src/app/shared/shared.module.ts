@@ -6,6 +6,8 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { Globals } from '../globals';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +20,9 @@ import { Globals } from '../globals';
   imports: [
     CommonModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,
