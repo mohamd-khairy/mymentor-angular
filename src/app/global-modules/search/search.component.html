@@ -1,4 +1,4 @@
-<div class="row" *ngIf="globals.searchData && globals.searchData.total>0">
+<div class="row" *ngIf="searchService.searchData && searchService.searchData.total>0">
     <!-- <div class="col-md-12"> -->
       <div class="jsx-94813066 main col-md-12">
         <form class="jsx-3579290337 filter-group col-md-3">
@@ -147,11 +147,11 @@
 
 
         <div class="jsx-94813066 results col-md-9">
-          <div class="jsx-94813066 results__header"><small>{{globals.searchData.total}} results</small></div>
+          <div class="jsx-94813066 results__header"><small>{{searchService.searchData.total}} results</small></div>
           <div class="jsx-94813066 results__mentors">
            
 
-            <div class="jsx-3823654774 mentor" *ngFor="let mentor of globals.searchData.data">
+            <div class="jsx-3823654774 mentor" *ngFor="let mentor of searchService.searchData.data">
               <div class="jsx-3823654774 left" style="width: 20%;">
                 <a routerLink="/mentor/profile">
                   <div class="cui-avatar-image sc-jWBwVP flvgkt"><img alt="{{mentor.name}}"
@@ -251,12 +251,12 @@
             </div>
 
           </div>
-          <div class="jsx-94813066 load-more" *ngIf="globals.searchData.next_page_url">
-            <button (click)="paginate(globals.searchData.next_page_url)" class="sc-htpNat fAwPfY">load more</button>
+          <div class="jsx-94813066 load-more" *ngIf="searchService.searchData.next_page_url">
+            <button (click)="paginate(searchService.searchData.next_page_url)" class="sc-htpNat fAwPfY">load more</button>
           </div>
 
-          <div class="jsx-94813066 load-more" *ngIf="globals.searchData.prev_page_url">
-            <button (click)="paginate(globals.searchData.prev_page_url)" class="sc-htpNat fAwPfY">load previous</button>
+          <div class="jsx-94813066 load-more" *ngIf="searchService.searchData.prev_page_url">
+            <button (click)="paginate(searchService.searchData.prev_page_url)" class="sc-htpNat fAwPfY">load previous</button>
           </div>
 
         </div>
@@ -264,8 +264,8 @@
     <!-- </div> -->
   </div>
 
-  <p class="text-center text-danger" *ngIf="globals.searchData && globals.searchData.total<1"> There is no result for this skill !</p>
+  <p class="text-center text-danger" *ngIf="searchService.searchData && searchService.searchData.total<1"> There is no result for this skill !</p>
 
-  <p class="text-center text-danger" *ngIf="globals.errorMsg">{{globals.errorMsg}}</p>
+  <p class="text-center text-danger" *ngIf="errorMsg">{{globals.errorMsg}}</p>
 
 

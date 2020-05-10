@@ -11,24 +11,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderService {
 
-  public q;
 
   constructor(private http: HttpClient, public globals: Globals , private router: Router) { }
-
-  search_api(q){
-
-    this.q = q;
-
-    return this.http.get(environment.apiUrl+'search?q='+q)
-    .pipe(catchError(this.errorHandler))
-  }
-
-  loadMore(nextPageUrl){
-    return this.http.get(nextPageUrl+'&q='+this.q)
-                    .pipe(catchError(this.errorHandler));
-  }
-
-
 
   errorHandler(error: HttpErrorResponse){
     return throwError(error);

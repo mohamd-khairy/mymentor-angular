@@ -3,6 +3,7 @@ import { SearchService } from './search.service';
 import { Globals } from 'src/app/globals';
 import { HeaderService } from 'src/app/shared/component/header/header.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -11,27 +12,39 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
+  constructor(public searchService: SearchService, private router: Router, public globals: Globals, public headerService: HeaderService)
+   { 
+    searchService.registerMyApp(this);
+   }
 
+  ngOnInit(): void {
+    if(!this.searchService.searchKey){
+      this.router.navigateByUrl('dashboard');
+    }
+   }
 
-  constructor(public searchService: SearchService,private router: Router, public globals: Globals , public headerService: HeaderService) { }
+  paginate(url) {
 
-  ngOnInit(): void {}
-
-  paginate(url){
-    this.headerService.loadMore(url).subscribe(
+    this.globals.start();
+    this.searchService.loadMore(url).subscribe(
       res => {
-
-          this.globals.searchData = JSON.parse(JSON.stringify(res)).data;
-  
-          console.log(this.globals.searchData);
-          this.globals.stop();
-                    
+        this.globals.stop();
+        console.log(this.searchService.searchData);
+        this.searchService.searchData = JSON.parse(JSON.stringify(res)).data;
       },
       err => {
-          console.log(err);
-          this.globals.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message ;
+        console.log(err);
+        this.searchService.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message;
       }
     )
+  }
+
+  start(){
+    this.globals.start();
+  }
+
+  stop(){
+    this.globals.stop();
   }
 
 }

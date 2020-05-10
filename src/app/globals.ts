@@ -1,10 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AuthService } from './auth/auth.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
-import { HeaderService } from './shared/component/header/header.service';
 
 
 @Injectable({
@@ -21,6 +18,8 @@ export class Globals {
     public Arr = Array;
 
     public errorMsg;
+
+    public formData: string;
 
     start(){
         this.progressBar = true ;
