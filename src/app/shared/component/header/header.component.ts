@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   
-  constructor(public authService: AuthService , private searchService: SearchService,
+  constructor(public authService: AuthService , public searchService: SearchService,
      public headerService: HeaderService, public globals: Globals, private router: Router) { }
 
   ngOnInit(): void {
