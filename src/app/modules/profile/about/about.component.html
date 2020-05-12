@@ -1,7 +1,9 @@
-    <div class="headline full" >{{jobData.current_job}} at {{jobData.current_company}}</div>
+<div *ngIf="jobData">
+
+    <div class="headline full">{{jobData.current_job}} at {{jobData.current_company}}</div>
     <div class="about">
         <div class="sc-fzoJus fhMGCd cui-md-viewer">
-            <p>{{jobData.brief}}</p>               
+            <p>{{jobData.brief}}</p>
         </div>
     </div>
     <div class="additional-info">
@@ -12,8 +14,8 @@
                             d="M14.887 3.896c1.775 2.147 2.736 4.62 2.873 7.404h2.812a8.607 8.607 0 0 0-5.685-7.404zm-2.187-.29V11.3h3.658c-.163-2.975-1.376-5.528-3.658-7.694zm2.187 16.498a8.607 8.607 0 0 0 5.685-7.404H17.76c-.137 2.783-1.098 5.257-2.873 7.404zm-2.187.29c2.282-2.166 3.495-4.72 3.658-7.694H12.7v7.694zm-3.478-.253C7.427 17.987 6.455 15.5 6.317 12.7H3.428a8.607 8.607 0 0 0 5.794 7.441zm2.078.18V12.7H7.719c.161 2.94 1.349 5.47 3.581 7.62zM9.222 3.858A8.607 8.607 0 0 0 3.428 11.3h2.89c.137-2.8 1.109-5.287 2.904-7.441zm2.078-.18C9.068 5.83 7.88 8.36 7.719 11.3H11.3V3.68zM12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z">
                         </path>
                     </svg></span>
-                    <span class="pr-2" *ngFor="let lang of jobData.available_langs"> {{lang}} </span>
-                </div>
+                <span class="pr-2" *ngFor="let lang of jobData.available_langs"> {{lang}} </span>
+            </div>
             <div class="timezone"><span class="sc-AxjAm bKJFpw"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24">
                         <g fill="none" fill-rule="evenodd">
@@ -23,9 +25,9 @@
                             </path>
                         </g>
                     </svg></span>
-                    <span  class="pr-2" *ngFor="let day of jobData.available_days">{{day}}</span></div>
+                <span class="pr-2" *ngFor="let day of jobData.available_days">{{day}}</span></div>
 
-             <div class="timezone"><span class="sc-AxjAm bKJFpw"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+            <div class="timezone"><span class="sc-AxjAm bKJFpw"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24">
                         <g fill="none" fill-rule="evenodd">
                             <path d="M0 0h24v24H0z"></path>
@@ -34,6 +36,9 @@
                             </path>
                         </g>
                     </svg></span>
-                    <span  class="pr-2" >{{jobData.session_price}} $ /{{jobData.session_duration}} {{jobData.session_duration_type}}</span></div>
+                <span class="pr-2">{{jobData.session_price}} $ /{{jobData.session_duration}}
+                    {{jobData.session_duration_type}}</span></div>
         </div>
 
+    </div>
+</div>
