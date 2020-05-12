@@ -1,0 +1,54 @@
+.headline {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.fhMGCd p {
+    color: rgb(68, 68, 68);
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0px 0px 16px;
+}
+.additional-info {
+    display: flex;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    margin-top: 20px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.additional-info .languages, .hrJVXQ .additional-info .timezone {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.bKJFpw {
+    display: inline-flex;
+    margin: 0px 4px 0px 0px;
+}
+.additional-info .timezone {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.bKJFpw {
+    display: inline-flex;
+    margin: 0px 4px 0px 0px;
+}
+
+.additional-info a {
+    display: inline-block;
+    margin-right: 12px;
+}
+.bKJFpw svg {
+    width: 18px;
+    height: 18px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}

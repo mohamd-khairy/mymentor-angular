@@ -136,3 +136,213 @@ a {
     color: rgb(0, 54, 72);
     margin-bottom: 20px;
 }
+.kcBPga .level-badges {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.kVccAF {
+    display: inline-flex;
+}
+.kVccAF .cui-tooltip__trigger {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.ljjVek {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 26px;
+    font-size: 12px;
+    font-weight: 600;
+    vertical-align: top;
+    color: rgb(0, 127, 158);
+    padding: 4px 8px;
+    border-radius: 3px;
+    background: rgb(235, 248, 251);
+}
+ .text, .ljjVek .icon {
+    line-height: 1em;
+}
+.fPsuOU {
+    display: inline-flex;
+    margin: 0px;
+}
+.ljjVek .text {
+    margin-left: 4px;
+}
+.fPsuOU svg:hover {
+    opacity: 1;
+}
+.fPsuOU svg {
+    width: 18px;
+    height: 18px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.fPsuOU svg path:last-child {
+    fill: rgb(0, 127, 158);
+}
+
+.kcBPga .level-badges {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.dGLmRD {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    margin-top: 15px;
+}
+.hYRFqL {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.hYRFqL .rating-num {
+    color: rgb(0, 54, 72);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 8px 0px 0px;
+}
+.hYRFqL .star {
+    line-height: 0;
+}
+.egHItY {
+    display: inline-flex;
+    margin: 0px;
+}
+.hYRFqL svg {
+    padding: 1px;
+}
+.egHItY svg {
+    width: 20px;
+    height: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.egHItY svg path:last-child {
+    fill: rgb(0, 159, 198);
+}
+.ja-DXIV > :last-child {
+    margin-bottom: -1px;
+}
+.khdmXn {
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+}
+.eOcDnx {
+    display: flex;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.eOcDnx > div {
+    text-align: center;
+    flex: 1 1 0%;
+    padding: 10px;
+}
+.eOcDnx .rate {
+    color: rgb(0, 159, 198);
+    font-size: 20px;
+    font-weight: bold;
+}
+.eOcDnx > div + div {
+    border-left: 1px solid rgb(230, 230, 230);
+}
+.eOcDnx .count {
+    color: rgb(0, 54, 72);
+    font-size: 20px;
+    font-weight: bold;
+}
+.dfFBhE {
+    padding: 20px 40px;
+}
+
+.bMVRib h2 {
+    color: rgb(0, 54, 72);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.dKSaSe {
+    display: flex;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    -webkit-box-align: center;
+    align-items: center;
+}
+.dKSaSe span + span {
+    display: inline-block;
+    margin-left: 16px;
+}
+.gjUHgO img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(355deg) brightness(94%) contrast(94%);
+}
+.ja-DXIV > :last-child {
+    margin-bottom: -1px;
+}
+.bMVRib {
+    padding: 20px 40px;
+    border-top: 1px solid rgb(230, 230, 230);
+}
+
+.bMVRib[_ngcontent-ovu-c88] h2[_ngcontent-ovu-c88] {
+    color: rgb(0, 54, 72);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.dKSaSe[_ngcontent-dhm-c88] span[_ngcontent-dhm-c88] + span[_ngcontent-dhm-c88] {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.ZEbzW img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    filter: invert(39%) sepia(10%) saturate(18%) hue-rotate(333deg) brightness(97%) contrast(86%);
+}
+.gkcJBi img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    filter: invert(42%) sepia(3%) saturate(0%) hue-rotate(285deg) brightness(92%) contrast(88%);
+}
+img {
+    max-width: 100%;
+}
