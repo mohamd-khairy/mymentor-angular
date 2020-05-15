@@ -1,4 +1,4 @@
-<div *ngIf="jobData">
+<div *ngIf="(job$ | async) as jobData">
 
     <div class="headline full">{{jobData.current_job}} at {{jobData.current_company}}</div>
     <div class="about">

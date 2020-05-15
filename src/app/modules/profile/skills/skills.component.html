@@ -1,21 +1,16 @@
-<div class="Expertise__StyledExpertise-sc-96daed-0 emsgWX">
-    <div class="icon"><span class="sc-fzqAbL epxEvy"><img
-                src="https://da2f8uix4p8om.cloudfront.net/20200505edgh7pzv8k/categories/javascript-plain.svg"
+<div class="emsgWX p-2" *ngFor="let skill of skills$ | async">
+    <div class="icon"><span class="sc-fzqAbL"><img
+            style="width: 50px;"
+                [src]="skill.photo"
                 loading="lazy"></span></div>
     <div>
         <div class="name">
-            <span>JavaScript</span>
+            <span>{{skill.skill_name}}</span>
         </div>
-        <div class="info"><b>8</b> <!-- -->years
+        <div class="info"><b>{{skill.experience_years}}</b> <!-- -->years
             <!-- --> experience<span> | <b>161</b> <!-- -->endorsements</span></div>
-        <div class="description truncated">I am using JavaScript since the beginning of my journey as a Full Stack Web
-            Developer. There is no better time to be a JavaScript develop...</div>
-        <div class="description full">I am using JavaScript since the beginning of my journey as a Full Stack Web
-            Developer. There is no better time to be a JavaScript developer considering the fact how rapidly technology
-            advances. I am using Vue.js and React.js to develop stunning and extremely fast Web Applications as well as
-            React Native for mobile apps, Node.js for server-side, and Workbox to make progressive web apps which can
-            provide offline experience for the users.</div>
-        <div class="tags truncated"><a href="https://www.codementor.io/reactjs-experts" target="_blank"
+        <div class="description truncated">{{skill.details}}</div>
+        <!-- <div class="tags truncated"><a href="https://www.codementor.io/reactjs-experts" target="_blank"
                 class="tag">React</a><a href="https://www.codementor.io/progressive-web-apps-experts" target="_blank"
                 class="tag">Progressive web apps</a><a href="https://www.codementor.io/spa-experts" target="_blank"
                 class="tag">Spa</a>
@@ -34,6 +29,6 @@
                 target="_blank" class="tag">React native</a><a href="https://www.codementor.io/es6-experts"
                 target="_blank" class="tag">Es6</a>
             <div class="Expertise__StyledToggler-sc-96daed-1 OxmCq">View more</div>
-        </div>
+        </div> -->
     </div>
 </div>

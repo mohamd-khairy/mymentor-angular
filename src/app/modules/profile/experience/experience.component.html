@@ -1,16 +1,13 @@
-    <div class="fVEKev">
-        <div class="employment-title">Head of Development</div>
+    <div class="fVEKev" *ngFor="let experience of experiences$ | async">
+        <div class="employment-title">{{experience.job_title}}</div>
         <div class="employment-detail">
-            <div class="company-name">FindlayWebTech</div>
-            <div class="time-period">2018-04-01
-                <!-- -->-
-                <!-- -->Present</div>
+            <div class="company-name">{{experience.company_name}}</div>
+            <div class="time-period">{{experience.start_date}} - {{ experience.present ? 'present' : experience.end_date}}</div>
         </div>
-        <div class="description truncated">Development of various products consisting of website and mobile
-            applications.</div>
-        <div class="description full">Development of various products consisting of website and mobile applications.
-        </div>
-        <div class="categories truncated">
+
+        <div class="description full">{{experience.details}}</div>
+
+        <!-- <div class="categories truncated">
             <div class="category">HTML/CSS</div>
             <div class="category">PHP</div>
             <div class="category">Python</div>
@@ -26,5 +23,5 @@
             <div class="category">React native</div>
             <div class="category">Vue</div>
             <div class="hSeVoT">View more</div>
-        </div>
+        </div> -->
     </div>

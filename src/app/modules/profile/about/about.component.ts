@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { BehaviorSubject } from 'rxjs';
 
@@ -12,8 +12,8 @@ export class AboutComponent implements OnInit {
   public successMsg = '';
 
   public jobData ;
-  // private _job = new BehaviorSubject<Array<any>>(null);
-  // job$ = this._job.asObservable();
+  private _job = new BehaviorSubject<Array<any>>(null);
+  job$ = this._job.asObservable();
 
   constructor(private profileService: ProfileService) { }
 
@@ -24,9 +24,7 @@ export class AboutComponent implements OnInit {
   get_job_data(){
     this.profileService.get_job_details_api().subscribe(
       (res) => { 
-        console.log('the data:' , res);
-        // this._job.next(JSON.parse(JSON.stringify(res)).data); 
-        this.jobData = JSON.parse(JSON.stringify(res)).data; 
+        this._job.next(JSON.parse(JSON.stringify(res)).data); 
         this.successMsg = "Data returned Successfully";
       },
       (err) => {
@@ -35,4 +33,5 @@ export class AboutComponent implements OnInit {
       } 
     );
   }
+
 }

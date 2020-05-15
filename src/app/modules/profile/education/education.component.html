@@ -1,13 +1,14 @@
-<div class="fVEKev">
-    <div class="employment-title">Head of Development</div>
+<div class="fVEKev"  *ngFor="let edu of education$ | async">
+    
+    <div class="employment-title">{{edu.education_name}}</div>
     <div class="employment-detail">
-        <div class="company-name">FindlayWebTech</div>
-        <div class="time-period">2018-04-01
-            <!-- -->-
-            <!-- -->Present</div>
+        <div class="company-name" >{{edu.university}}</div> 
+        <div class="company-name">{{edu.faculty}}</div> 
+        <div class="time-period">{{edu.department}}</div>
     </div>
-    <div class="description truncated">Development of various products consisting of website and mobile
-        applications.</div>
-    <div class="description full">Development of various products consisting of website and mobile applications.
+    <div class="employment-detail">
+        <div class="company-name">{{edu.degree}}</div>
+        <div class="time-period">{{edu.start_date}} - {{ edu.present ? 'present' : edu.end_date}}</div>
     </div>
+    <div class="description full">{{edu.details}}</div>
 </div>

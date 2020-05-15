@@ -8,6 +8,9 @@ import { MasterModule } from './layouts/master/master.module';
 import { HttpClientModule , HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers, effects } from './modules/profile/store';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.inte
     FormsModule,
     AuthModule,
     MasterModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot(effects)
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
