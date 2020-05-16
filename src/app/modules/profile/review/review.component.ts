@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IimageState } from '../store/states/states.state';
+import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-review',
@@ -6,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
+  @Input() rates$ : Observable<any>;
+  @Input() image$ : Observable<IimageState>;
 
-  constructor() { }
+  constructor(public globals: Globals) { }
 
   ngOnInit(): void {
   }

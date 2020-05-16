@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { StoreInterface } from '../store';
+import { IimageState, ISkill } from '../store/states/states.state';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Globals } from 'src/app/globals';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-image',
@@ -7,7 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
-  constructor() { }
+  @Input() skills$ : Observable<ISkill>;
+  @Input() image$ : Observable<IimageState>;
+  @Input() job$ : Observable<any>;
+
+
+  constructor(private store: Store<StoreInterface> , public globals: Globals , private profileService: ProfileService) {
+  }
 
   ngOnInit(): void {
   }
