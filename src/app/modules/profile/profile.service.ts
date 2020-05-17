@@ -13,6 +13,18 @@ export class ProfileService {
 
   constructor(private http: HttpClient,private router: Router,private authService: AuthService) { }
 
+  get_education_api()
+  {
+    return this.http.get(environment.apiUrl+'education?user_id='+this.authService.userData.id)
+    .pipe(catchError(this.errorHandler));
+  }
+
+  get_experience_api()
+  {
+    return this.http.get(environment.apiUrl+'experience?user_id='+this.authService.userData.id)
+    .pipe(catchError(this.errorHandler));
+  }
+
   get_job_details_api()
   {
     return this.http.get(environment.apiUrl + 'job?user_id='+this.authService.userData.id)
@@ -28,6 +40,12 @@ export class ProfileService {
   get_skills_api()
   {
     return this.http.get(environment.apiUrl + 'skill?user_id='+this.authService.userData.id)
+    .pipe(catchError(this.errorHandler));
+  }
+
+  get_rates_api()
+  {
+    return this.http.get(environment.apiUrl + 'rate?user_rated_id='+this.authService.userData.id)
     .pipe(catchError(this.errorHandler));
   }
 

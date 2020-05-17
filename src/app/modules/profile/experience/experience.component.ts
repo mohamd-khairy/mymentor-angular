@@ -11,7 +11,7 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit {
-  @Input() experiences$ : Observable<IExperienceState>;
+  @Input() experience$ : Observable<IExperienceState>;
 
   constructor(public store: Store<StoreInterface> , private profileService: ProfileService) { 
   }

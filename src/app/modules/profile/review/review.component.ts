@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IimageState } from '../store/states/states.state';
 import { Globals } from 'src/app/globals';
 
 @Component({
@@ -10,7 +9,7 @@ import { Globals } from 'src/app/globals';
 })
 export class ReviewComponent implements OnInit {
   @Input() rates$ : Observable<any>;
-  @Input() image$ : Observable<IimageState>;
+  @Input() profile$ : Observable<any>;
 
   constructor(public globals: Globals) { }
 

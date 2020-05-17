@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StoreInterface } from '../store';
-import { IimageState, ISkill } from '../store/states/states.state';
+import { ISkill } from '../store/states/states.state';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Globals } from 'src/app/globals';
 import { ProfileService } from '../profile.service';
@@ -14,7 +14,7 @@ import { ProfileService } from '../profile.service';
 export class ImageComponent implements OnInit {
 
   @Input() skills$ : Observable<ISkill>;
-  @Input() image$ : Observable<IimageState>;
+  @Input() profile$ : Observable<any>;
   @Input() job$ : Observable<any>;
 
 

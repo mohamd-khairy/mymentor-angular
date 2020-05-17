@@ -4,7 +4,7 @@
 
         <div class="card o-hidden border-0 shadow-lg my-5 col-md-4"  style="height: 100%;">
             <div class="card-body p-0">
-               <app-image></app-image>
+               <app-image [job$]="job$" [profile$]="profile$" [skills$]="skills$"></app-image>
             </div>
           </div>
       
@@ -15,7 +15,7 @@
 
                         <div class="title">ABOUT ME</div>
 
-                        <app-about ></app-about>
+                        <app-about [job$]="job$"></app-about>
 
                     </section>
 
@@ -23,7 +23,7 @@
 
                         <div class="title">Skills</div>
 
-                        <app-skills></app-skills>
+                        <app-skills [skills$]="skills$"></app-skills>
 
                     </section>
 
@@ -31,7 +31,7 @@
 
                         <div class="title">Experience</div>
 
-                        <app-experience></app-experience>
+                        <app-experience [experience$]="experience$"></app-experience>
 
                     </section>
 
@@ -39,7 +39,7 @@
 
                         <div class="title">Education</div>
 
-                        <app-education></app-education>
+                        <app-education [education$]="education$"></app-education>
 
                     </section>
 
@@ -47,7 +47,7 @@
 
                         <div class="title">REVIEWS FROM CLIENTS</div>
 
-                        <app-review></app-review>
+                        <app-review [rates$]="rates$" [profile$]="profile$" ></app-review>
 
                     </section>
 

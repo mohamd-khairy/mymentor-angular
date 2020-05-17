@@ -9,6 +9,7 @@ import { of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { LoadingAction } from '../actions/educationActions.action';
 import { LOADINGACTIONEx } from '../actions/experienceActions.action';
+import { ProfileService } from '../../profile.service';
 
 
 @Injectable()
@@ -16,12 +17,13 @@ export class SkillEffect {
 
     experience$ = createEffect(() => this.actions.pipe(
         ofType(SkillActionsTypes.Loading),
-        mergeMap(() => this.http.get(environment.apiUrl+'skill?user_id='+this.authService.userData.id)
+        mergeMap(() => this.profileService.get_skills_api()
         .pipe(
             map((data) => new Success(JSON.parse(JSON.stringify(data)).data)),
             catchError((err) => of(new Fail(JSON.parse(JSON.stringify(err)))))
         ))
     ))
 
-    constructor(private actions: Actions , private http: HttpClient, private authService:AuthService){}
+    constructor(private actions: Actions , private http: HttpClient, private authService:AuthService,
+        private profileService: ProfileService){}
 }

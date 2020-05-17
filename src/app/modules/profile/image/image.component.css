@@ -1,6 +1,6 @@
 .jBmtQD {
     color: rgb(255, 255, 255);
-    min-width: 70px;
+    min-width: 140px;
     width: 100%;
     font-weight: 600;
     cursor: pointer;
@@ -35,6 +35,7 @@
 .iHhYZb {
     display: inline-block;
     flex: 1 1 0%;
+    
 }
 a {
     color: #00b5e2;
@@ -345,4 +346,31 @@ a {
 }
 img {
     max-width: 100%;
+}
+
+
+.fiLHeR {
+    color: rgb(51, 51, 51);
+    min-width: 70px;
+    width: auto;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 1;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 230);
+    border-image: initial;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px 14px;
 }
