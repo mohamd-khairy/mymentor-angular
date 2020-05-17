@@ -15,60 +15,35 @@ import { Globals } from '../globals';
 import { AddEducationDataComponent } from './personal/education-data/add-education-data/add-education-data.component';
 import { AddExperienceDataComponent } from './personal/experience-data/add-experience-data/add-experience-data.component';
 import { PersonalDataComponent } from './personal/personal-data/personal-data.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AboutComponent } from './profile/about/about.component';
-import { SkillsComponent } from './profile/skills/skills.component';
-import { ExperienceComponent } from './profile/experience/experience.component';
-import { EducationComponent } from './profile/education/education.component';
-import { ReviewComponent } from './profile/review/review.component';
-import { SocialComponent } from './profile/social/social.component';
-import { ImageComponent } from './profile/image/image.component';
+import { ProfileComponent } from './profiles/profile/profile.component';
+import { AboutComponent } from './profiles/profile/about/about.component';
+import { SkillsComponent } from './profiles/profile/skills/skills.component';
+import { ExperienceComponent } from './profiles/profile/experience/experience.component';
+import { EducationComponent } from './profiles/profile/education/education.component';
+import { ReviewComponent } from './profiles/profile/review/review.component';
+import { SocialComponent } from './profiles/profile/social/social.component';
+import { ImageComponent } from './profiles/profile/image/image.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { UpdateAboutComponent } from './profiles/update-profile/update-about/update-about.component';
+import { UpdateProfileModule } from './profiles/update-profile/update-profile.module';
 
 const routes: Routes = [
   {
     path: '',
     component: MasterComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'dashboard',
-        component: DashboradComponent
-      },
-      {
-        path: 'mentor',
-        component: MentorsComponent
-      },
+      {path: '',redirectTo: 'dashboard',pathMatch: 'full'},
+      {path: 'dashboard',component: DashboradComponent},
+      {path: 'mentor',component: MentorsComponent},
       {path: 'mentor/profile', component: ProfileComponent},
-      {
-        path: 'session',
-        component: SessionsComponent
-      },
-      {
-        path: 'user/personal-data',
-        component: PersonalDataComponent
-      },
-      {
-        path: 'user/education-data',
-        component: EducationDataComponent,
-      },
+      {path: 'session',component: SessionsComponent},
+      {path: 'user/personal-data',component: PersonalDataComponent},
+      {path: 'user/education-data',component: EducationDataComponent,},
       {path: 'user/education-data/add', component: AddEducationDataComponent},
-      {
-        path: 'user/experience-data',
-        component: ExperienceDataComponent
-      },
+      {path: 'user/experience-data',component: ExperienceDataComponent},
       {path: 'user/experience-data/add', component: AddExperienceDataComponent},
-      {
-        path: 'user/payment-data',
-        component: PaymentDataComponent
-      },
-      {
-        path: 'user/settings',
-        component: SettingsComponent
-      }
+      {path: 'user/payment-data',component: PaymentDataComponent},
+      {path: 'user/settings',component: SettingsComponent}
     ]
   }
 ];
@@ -92,13 +67,15 @@ const routes: Routes = [
     EducationComponent,
     ReviewComponent,
     SocialComponent,
-    ImageComponent
+    ImageComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forChild(routes),
+    UpdateProfileModule
   ],
   providers: [Globals ]
 })

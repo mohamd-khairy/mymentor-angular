@@ -1,0 +1,85 @@
+
+.hrJVXQ {
+    position: relative;
+    line-height: 1.42em;
+    background: rgb(255, 255, 255);
+    padding: 32px 40px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.hrJVXQ .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 54, 72);
+    margin-bottom: 20px;
+}
+
+
+
+.ftRxdY {
+    margin-bottom: 8px;
+}
+.gmbnKO {
+    line-height: 1.43;
+    color: rgb(153, 153, 153);
+    font-weight: normal;
+    font-size: 12px;
+    padding: 8px 20px;
+}
+a {
+    color: rgb(7, 90, 255);
+}
+a {
+    color: #00b5e2;
+    cursor: pointer;
+    text-decoration: none;
+}
+.active {
+    height: 48px;
+    font-size: 14px;
+    line-height: 1.43;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(51, 51, 51);
+    background-color: rgb(230, 230, 230);
+    font-weight: bold;
+    padding: 0px 20px;
+}
+.efQkpQ {
+    height: 48px;
+    font-size: 14px;
+    line-height: 1.43;
+    color: rgb(102, 102, 102);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 20px;
+}
+.bbGQvy {
+    display: flex;
+    height: calc(100vh - 60px);
+    flex-flow: column;
+    overflow: auto;
+}
+
+.kLUGuO {
+    font-size: 14px;
+    line-height: 1.33;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(51, 51, 51);
+    padding: 12px 20px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.iMaKXL {
+    display: inline-flex;
+    margin: 0px 8px 0px 0px;
+}
+
+.jVXVZB {
+    width: 256px;
+    background-color: rgb(246, 246, 246);
+    overflow: auto;
+}

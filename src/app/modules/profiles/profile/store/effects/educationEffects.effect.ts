@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { AuthService } from 'src/app/auth/auth.service';
 import { mergeMap, catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { ProfileService } from 'src/app/modules/profile/profile.service'
+import { ProfileService } from 'src/app/modules/profiles/profile/profile.service'
 @Injectable()
 export class EducationEffect {
 

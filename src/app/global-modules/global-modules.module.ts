@@ -29,7 +29,7 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forChild(routes),    RouterModule.forChild(routes),
+    RouterModule.forChild(routes), 
   ]
 })
 export class GlobalModulesModule { }
