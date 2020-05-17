@@ -1,35 +1,43 @@
+      
 <main class=" kXWrdW">
-    <div
-        class="Layout__StyledContentWrapperLeft-sc-12yqlzr-3 shared__StyledContentWrapperLeft-m6yhmx-0 EmploymentContainer__StyledContentWrapperLeft-sc-82rwp4-1 uVvFR">
+    <div class="uVvFR">
         <div class="shared__HeaderSection-m6yhmx-2 EmploymentContainer__HeaderSection-sc-82rwp4-0 lhuPiY">
             <h1 class="shared__Title-m6yhmx-1 eaLbTU">Employment</h1>
-        </div>
-        <div class="shared__StyledFormContainer-m6yhmx-4 Form__StyledFormContainer-sc-47v670-0 hgPKay">
+    </div>
+
+    <form #experienceForm="ngForm" (ngSubmit)="experience(experienceForm)">
+      <div class="shared__StyledFormContainer-m6yhmx-4 Form__StyledFormContainer-sc-47v670-0 hgPKay">
             <h2 class="shared__StyledFormTitle-m6yhmx-5 dOCwKZ">Add Employment</h2>
             <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
                 <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
-                    <div class="jss354 jss357"><label
-                            class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                    <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
                             data-shrink="true">Title<span class="jss375">&thinsp;*</span></label>
-                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377"><input
-                                aria-invalid="false" class="jss399 jss384 jss353" name="title" required="" type="text"
-                                value=""></div>
+                       
+                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                            <input #job_title="ngModel" ngModel name="job_title"
+                             aria-invalid="false" class="jss399 jss384 jss353"  required="" type="text"
+                                value="">
+                        </div>
+
                     </div>
                 </div>
                 <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
                     <div class="jss354 jss357"><label
                             class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
                             data-shrink="true">Company<span class="jss375">&thinsp;*</span></label>
-                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377"><input
-                                aria-invalid="false" class="jss399 jss384 jss353" name="companyName" required=""
+                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                            <input #company_name="ngModel" ngModel
+                                aria-invalid="false" class="jss399 jss384 jss353" name="company_name" required=""
                                 type="text" value=""></div>
                     </div>
                 </div>
             </div>
+
             <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
                 <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
                         data-shrink="true">Location<span class="jss375">&thinsp;*</span></label>
-                    <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377"><input
+                    <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                        <input #location="ngModel" ngModel
                             aria-invalid="false" class="jss399 jss384 jss353" name="location" required="" type="text"
                             value=""></div>
                 </div>
@@ -44,7 +52,7 @@
                                 data-shrink="true">From</label>
                             <div class="jss389 jss376 jss406 jss380 jss408 jss398 jss383 jss390 jss377">
                                 <div class="jss421">
-                                    <select class="jss422 jss418 jss399 jss384" name="startAtMonth"
+                                    <select class="jss422 jss418 jss399 jss384" name="start_month" #start_month="ngModel" ngModel
                                         aria-invalid="false">
                                         <option value="Month" disabled="">Month</option>
                                         <option value="1">January</option>
@@ -70,7 +78,9 @@
                     <div class="shared__StyledFormCol-m6yhmx-7 kjzZT" style="width:100px">
                         <div class="jss354 jss357">
                             <div class="jss389 jss376 jss406 jss380 jss408 jss398 jss383 jss390 jss377">
-                                <div class="jss421"><select class="jss422 jss418 jss399 jss384" name="startAtYear"
+                                <div class="jss421">
+                                    <select class="jss422 jss418 jss399 jss384" name="start_year" #start_year="ngModel" ngModel
+
                                         aria-invalid="false">
                                         <option value="Year" disabled="">Year</option>
                                         <option value="2020">2020</option>
@@ -111,13 +121,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT" *ngIf="!experienceForm.value.present1">
                     <div class="shared__StyledFormCol-m6yhmx-7 btACLI" style="width:100px">
                         <div class="jss354 jss357"><label
                                 class="jss369 jss411 jss373 jss358 jss411 jss363 jss366 jss365"
                                 data-shrink="true">To</label>
                             <div class="jss389 jss376 jss406 jss380 jss408 jss398 jss383 jss390 jss377">
-                                <div class="jss421"><select class="jss422 jss418 jss399 jss384" name="endAtMonth"
+                                <div class="jss421"><select class="jss422 jss418 jss399 jss384" name="end_month"  #end_month="ngModel" ngModel
                                         aria-invalid="false">
                                         <option value="Month" disabled="">Month</option>
                                         <option value="1">January</option>
@@ -139,10 +150,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT" style="width:100px">
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT" style="width:100px" >
                         <div class="jss354 jss357">
                             <div class="jss389 jss376 jss406 jss380 jss408 jss398 jss383 jss390 jss377">
-                                <div class="jss421"><select class="jss422 jss418 jss399 jss384" name="endAtYear"
+                                <div class="jss421"><select class="jss422 jss418 jss399 jss384" name="end_year" #end_year="ngModel" ngModel
                                         aria-invalid="false">
                                         <option value="Year" disabled="">Year</option>
                                         <option value="2020">2020</option>
@@ -178,20 +189,19 @@
                                     </select><svg class="jss428 jss427 jss417" focusable="false" viewBox="0 0 24 24"
                                         aria-hidden="true" role="presentation">
                                         <path d="M7 10l5 5 5-5z"></path>
-                                    </svg></div>
-                            </div>
-                        </div>
+                                            </svg></div>
+                                    </div>
+                                </div>
                     </div>
                 </div>
             </div>
-
 
 
             <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
                 <label for="wvvg4yq" class="sc-fzoNJl ksAnDK">
                     <div class="sc-fzpmMD enYpte">
                         <div class="sc-fznxKY kfRyXm">
-                            <input type="checkbox" >
+                            <input type="checkbox"  name="present1" #present1="ngModel" ngModel>
                         </div>
 
 
@@ -205,16 +215,17 @@
                         class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
                         data-shrink="true">Description<span class="jss375">&thinsp;*</span></label>
                     <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377 jss397 jss382 jss343">
-                        <textarea aria-invalid="false" class="jss399 jss384 jss353 jss401 jss386" name="description"
+                        <textarea aria-invalid="false" class="jss399 jss384 jss353 jss401 jss386" #details="ngModel" name="details" ngModel 
                             required="" rows="3"></textarea></div>
                 </div>
             </div>
 
-            <div class="FormActions__StyledActions-ms7gix-0 csTuyp">
-                <button name="save" class="sc-AxirZ laHIhI">SAVE</button>
-                <button name="cancel" margin="0 0 0 10px" class="sc-AxirZ kVERMx">CANCEL</button>
+            <div class=" csTuyp">
+                <button type="submit"  name="save" class="sc-AxirZ laHIhI">SAVE</button>
+                <button routerLink="/mentor/profile/update/experiences" name="cancel" margin="0 0 0 10px" class="sc-AxirZ kVERMx">CANCEL</button>
             </div>
-        </div>
+        </div> 
+    </form>
         <div class="List__StyledListWrapper-bikea9-0 kysVhS"></div>
     </div>
 </main>

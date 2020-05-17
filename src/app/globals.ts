@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { AuthService } from './auth/auth.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -12,6 +13,8 @@ export class Globals {
     constructor(public authservice: AuthService,private router: Router, private http: HttpClient){}
 
     public searchData;
+
+    public isLoading$: Observable<boolean>;
 
     public progressBar= false;
 

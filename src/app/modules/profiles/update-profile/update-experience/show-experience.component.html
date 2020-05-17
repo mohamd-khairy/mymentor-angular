@@ -1,0 +1,54 @@
+<main class=" kXWrdW">
+    <div class="uVvFR">
+        <div class="shared__HeaderSection-m6yhmx-2 EmploymentContainer__HeaderSection-sc-82rwp4-0 lhuPiY">
+            <h1 class="shared__Title-m6yhmx-1 eaLbTU">Employment</h1>
+            <button routerLink="/mentor/profile/add/experience" class="shared__StyledActionButton-m6yhmx-3 kmttNF">
+                <span class="sc-AxhCb giuahr">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M.063 0h24v24h-24z"></path>
+                            <path fill="#000" fill-rule="nonzero"
+                                d="M13.4 3l-.001 7.6H21v2.8h-7.601L13.4 21h-2.8l-.001-7.6H3v-2.8h7.599L10.6 3h2.8z"></path>
+                        </g>
+                    </svg>
+                </span>
+                ADD NEW EMPLOYMENT
+            </button>
+    </div>
+
+
+        <div class="fVEKev kuBJFZ" *ngFor="let experience of experience$ | async">
+            <div class="employment-detail">
+                <div class="time-period company_title">
+                    {{experience.job_title}} 
+                </div>
+                <div class="time-period employment-title pl-2" >
+                    at {{experience.company_name}}
+                </div>
+            </div>
+            <div class="employment-detail">
+                <div class="company-name" style="color:black;font-size: 14px;">{{experience.location}}</div>
+                <div class="time-period">{{experience.start_date}} - {{ experience.present ? 'present' : experience.end_date}}</div>
+            </div>
+
+            <div class="employment-detail">{{experience.details}}</div>
+
+
+            <span role="button" routerLink="/mentor/profile/update/experience/{{experience.id}}"
+                class="EditButton__StyledEditButton-vlb30r-0 cgdWNd Item__StyledEditButton-sc-1vshak1-0 XFTCJ edit"><span
+                    class="sc-AxhCb kuaKtL"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <g fill-rule="nonzero" fill="none">
+                            <path d="M0 0h24v24H0z"></path>
+                            <path fill="#000"
+                                d="M19.657 8.157l-3.813-3.813-9.815 9.814 3.813 3.813 9.815-9.814zm.99-.99a1.258 1.258 0 0 0-.016-1.765L18.598 3.37a1.255 1.255 0 0 0-1.764-.015l3.812 3.812zM8.628 18.737L5.261 15.37l-2.212 4.865a.541.541 0 0 0 .488.764.55.55 0 0 0 .226-.05l4.865-2.212zM17.708 1.6c.71 0 1.378.277 1.88.78l2.033 2.032a2.661 2.661 0 0 1 0 3.76L10.436 19.357l-.18.18-.231.105-5.681 2.582a1.932 1.932 0 0 1-2.436-.718 1.93 1.93 0 0 1-.132-1.85l2.582-5.68.105-.232.18-.18L15.828 2.38a2.642 2.642 0 0 1 1.88-.779z">
+                            </path>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </div>
+
+        <div class="List__StyledListWrapper-bikea9-0 kysVhS"></div>
+    </div>
+</main>
