@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { DELETEACTION , UPDATEACTION, LOADACTION } from '../../store/actions.action';
+import { DELETEACTION , UPDATEACTION, LOADACTION } from '../../store/experience/actions.action';
 import { Observable } from 'rxjs';
-import { loadingSelector, ExperienceDataSelector } from '../../store/selectors.selector';
+import { loadingSelector, ExperienceDataSelector } from '../../store/experience/selectors.selector';
 import { Globals } from 'src/app/globals';
 import { ActivatedRoute } from '@angular/router';
 

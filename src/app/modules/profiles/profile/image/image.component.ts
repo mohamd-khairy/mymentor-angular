@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { StoreInterface } from '../store';
+import { StoreInterface } from '../../../../shared/store';
 import { ISkill } from '../store/states/states.state';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Globals } from 'src/app/globals';

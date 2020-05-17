@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { LoadingAction } from './store/actions/educationActions.action';
 import { Loading } from './store/actions/skillActions.action';
 import { LOADINGACTIONEx } from './store/actions/experienceActions.action';
-import { StoreInterface } from './store';
+import { StoreInterface } from '../../../shared/store';
 import { BehaviorSubject } from 'rxjs';
 import { ProfileService } from './profile.service';
 import { IEducationState, IExperienceState, ISkill } from './store/states/states.state';

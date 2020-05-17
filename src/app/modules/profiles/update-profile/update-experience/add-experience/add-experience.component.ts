@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Globals } from 'src/app/globals';
-import { loadingSelector } from '../../store/selectors.selector';
+import { loadingSelector } from '../../store/experience/selectors.selector';
 import { NgForm } from '@angular/forms';
-import { ADDAction } from '../../store/actions.action';
+import { ADDAction } from '../../store/experience/actions.action';
 
 @Component({
   selector: 'app-add-experience',

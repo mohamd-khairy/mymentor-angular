@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AllExperienceDateSelector } from '../../profile/store/selectors/experienceSelectors.selector';
 import { Store } from '@ngrx/store';
-import { LOADALLACTION } from '../store/actions.action';
+import { LOADALLACTION } from '../store/experience/actions.action';
 import { Globals } from 'src/app/globals';
-import { loadingSelector, ExperienceDataSelector } from '../store/selectors.selector';
+import { loadingSelector, ExperienceDataSelector } from '../store/experience/selectors.selector';
 
 @Component({
   selector: 'app-show-experience',

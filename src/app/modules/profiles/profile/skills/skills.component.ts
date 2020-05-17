@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ISkill } from '../store/states/states.state';
-import { StoreInterface } from '../store';
+import { StoreInterface } from '../../../../shared/store';
 import { Store } from '@ngrx/store';
 import { ProfileService } from '../profile.service';
 

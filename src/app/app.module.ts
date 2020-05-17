@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.interceptor';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers, effects } from './modules/profiles/profile/store';
+import { reducers, effects } from './shared/store';
 
 @NgModule({
   declarations: [

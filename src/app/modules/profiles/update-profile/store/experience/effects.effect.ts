@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
 import { ActionTypes, ADDAction } from './actions.action';
 import { map, mergeMap, catchError, tap } from 'rxjs/operators';
-import { UpdateProfileService } from '../update-profile.service';
+import { UpdateProfileService } from '../../update-profile.service';
 import { of, Observable } from 'rxjs';
-import {SUCCESSACTION , FAILACTION} from '../store/actions.action';
+import {SUCCESSACTION , FAILACTION} from './actions.action';
 import { Action } from '@ngrx/store';
-import { FailAction } from '../../profile/store/actions/educationActions.action';
+import { FailAction } from '../../../profile/store/actions/educationActions.action';
 import { Router } from '@angular/router';
 
 
