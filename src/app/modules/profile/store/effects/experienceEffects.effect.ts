@@ -21,6 +21,5 @@ export class ExperienceEffect {
         ))
     ))
 
-    constructor(private actions: Actions , private http: HttpClient, private authService:AuthService,
-        private profileService: ProfileService){}
+    constructor(private actions: Actions , private profileService: ProfileService){}
 }

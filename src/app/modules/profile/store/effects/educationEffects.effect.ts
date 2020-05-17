@@ -19,6 +19,5 @@ export class EducationEffect {
         ))
     ))
 
-    constructor(private http: HttpClient ,private authService: AuthService , private actions: Actions ,
-         private profileService: ProfileService){}
+    constructor(private actions: Actions , private profileService: ProfileService){}
 }
