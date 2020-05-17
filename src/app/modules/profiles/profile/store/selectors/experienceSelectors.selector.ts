@@ -8,3 +8,6 @@ export let JobTitleSelector    = createSelector(Fexperience, (state) => state.jo
 export let PresentSelector     = createSelector(Fexperience , state => state.present);
 export let StartDateSelector   = createSelector(Fexperience , state => state.start_date);
 export let EndDateSelector     = createSelector(Fexperience , state => state.end_date);
+
+
+export let AllExperienceDateSelector     = createSelector(Fexperience , state => state);

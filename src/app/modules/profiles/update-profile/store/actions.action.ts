@@ -1,9 +1,35 @@
 import { Action } from '@ngrx/store';
 
 export enum ActionTypes {
+    LOADALL = "[addExperience] LoadAll",
+    LOAD    = "[addExperience] Load",
     ADD     = "[addExperience] Add",
+    UPDATE  = "[addExperience] Update",
+    DELETE  = "[addExperience] Delete",
     SUCCESS = "[addExperience] Success",
     FAIL    = "[addExperience] fail",
+}
+
+export class LOADALLACTION implements Action{
+    readonly type = ActionTypes.LOADALL;
+}
+
+export class LOADACTION implements Action{
+    readonly type = ActionTypes.LOAD;
+
+    constructor(public payLoad: any){}
+}
+
+export class UPDATEACTION implements Action{
+    readonly type = ActionTypes.UPDATE;
+
+    constructor(public payLoad: any){}
+}
+
+export class DELETEACTION implements Action{
+    readonly type = ActionTypes.DELETE;
+
+    constructor(public payLoad: any){}
 }
 
 export class ADDAction implements Action{

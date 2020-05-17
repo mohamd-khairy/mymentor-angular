@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { IExperienceState } from '../../profile/store/states/states.state';
-import { ProfileService } from '../../profile/profile.service';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { AllExperienceDateSelector } from '../../profile/store/selectors/experienceSelectors.selector';
+import { Store } from '@ngrx/store';
+import { LOADALLACTION } from '../store/actions.action';
+import { Globals } from 'src/app/globals';
+import { loadingSelector, ExperienceDataSelector } from '../store/selectors.selector';
 
 @Component({
   selector: 'app-show-experience',
@@ -9,20 +12,15 @@ import { ProfileService } from '../../profile/profile.service';
   styleUrls: ['./show-experience.component.css']
 })
 export class ShowExperienceComponent implements OnInit {
-  private _experience = new BehaviorSubject<IExperienceState>(null);
-  public experience$ = this._experience.asObservable();
 
-  constructor(private profileService: ProfileService) { }
+  public experience$ : Observable<any>;
+
+  constructor(private globals: Globals, private store: Store) { }
 
   ngOnInit(): void {
-    this.experience_data();
-  }
-
-
-  experience_data(){
-    this.profileService.get_experience_api().subscribe(
-      data => this._experience.next(JSON.parse(JSON.stringify(data)).data)
-    )
+    this.globals.isLoading$ = this.store.select(loadingSelector);
+    this.store.dispatch(new LOADALLACTION()) // experience
+    this.experience$ = this.store.select(ExperienceDataSelector);
   }
 
 }

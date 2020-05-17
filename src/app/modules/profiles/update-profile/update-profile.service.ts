@@ -19,6 +19,21 @@ export class UpdateProfileService {
                     .pipe(catchError(this.errorHandler))
   }
 
+  update_experience_api(data: any){
+    return this.http.put(environment.apiUrl + 'experience/'+data.id , data)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+  get_one_experience_by_id_api(id: BigInteger){
+    return this.http.get(environment.apiUrl + 'experience/'+ id)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+  delete_one_experience_by_id_api(id: BigInteger){
+    return this.http.delete(environment.apiUrl + 'experience/'+ id)
+                    .pipe(catchError(this.errorHandler))
+  }
+
   get_experience_api(){
     return this.http.get(environment.apiUrl + 'experience?user_id='+ this.authService.userData.id)
                     .pipe(catchError(this.errorHandler))

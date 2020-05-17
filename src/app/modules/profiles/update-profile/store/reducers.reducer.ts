@@ -10,6 +10,22 @@ export class customAction{
 export function experienceAddReducer(state = initialState , action: customAction){
 
     switch (action.type) {
+      
+        case ActionTypes.LOADALL: 
+                  
+            return Object.assign({}, state, {
+              loading: true,
+            });
+          
+          break;
+
+        case ActionTypes.LOAD: 
+            
+            return Object.assign({}, state, {
+              loading: true,
+            });
+          
+          break;
 
         case ActionTypes.ADD: 
         
@@ -19,21 +35,39 @@ export function experienceAddReducer(state = initialState , action: customAction
           
           break;
 
+        case ActionTypes.UPDATE: 
+      
+            return Object.assign({}, state, {
+              loading: true,
+            });
+        
+          break;
           
+        case ActionTypes.DELETE: 
+      
+          return Object.assign({}, state, {
+            loading: true,
+          });
+      
+        break;
+
         case ActionTypes.SUCCESS:
-            console.log(action.payLoad);
             
             return {
-                loading: false,
-                data: action.payLoad
+              loading: false,
+              data: action.payLoad
             }
-            break;
+
+          break;
+
         case ActionTypes.FAIL:
             return {
-                loading: false,
-                data: action.payLoad
+              loading: false,
+              data: action.payLoad
             }
-            break;
+            
+          break;
+
         default:
             return state
             break;

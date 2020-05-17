@@ -11,6 +11,7 @@ import { UpdateSocialComponent } from './update-social/update-social.component';
 import { UpdateExperienceComponent } from './update-experience/update-experience/update-experience.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AddExperienceComponent } from './update-experience/add-experience/add-experience.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,7 @@ const routes: Routes = [
         component: UpdateProfileComponent,
         children:[
           {path: '',redirectTo: 'about',pathMatch: 'full'},
-          {path: 'experience',component: UpdateExperienceComponent},
+          {path: 'experience',component: AddExperienceComponent},
         ]
       }
     ]
@@ -49,7 +50,8 @@ const routes: Routes = [
     ShowExperienceComponent,
     UpdateEducationComponent,
     UpdateSocialComponent,
-    UpdateExperienceComponent
+    UpdateExperienceComponent,
+    AddExperienceComponent
   ],
   imports: [
     CommonModule,

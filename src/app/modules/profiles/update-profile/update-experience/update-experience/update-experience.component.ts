@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { ADDAction } from '../../store/actions.action';
+import { DELETEACTION , UPDATEACTION, LOADACTION } from '../../store/actions.action';
 import { Observable } from 'rxjs';
-import { loadingSelector } from '../../store/selectors.selector';
+import { loadingSelector, ExperienceDataSelector } from '../../store/selectors.selector';
 import { Globals } from 'src/app/globals';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,32 +15,42 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateExperienceComponent implements OnInit {
 
   public experienceId;
+  public experienceData;
 
   constructor(private store: Store , public globals: Globals , private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.experienceId = this.route.snapshot.params.id;
-    console.log( this.experienceId);
+    this.get_one_experience();
+
+    this.store.select(ExperienceDataSelector).subscribe(data => {
+        this.experienceData = data;
+    })
   }
 
-  experience(formData: NgForm){
+  get_one_experience(){
     this.globals.isLoading$ = this.store.select(loadingSelector);
 
-    let start_date = '1-'+formData.value.start_month+'-'+formData.value.start_year;
-    let end_date = formData.value.present1 ?  null : '1-'+formData.value.end_month+'-'+formData.value.end_year;
+    this.store.dispatch(new LOADACTION(this.experienceId));
+  }
+
+  update_experience(formData: NgForm){
+    
+    this.globals.isLoading$ = this.store.select(loadingSelector);
 
     const newData = Object.assign({}, formData.value, {
-      present:    formData.value.present1 ? true : false,
-      start_date: start_date ,
-      end_date:   end_date
+      present: formData.value.present1 ? true : false,
     });
 
     delete newData.present1;
-    delete newData.start_month;
-    delete newData.start_year;
-    delete newData.end_month;
-    delete newData.end_year;
     
-    this.store.dispatch(new ADDAction(newData));
+    this.store.dispatch(new UPDATEACTION(newData));
+
+    formData.reset()
+  }
+
+  deleteExperience(id){
+    this.globals.isLoading$ = this.store.select(loadingSelector);
+    this.store.dispatch(new DELETEACTION(id));
   }
 }
