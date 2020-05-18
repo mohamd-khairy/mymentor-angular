@@ -1,32 +1,126 @@
 <main class="kXWrdW">
-    <div class="cTYPjn">
+    <!-- *ngIf="(about$ | async) as about" -->
+    <!-- {{ aboutData | json}} -->
+    <div class="" >
         <h1 class="eaLbTU">About Me</h1>
-        <div class="iQRHfx">
-            <div class="jss62 jss65 textarea-wrapper"><label
-                    class="jss77 jss55 jss82 jss70 jss66 jss55 jss71 jss74 jss73" data-shrink="true">One sentence
-                    describing you<span class="jss83">&thinsp;*</span></label>
-                <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85"><input aria-invalid="false"
-                        class="jss107 jss92 jss61" name="headline" required="" type="text" value=""></div>
-            </div>
-            <div class="kLsSpO">
-                <div class="sc-fzpjYC gJohPa">
-                    <div class="sc-fznxsB fZgLFv">
-                        <div class="fkHeXT">Short bio *</div>
-                      
-                    </div>
-                    <div class="jss62 jss65 sc-fzoLag gvRhAv">
-                        <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85 jss105 jss90 jss51"><textarea
-                                aria-invalid="false" class="jss107 jss92 jss61 jss109 jss94" name="about" placeholder=""
-                                required="" rows="5"></textarea></div>
+        <form #AboutForm="ngForm" (ngSubmit)="UpdateAboutData(AboutForm)">
+            <input type="hidden" [(ngModel)]="aboutData.id" #id="ngModel" name="id">
+            <div class="iQRHfx">
+
+                <div class="jss62 jss65 textarea-wrapper">
+                    <label class="jss77 jss55 jss82 jss70 jss66 jss55 jss71 jss74 jss73" data-shrink="true">One sentence
+                        describing you<span class="jss83">&thinsp;*</span>
+                    </label>
+                    <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
+                        <input   [(ngModel)]="aboutData.current_job" #current_job="ngModel" name="current_job" aria-invalid="false" class="jss107 jss92 jss61" required="" type="text">
                     </div>
                 </div>
+
+                
+                <div class="jss62 jss65 textarea-wrapper pt-4"><label class="jss77 jss55 jss66 jss55 jss71 jss74 jss73"
+                        data-shrink="true">Current Company Name<span class="jss83">&thinsp;*</span></label>
+                    <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
+                        <input  [(ngModel)]="aboutData.current_company" #current_company="ngModel" name="current_company" aria-invalid="false" class="jss107 jss92 jss61" type="text" value=""></div>
+                </div>
+
+                <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP pt-4 row">
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT col-md-4">
+                        <div class="shared__StyledFormCol-m6yhmx-7 btACLI">
+                            <div class="jss354 jss357">
+                                <label class="jss77 jss55 jss66 jss55 jss71 jss74 jss73" data-shrink="true">
+                                    Session Price<span class="jss83">&thinsp;*</span>
+                                </label>
+
+                                <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
+                                    <input  [(ngModel)]="aboutData.session_price" #session_price="ngModel" name="session_price" aria-invalid="false" class="jss107 jss92 jss61" type="number" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT col-md-4">
+                        <div class="shared__StyledFormCol-m6yhmx-7 btACLI">
+                            <div class="jss354 jss357">
+                                <label class="jss77 jss55 jss66 jss55 jss71 jss74 jss73" data-shrink="true">
+                                    Session duration<span class="jss83">&thinsp;*</span>
+                                </label>
+
+                                <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
+                                    <input  [(ngModel)]="aboutData.session_duration" #session_duration="ngModel" name="session_duration" aria-invalid="false" class="jss107 jss92 jss61" type="number" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT col-md-4">
+                        <div class="shared__StyledFormCol-m6yhmx-7 btACLI">
+                            <div class="jss354 jss357">
+                                <label class="jss77 jss55 jss66 jss55 jss71 jss74 jss73" data-shrink="true">
+                                    Session duration Type<span class="jss83">&thinsp;*</span>
+                                </label>
+
+                                <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
+                                    <select  class="jss107 jss92 jss61"  [(ngModel)]="aboutData.session_duration_type" #session_duration_type="ngModel" name="session_duration_type">
+                                        <option value="hour">Hour</option>
+                                        <option value="min">Minute</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP pt-2 row">
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT col-md-6">
+                        <div class="shared__StyledFormCol-m6yhmx-7 btACLI" >
+                            <div class="jss354 jss357">
+                                <label class="jss77 jss55 jss66 jss55 jss71 jss74 jss73" data-shrink="true">
+                                    Available Days<span class="jss83">&thinsp;*</span>
+                                </label>
+
+                                <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
+                                    <select multiple   class="jss107 jss92 jss61"   [(ngModel)]="aboutData.available_days"  #available_days="ngModel" name="available_days" *ngIf="(days$ | async) as days">
+                                        <option *ngFor="let day of days"  value="{{day.id}}">{{day.day}}</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT col-md-6">
+                        <div class="shared__StyledFormCol-m6yhmx-7 btACLI" >
+                            <div class="jss354 jss357">
+                                <label class="jss77 jss55 jss66 jss55 jss71 jss74 jss73" data-shrink="true">
+                                    Available Languages<span class="jss83">&thinsp;*</span>
+                                </label>
+
+                                <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
+                                    <select multiple class="jss107 jss92 jss61" [(ngModel)]="aboutData.available_langs" #available_langs="ngModel" name="available_langs"  *ngIf="(languages$ | async) as language">
+                                        <option *ngFor="let lang of language" ng-selected="aboutData.available_langs[0]"  value="{{lang.id}}">{{lang.name_1}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kLsSpO">
+                    <div class="sc-fzpjYC gJohPa">
+                        <div class="sc-fznxsB fZgLFv">
+                            <div class="fkHeXT">Short bio *</div>
+                        </div>
+                        <div class="jss62 jss65 sc-fzoLag gvRhAv">
+                            <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85 jss105 jss90 jss51">
+                                
+                            <textarea  [(ngModel)]="aboutData.brief"  #brief="ngModel" name="brief" aria-invalid="false" class="jss107 jss92 jss61 jss109 jss94"placeholder=""
+                                    required="" rows="3"></textarea></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="sc-AxirZ laHIhI BasicInformationForm__StyledButton-sc-2up9d7-0 bTGmWW" >UPDATE</button>
             </div>
-            <div class="jss62 jss65 textarea-wrapper"><label class="jss77 jss55 jss66 jss55 jss71 jss74 jss73"
-                    data-shrink="true">Self-introduction video URL</label>
-                <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85"><input aria-invalid="false"
-                        class="jss107 jss92 jss61" name="videoUrl" type="text" value=""></div>
-            </div>
-            <button class="sc-AxirZ laHIhI BasicInformationForm__StyledButton-sc-2up9d7-0 bTGmWW" >UPDATE</button>
-        </div>
+        </form>
     </div>
 </main>
