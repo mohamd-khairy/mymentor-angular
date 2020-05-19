@@ -17,6 +17,9 @@ import { skillsEffect } from '../modules/profiles/update-profile/store/skill/eff
 import { IinitialEducationsState } from '../modules/profiles/update-profile/store/education/states.state';
 import { educationsAddReducer } from '../modules/profiles/update-profile/store/education/reducers.reducer';
 import { educationsEffect } from '../modules/profiles/update-profile/store/education/effects.effect';
+import { IinitialprofileState } from '../modules/profiles/update-profile/store/profile/states.state';
+import { profilesAddReducer } from '../modules/profiles/update-profile/store/profile/reducers.reducer';
+import { profilesEffect } from '../modules/profiles/update-profile/store/profile/effects.effect';
 
 export interface StoreInterface {
     education : IEducationState[],
@@ -25,7 +28,8 @@ export interface StoreInterface {
     addExperience: any,
     about: IinitialAboutState,
     skills: initialSkillState,
-    educations: IinitialEducationsState
+    educations: IinitialEducationsState,
+    profile: IinitialprofileState
 }
 
 
@@ -36,7 +40,8 @@ export const reducers: ActionReducerMap<StoreInterface> = {
     addExperience: experienceAddReducer,
     about: AboutReducer,
     skills: skillsAddReducer,
-    educations: educationsAddReducer
+    educations: educationsAddReducer,
+    profile: profilesAddReducer
  };
 
 export const effects = [
@@ -46,5 +51,6 @@ export const effects = [
     AddExperienceEffect ,
     AboutEffect,
     skillsEffect,
-    educationsEffect
+    educationsEffect,
+    profilesEffect
 ];

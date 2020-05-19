@@ -23,8 +23,6 @@ import { EducationComponent } from './profiles/profile/education/education.compo
 import { ReviewComponent } from './profiles/profile/review/review.component';
 import { SocialComponent } from './profiles/profile/social/social.component';
 import { ImageComponent } from './profiles/profile/image/image.component';
-import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
-import { UpdateAboutComponent } from './profiles/update-profile/update-about/update-about.component';
 import { UpdateProfileModule } from './profiles/update-profile/update-profile.module';
 
 const routes: Routes = [
@@ -68,7 +66,6 @@ const routes: Routes = [
     ReviewComponent,
     SocialComponent,
     ImageComponent,
-    UpdateProfileComponent,
   ],
   imports: [
     CommonModule,

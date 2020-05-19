@@ -42,6 +42,7 @@ export class UpdateSkillComponent implements OnInit {
     if(this.selectedFile){
       file.append('photo', this.selectedFile , this.selectedFile.name);  
     }
+    
     file.append('skill_name', formData.value.skill_name);  
     file.append('experience_years', formData.value.experience_years);  
     file.append('details', formData.value.details);  

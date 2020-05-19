@@ -126,6 +126,21 @@ export class UpdateProfileService {
                     .pipe(catchError(this.errorHandler))
   }
 
+
+  
+  /////////////////// profile \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+  update_profile_api(data: any , id: any){
+    return this.http.post(environment.apiUrl + 'profile' , data)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+  get_one_profile_by_id_api(){
+    return this.http.get(environment.apiUrl + 'profile/'+ this.authService.userData.id)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+
   errorHandler(error: HttpErrorResponse){
     return throwError(error);
   }

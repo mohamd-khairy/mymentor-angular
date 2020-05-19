@@ -1,11 +1,11 @@
 <!-- Nested Row within Card Body -->
 <section *ngIf="(profile$ | async) as profiles">
   <div class="row">
-    <img style="width: 200px;" alt="mohamed khairy" class="card-img-top rounded-circle mx-auto d-block p-2 mt-2"
+    <img style="width: 150px;" alt="mohamed khairy" class="card-img-top rounded-circle mx-auto d-block p-2 mt-2"
       [src]="profiles.photo">
   </div>
   <div class="text-center pt-2">
-    <h1 class="h4 text-gray-900 mb-4 font-weight-bold">{{profiles.name}}</h1>
+    <h1 class="h5 text-gray-900 mb-4 font-weight-bold">{{profiles.user.name}}</h1>
   </div>
 
   <div class="kcBPga">

@@ -16,6 +16,7 @@ import { AddSkillComponent } from './update-skills/add-skill/add-skill.component
 import { UpdateSkillComponent } from './update-skills/update-skill/update-skill.component';
 import { AddEducationComponent } from './update-education/add-education/add-education.component';
 import { UpdateEducationComponent } from './update-education/update-education/update-education.component';
+import { UpdateImageComponent } from './update-image/update-image.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
         path: 'mentor/profile/update',
         component: UpdateProfileComponent,
         children:[
-          {path: '',redirectTo: 'about',pathMatch: 'full'},
+          {path: '',redirectTo: 'profile',pathMatch: 'full'},
+          {path: 'profile',component: UpdateImageComponent},
           {path: 'about',component: UpdateAboutComponent},
           {path: 'skills',component: ShowSkillsComponent},
           {path: 'skill/:id',component: UpdateSkillComponent},
@@ -53,6 +55,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    UpdateProfileComponent,
     UpdateAboutComponent,
     ShowSkillsComponent,
     ShowExperienceComponent,
@@ -63,7 +66,8 @@ const routes: Routes = [
     AddSkillComponent,
     UpdateSkillComponent,
     AddEducationComponent,
-    UpdateEducationComponent
+    UpdateEducationComponent,
+    UpdateImageComponent
   ],
   imports: [
     CommonModule,

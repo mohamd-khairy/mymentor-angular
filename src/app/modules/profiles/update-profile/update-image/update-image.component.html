@@ -1,0 +1,172 @@
+<main class="">
+    <form #imageForm="ngForm" (ngSubmit)="Update_profile(imageForm)">
+        <input type="hidden" #id="ngModel" [(ngModel)]="profileData.id" name="id" >
+        <div class="">
+            <h1 class="eaLbTU mb-0">Profile Data</h1>
+
+                <div class="text-center">
+                    <div class="wrap-custom-file">
+                        <input type="file" class=" rounded-circle mx-auto"  (change)="onFileChanged($event)"  accept=".gif, .jpg, .png"/> 
+                        <label  class=" rounded-circle mx-auto" for="image1" style="background-image: url({{profileData.photo}}); background-size: 100%;">
+                            <span>change image</span>
+                            <i class="fa fa-plus-circle"></i>
+                        </label>
+                    </div>
+                </div>
+           
+                <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357">
+                            <label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">first name<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.first_name" name="first_name" #first_name="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">middle name<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.middle_name" name="middle_name" #middle_name="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">last name<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.last_name" name="last_name" #last_name="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">country<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.country" name="country" #country="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">city<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.city" name="city" #city="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">address<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.address" name="address" #address="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+
+     
+                <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">mobile<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.mobile" name="mobile" #mobile="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">phone_number<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.phone_number" name="phone_number" #phone_number="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">postal_code<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.postal_code" name="postal_code" #postal_code="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">gender<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.gender" name="gender" #gender="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">date_of_birth<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.date_of_birth" name="date_of_birth" #date_of_birth="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="date" >
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                        <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                                data-shrink="true">marital_status<span class="jss375">&thinsp;*</span></label>
+                           
+                            <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                                <input aria-invalid="false" [(ngModel)]="profileData.marital_status" name="marital_status" #marital_status="ngModel"
+                                class="jss399 jss384 jss353"  required="" type="text" >
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" csTuyp">
+                    <button type="submit" class="sc-AxirZ laHIhI BasicInformationForm__StyledButton-sc-2up9d7-0 bTGmWW" >Update</button>
+                    <button type="button" routerLink="/mentor/profile/update/skills" (click)="imageForm.reset()" name="cancel" margin="0 0 0 10px" class="sc-AxirZ kVERMx ml-2">CANCEL</button>
+                </div>
+
+        </div>
+    </form>
+</main>
