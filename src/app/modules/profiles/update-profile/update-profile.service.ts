@@ -99,6 +99,33 @@ export class UpdateProfileService {
     return this.http.get(environment.apiUrl + 'skill?user_id='+ this.authService.userData.id)
                     .pipe(catchError(this.errorHandler))
   }
+
+  /////////////////// educations \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  add_education_api(data: any){
+    return this.http.post(environment.apiUrl + 'education' , data)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+  update_education_api(data: any , id: any){
+    return this.http.put(environment.apiUrl + 'education/'+id , data)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+  get_one_education_by_id_api(id: BigInteger){
+    return this.http.get(environment.apiUrl + 'education/'+ id)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+  delete_one_education_by_id_api(id: BigInteger){
+    return this.http.delete(environment.apiUrl + 'education/'+ id)
+                    .pipe(catchError(this.errorHandler))
+  }
+
+  get_education_api(){
+    return this.http.get(environment.apiUrl + 'education?user_id='+ this.authService.userData.id)
+                    .pipe(catchError(this.errorHandler))
+  }
+
   errorHandler(error: HttpErrorResponse){
     return throwError(error);
   }

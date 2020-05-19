@@ -1,0 +1,137 @@
+<main class=" kXWrdW">
+    <div class="uVvFR">
+        <div class="shared__HeaderSection-m6yhmx-2 EmploymentContainer__HeaderSection-sc-82rwp4-0 lhuPiY">
+            <h1 class="shared__Title-m6yhmx-1 eaLbTU">Educations</h1>
+    </div>
+
+    <form #educationForm="ngForm" (ngSubmit)="update_education(educationForm);">
+        <input type="hidden" name="id" [(ngModel)]="educationData.id" #id="ngModel">
+      <div class="shared__StyledFormContainer-m6yhmx-4 Form__StyledFormContainer-sc-47v670-0 hgPKay">
+            <h2 class="shared__StyledFormTitle-m6yhmx-5 dOCwKZ">Update Education</h2>
+           
+            <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                    <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                            data-shrink="true">Title<span class="jss375">&thinsp;*</span></label>
+                       
+                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                            <input #education_name="ngModel" [(ngModel)]="educationData.education_name" name="education_name"
+                             aria-invalid="false" class="jss399 jss384 jss353"  required="" type="text">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                    <div class="jss354 jss357"><label
+                            class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                            data-shrink="true">University<span class="jss375">&thinsp;*</span></label>
+                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                            <input #university="ngModel" [(ngModel)]="educationData.university"
+                                aria-invalid="false" class="jss399 jss384 jss353" name="university" required=""
+                                type="text" ></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                    <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                            data-shrink="true">Faculty<span class="jss375">&thinsp;*</span></label>
+                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                            <input #faculty="ngModel" [(ngModel)]="educationData.faculty"
+                                aria-invalid="false" class="jss399 jss384 jss353" name="faculty" required="" type="text"
+                            ></div>
+                    </div>
+                </div>
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                    <div class="jss354 jss357"><label class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                            data-shrink="true">Department<span class="jss375">&thinsp;*</span></label>
+                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                            <input #department="ngModel" [(ngModel)]="educationData.department"
+                                aria-invalid="false" class="jss399 jss384 jss353" name="department" required="" type="text"
+                            ></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                    <div class="shared__StyledFormCol-m6yhmx-7 btACLI" style="width:200px">
+                        <div class="jss354 jss357"><label
+                                class="jss369 jss411 jss373 jss358 jss411 jss363 jss366 jss365"
+                                data-shrink="true">From</label>
+                            <div class="jss389 jss376 jss406 jss380 jss408 jss398 jss383 jss390 jss377">
+                                <div class="jss421">
+                                    <input type="date" class="jss422 jss418 jss399 jss384" name="start_date"  #start_date="ngModel"  [(ngModel)]="educationData.start_date" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT" *ngIf="!educationForm.value.present1">
+                    <div class="shared__StyledFormCol-m6yhmx-7 btACLI" style="width:200px">
+                        <div class="jss354 jss357"><label
+                                class="jss369 jss411 jss373 jss358 jss411 jss363 jss366 jss365"
+                                data-shrink="true">To</label>
+                            <div class="jss389 jss376 jss406 jss380 jss408 jss398 jss383 jss390 jss377">
+                                <div class="jss421">
+                                    <input type="date" class="jss422 jss418 jss399 jss384" name="end_date"  #end_date="ngModel"   [(ngModel)]="educationData.end_date"  >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                    <label for="wvvg4yq" class="sc-fzoNJl ksAnDK">
+                        <div class="sc-fzpmMD enYpte">
+                            <div class="sc-fznxKY kfRyXm">
+                                <input type="checkbox"  name="present1" #present1="ngModel" [(ngModel)]="educationData.present" >
+                            </div>
+    
+    
+                            <div class="sc-fznMAR gDefMr">I currently Learn here</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="shared__StyledFormCol-m6yhmx-7 kjzZT">
+                    <div class="jss354 jss357"><label
+                            class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                            data-shrink="true">degree<span class="jss375">&thinsp;*</span></label>
+                        <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377">
+                            <input #degree="ngModel"   [(ngModel)]="educationData.degree" 
+                                aria-invalid="false" class="jss399 jss384 jss353" name="degree" required=""
+                                type="text" ></div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <div class="shared__StyledFormRow-m6yhmx-6 eWOHsP">
+                <div class="jss354 jss357 sc-fzoLag gqDFwO"><label
+                        class="jss369 jss347 jss374 jss362 jss358 jss347 jss363 jss366 jss365"
+                        data-shrink="true">Description<span class="jss375">&thinsp;*</span></label>
+                    <div class="jss389 jss376 jss342 jss380 jss344 jss398 jss383 jss390 jss377 jss397 jss382 jss343">
+                        <textarea aria-invalid="false" class="jss399 jss384 jss353 jss401 jss386" #details="ngModel" name="details"    [(ngModel)]="educationData.details"  
+                            required="" rows="3"></textarea></div>
+                </div>
+            </div>
+
+            <div class=" csTuyp">
+                <button type="submit"  name="save" class="sc-AxirZ laHIhI">Update</button>
+                <button type="button" (click) = "deleteEducation(educationData.id);educationForm.reset()"  name="save" class="sc-AxirZ delete">Delete</button>
+                <button type="button" routerLink="/mentor/profile/update/educations" (click)="educationForm.reset()" name="cancel" margin="0 0 0 10px" class="sc-AxirZ kVERMx">CANCEL</button>
+            </div>
+
+        </div> 
+    </form>
+        <div class="List__StyledListWrapper-bikea9-0 kysVhS"></div>
+    </div>
+</main>
