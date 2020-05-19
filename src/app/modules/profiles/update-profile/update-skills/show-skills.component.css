@@ -1,0 +1,187 @@
+
+.kXWrdW {
+    display: flex;
+    flex: 1 1 0%;
+    overflow: auto;
+}
+.uVvFR {
+    max-width: 720px;
+    flex: 1 1 0%;
+    padding: 0px 0px;
+}
+.lhuPiY {
+    display: flex;
+    align-items: flex-end;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    margin-left: 12px;
+}
+.lhuPiY > * {
+    margin: 0px;
+}
+.eaLbTU {
+    font-family: "Open Sans", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: rgb(51, 51, 51);
+    margin: 0px 0px 32px;
+}
+
+.company_title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+}
+
+.fVEKev {
+    padding: 12px 0px;
+}
+.fVEKev .employment-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    margin-bottom: 7px;
+}
+.fVEKev .employment-detail {
+    display: flex;
+    color: rgb(153, 153, 153);
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+.fVEKev .employment-detail .company-name, .fVEKev .employment-detail .time-period {
+    line-height: 1em;
+}
+.fVEKev .employment-detail .company-name {
+    padding-right: 5px;
+    margin-right: 5px;
+    border-right: 1px solid rgb(153, 153, 153);
+}
+.fVEKev .employment-detail .company-name, .fVEKev .employment-detail .time-period {
+    line-height: 1em;
+}
+.fVEKev .description.truncated, .fVEKev .categories.truncated {
+    display: block;
+}
+.fVEKev .description {
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.fVEKev .description.full, .fVEKev .categories.full {
+    display: none;
+}
+.fVEKev .description.truncated, .fVEKev .categories.truncated {
+    display: block;
+}
+.fVEKev .categories {
+    margin-bottom: 10px;
+}
+.fVEKev .categories {
+    margin-bottom: 10px;
+}
+.fVEKev .category {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+    padding: 2px 10px;
+    background: rgb(246, 246, 246);
+}
+.hSeVoT {
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(153, 153, 153);
+    font-size: 12px;
+}
+
+
+.XFTCJ {
+    top: 12px;
+    right: 24px;
+    display: none;
+    position: absolute;
+}
+.cgdWNd {
+    cursor: pointer;
+}
+.kuaKtL {
+    display: inline-flex;
+    margin: 0px;
+}
+.kuaKtL svg {
+    width: 20px;
+    height: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.kuaKtL svg path:last-child {
+    fill: rgb(7, 90, 255);
+}
+.kuaKtL svg:hover {
+    opacity: 1;
+}
+.kuBJFZ:hover {
+    background-color: rgb(249, 249, 249);
+}
+.kuBJFZ {
+    margin-top: 2px;
+    position: relative;
+    padding: 16px 12px;
+    border-radius: 3px;
+}
+.kuBJFZ:hover .edit {
+    display: block;
+}
+
+.lhuPiY > * {
+    margin: 0px;
+}
+.kmttNF {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(7, 90, 255);
+    background-color: transparent;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    padding: 0px;
+}
+.giuahr {
+    display: inline-flex;
+    margin: 0px 4px 0px 0px;
+}
+.giuahr svg:hover {
+    opacity: 1;
+}
+.giuahr svg {
+    width: 14px;
+    height: 14px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.giuahr svg path:last-child {
+    fill: rgb(7, 90, 255);
+}
+
+.emsgWX {
+    display: flex;
+    line-height: 1.4em;
+}
+.emsgWX .icon {
+    margin-right: 17px;
+}

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UpdateProfileComponent } from './update-profile.component';
 import { UpdateAboutComponent } from './update-about/update-about.component';
 import { MasterComponent } from 'src/app/layouts/master/master.component';
-import { UpdateSkillsComponent } from './update-skills/update-skills.component';
+import { ShowSkillsComponent } from './update-skills/show-skills.component';
 import { ShowExperienceComponent } from './update-experience/show-experience.component';
 import { UpdateEducationComponent } from './update-education/update-education.component';
 import { UpdateSocialComponent } from './update-social/update-social.component';
@@ -12,6 +12,8 @@ import { UpdateExperienceComponent } from './update-experience/update-experience
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExperienceComponent } from './update-experience/add-experience/add-experience.component';
+import { AddSkillComponent } from './update-skills/add-skill/add-skill.component';
+import { UpdateSkillComponent } from './update-skills/update-skill/update-skill.component';
 
 const routes: Routes = [
   {
@@ -24,7 +26,8 @@ const routes: Routes = [
         children:[
           {path: '',redirectTo: 'about',pathMatch: 'full'},
           {path: 'about',component: UpdateAboutComponent},
-          {path: 'skills',component: UpdateSkillsComponent},
+          {path: 'skills',component: ShowSkillsComponent},
+          {path: 'skill/:id',component: UpdateSkillComponent},
           {path: 'experiences',component: ShowExperienceComponent},
           {path: 'experience/:id',component: UpdateExperienceComponent},
           {path: 'educations',component: UpdateEducationComponent},
@@ -37,6 +40,7 @@ const routes: Routes = [
         children:[
           {path: '',redirectTo: 'about',pathMatch: 'full'},
           {path: 'experience',component: AddExperienceComponent},
+          {path: 'skill',component: AddSkillComponent},
         ]
       }
     ]
@@ -46,12 +50,14 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     UpdateAboutComponent,
-    UpdateSkillsComponent,
+    ShowSkillsComponent,
     ShowExperienceComponent,
     UpdateEducationComponent,
     UpdateSocialComponent,
     UpdateExperienceComponent,
-    AddExperienceComponent
+    AddExperienceComponent,
+    AddSkillComponent,
+    UpdateSkillComponent
   ],
   imports: [
     CommonModule,
