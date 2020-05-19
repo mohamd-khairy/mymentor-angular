@@ -82,7 +82,7 @@
     <h2>TOP EXPERTISE</h2>
     <div class="dKSaSe p-2" *ngFor="let skill of skills$ | async">
       <span class="sc-fzqAbL gjUHgO">
-        <img src="https://da2f8uix4p8om.cloudfront.net/20200505edgh7pzv8k/categories/javascript-plain.svg" loading="lazy">
+        <img [src]="skill.photo" loading="lazy">
       </span>
       <span>{{skill.skill_name}}</span>
     </div>

@@ -245,3 +245,55 @@ textarea:focus, input:focus{
     outline: none;
     padding: 8px 14px;
 }
+
+
+.delete {
+    color: rgb(255, 255, 255);
+    min-width: 70px;
+    width: auto;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 1;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: red;
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+    border-image: initial;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px 14px;
+}
+.kVERMx {
+    color: rgb(51, 51, 51);
+    min-width: 70px;
+    width: auto;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 1;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 230);
+    border-image: initial;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px 14px;
+}

@@ -19,22 +19,22 @@
 
         <div class="fVEKev kuBJFZ" *ngFor="let skill of skills">
             <div class="row">
-                <div class="icon col-md-1"><span class="sc-fzqAbL"><img
-                    style="width: 50px;"
+                <div class="icon col-md-2"><span class="sc-fzqAbL"><img
+                    style="width: 100px;"
                         [src]="skill.photo"
                         loading="lazy"></span>
                 </div>
-                <div class="col-md-9">
-                    <div class="employment-detail">
+                <div class="col-md-9 ml-2">
+                    <div class="employment-detail pb-2">
                         <div class="time-period company_title">
                             {{skill.skill_name}}
                         </div>
                     </div>
-                    <div class="employment-detail">
-                        <div class="time-period">{{skill.experience_years}}</div>
+                    <div class="employment-detail pb-2">
+                        <div class="time-period">{{skill.experience_years}} Years Experience</div>
                     </div>
 
-                    <div class="employment-detail">{{skill.details}}</div>
+                    <div class="employment-detail" style="font-size: 14px;color: rgb(102, 102, 102);">{{skill.details}}</div>
                 </div>
 
             </div>

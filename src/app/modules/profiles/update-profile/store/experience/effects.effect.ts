@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
-import { ActionTypes, ADDAction } from './actions.action';
+import { ActionTypes, ADDAction, UPDATEACTION, DELETEACTION, LOADACTION } from './actions.action';
 import { map, mergeMap, catchError, tap } from 'rxjs/operators';
 import { UpdateProfileService } from '../../update-profile.service';
 import { of, Observable } from 'rxjs';
@@ -37,7 +37,7 @@ export class AddExperienceEffect {
         
     UpdateExperience$ : Observable<Action> = createEffect(() =>  this.actions$.pipe(
         ofType(ActionTypes.UPDATE),
-        map((action: ADDAction) => action.payLoad),
+        map((action: UPDATEACTION) => action.payLoad),
         mergeMap((data) => this.updateProfileService.update_experience_api(data)
         .pipe(
             map((data) => new SUCCESSACTION(JSON.parse(JSON.stringify(data)).data)),
@@ -48,7 +48,7 @@ export class AddExperienceEffect {
 
     DeleteExperience$ : Observable<Action> = createEffect(() =>  this.actions$.pipe(
         ofType(ActionTypes.DELETE),
-        map((action: ADDAction) => action.payLoad),
+        map((action: DELETEACTION) => action.payLoad),
         mergeMap((id) => this.updateProfileService.delete_one_experience_by_id_api(id)
         .pipe(
             map((data) => new SUCCESSACTION(JSON.parse(JSON.stringify(data)).data)),
@@ -60,7 +60,7 @@ export class AddExperienceEffect {
 
     GetOneExperience$ : Observable<Action> = createEffect(() =>  this.actions$.pipe(
         ofType(ActionTypes.LOAD),
-        map((action: ADDAction) => action.payLoad),
+        map((action: LOADACTION) => action.payLoad),
         mergeMap((id) => this.updateProfileService.get_one_experience_by_id_api(id)
         .pipe(
             map((data) => new SUCCESSACTION(JSON.parse(JSON.stringify(data)).data)),

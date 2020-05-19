@@ -23,7 +23,7 @@ export class LOADACTION implements Action{
 export class UPDATEACTION implements Action{
     readonly type = ActionTypes.UPDATE;
 
-    constructor(public payLoad: any){}
+    constructor(public payLoad: any , public id: any){}
 }
 
 export class DELETEACTION implements Action{

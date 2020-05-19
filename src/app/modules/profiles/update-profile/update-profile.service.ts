@@ -80,8 +80,8 @@ export class UpdateProfileService {
                     .pipe(catchError(this.errorHandler))
   }
 
-  update_skill_api(data: any){
-    return this.http.put(environment.apiUrl + 'skill/'+data.id , data)
+  update_skill_api(data: any , id: any){
+    return this.http.post(environment.apiUrl + 'skill/'+id , data)
                     .pipe(catchError(this.errorHandler))
   }
 
