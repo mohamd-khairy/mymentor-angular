@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-verify-email',
@@ -13,12 +14,13 @@ export class VerifyEmailComponent implements OnInit {
   errorMsg = '';
   successMsg = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router ,   public globals: Globals) { }
 
   ngOnInit(): void {
   }
 
   verifyEmail(formData: NgForm){
+    this.globals.start();
 
     this.authService.verifyEmail_api(formData.value.token).subscribe(
       res => {
@@ -29,6 +31,8 @@ export class VerifyEmailComponent implements OnInit {
           this.router.navigateByUrl('login');
           this.successMsg = '';
         }, 5000);
+        this.globals.stop();
+
       },
       err => {
         console.log(err);
@@ -36,6 +40,8 @@ export class VerifyEmailComponent implements OnInit {
         setTimeout(() => {
           this.errorMsg = '';
         }, 5000);
+        this.globals.stop();
+
       }
     );
   }
