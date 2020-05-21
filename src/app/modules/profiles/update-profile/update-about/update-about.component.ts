@@ -22,7 +22,7 @@ export class UpdateAboutComponent implements OnInit {
   public days$ = this._days.asObservable();
   public languages$ = this._lang.asObservable();
 
-  public aboutData: any;
+  public aboutData: any = {};
 
   constructor(private store: Store<StoreInterface>,
      private updateProfileService: UpdateProfileService,
@@ -36,8 +36,8 @@ export class UpdateAboutComponent implements OnInit {
   }
 
   UpdateAboutData(AboutForm: NgForm){
-    this.globals.isLoading$ = this.store.select(loadingSelector);
-    if(AboutForm.value.id == ""){
+    this.globals.isLoading$ = this.store.select(loadingSelector);    
+    if(AboutForm.value.id == "" || AboutForm.value.id == undefined){
       delete AboutForm.value.id;
       this.store.dispatch(new ADDABOUTAction(AboutForm.value));
     }else{
@@ -48,7 +48,9 @@ export class UpdateAboutComponent implements OnInit {
   getAboutData(){
     this.updateProfileService.get_about_api().subscribe(
         data => { 
-          this.aboutData = JSON.parse(JSON.stringify(data)).data
+          if(JSON.parse(JSON.stringify(data)).data){
+            this.aboutData = JSON.parse(JSON.stringify(data)).data
+          }          
         } 
     )
   }
