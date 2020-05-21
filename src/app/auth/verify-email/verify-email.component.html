@@ -27,7 +27,11 @@
                                         id="exampleInputtoken" placeholder="Enter your token">
                                       </div>
                                     <button type="submit"  class="btn btn-primary btn-user btn-block">
-                                        Verify Email
+                                        
+                                        <div  *ngIf="!globals.progressBar">Verify Email</div>
+                                        <div style="text-align: center;" *ngIf="globals.progressBar">
+                                            <div class="loader">Loading...</div>
+                                        </div>
                                     </button>
                                 </form>
                                 <hr>
