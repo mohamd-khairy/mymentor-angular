@@ -1,68 +1,71 @@
 <!-- Nested Row within Card Body -->
-<section *ngIf="(profile$ | async) as profiles">
-  <div class="row">
-    <img style="width: 150px;" alt="mohamed khairy" class="card-img-top rounded-circle mx-auto d-block p-2 mt-2"
-      [src]="profiles.photo">
-  </div>
-  <div class="text-center pt-2">
-    <h1 class="h5 text-gray-900 mb-4 font-weight-bold">{{profiles.user.name}}</h1>
-  </div>
+<section class="hrJVXQ">
+  
+  <div class="title pt-4 pl-4">My Profile</div>
 
-  <div class="kcBPga">
-    <div class="level-badges"><span class="sc-fzoaKM kVccAF cui-tooltip"><span class="cui-tooltip__trigger"
-          data-tip="true" data-for="0.9488210563373645" data-place="bottom" data-effect="solid" currentitem="false">
-          <div color="#007f9e" class="Label__StyledLabel-sc-1v26ouz-0 ljjVek"><span class="sc-AxjAm fPsuOU icon"><svg
+  <section  *ngIf="(profile$ | async) as profiles">
+    <div class="row">
+      <img style="width: 150px;" alt="mohamed khairy" class="card-img-top rounded-circle mx-auto d-block p-2 mt-2"
+        [src]="profiles.photo">
+    </div>
+    <div class="text-center pt-2">
+      <h1 class="h5 text-gray-900 mb-4 font-weight-bold">{{profiles.user.name}}</h1>
+    </div>
+
+    <div class="kcBPga">
+      <div class="level-badges"><span class="sc-fzoaKM kVccAF cui-tooltip"><span class="cui-tooltip__trigger"
+            data-tip="true" data-for="0.9488210563373645" data-place="bottom" data-effect="solid" currentitem="false">
+            <div color="#007f9e" class="Label__StyledLabel-sc-1v26ouz-0 ljjVek"><span class="sc-AxjAm fPsuOU icon"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <g fill-rule="nonzero" fill="none">
+                    <path d="M0 0h24v24H0z"></path>
+                    <path fill="#000"
+                      d="M18.99 2h-8.11a3 3 0 0 0-2.95 3v1a3.59 3.59 0 0 1 .6-.06h.16-.16a3.6 3.6 0 0 0 0 7.2 3.56 3.56 0 0 0 1.6-.39l.2-.1a2.63 2.63 0 0 0 .36-.08h-.19a3.59 3.59 0 0 0-1.18-6.52V5c0-.856.694-1.55 1.55-1.55h8.11c.856 0 1.55.694 1.55 1.55v6.11a1.55 1.55 0 0 1-1.55 1.55h-2.86c0-.13.09-.25.11-.39l.07-.34.8-3.77A1.75 1.75 0 0 0 15.74 6a2 2 0 0 0-.4 0 1.79 1.79 0 0 0-1.75 1.45l-.5 2.35-.08.37a4.83 4.83 0 0 1-2.12 3.21 4.24 4.24 0 0 1-2.25.66 4 4 0 0 1-2.2-.66 9.25 9.25 0 0 0-4 4.63c-.67 1.93-.8 4 1.25 4h9.87a1.12 1.12 0 0 0 1.13-1.14 8 8 0 0 0-.3-2.45 20.66 20.66 0 0 0-.91-2.11A7.55 7.55 0 0 0 15.53 14h3.45a3 3 0 0 0 2.95-2.95V5a3 3 0 0 0-2.94-3zm-8.25 7.55a2.2 2.2 0 1 1-.64-1.552 2.2 2.2 0 0 1 .64 1.562v-.01zm4.12 2.4a5.55 5.55 0 0 1-2.2 3.13l-1.06.68.56 1.13c.316.627.597 1.271.84 1.93a6.26 6.26 0 0 1 .23 1.74H3.65a2.07 2.07 0 0 1-.24 0 3.6 3.6 0 0 1 .31-2.11A7.5 7.5 0 0 1 6.5 15a5.3 5.3 0 0 0 2.13.45 5.67 5.67 0 0 0 3-.87 6.2 6.2 0 0 0 2.75-4.11l.08-.37.5-2.35a.4.4 0 0 1 .38-.34h.09a.36.36 0 0 1 .31.45l-.8 3.77-.08.32z">
+                    </path>
+                  </g>
+                </svg></span><span class="text">{{profiles.user.user_type.user_type_name}}</span></div>
+          </span>
+        </span></div>
+      <div class="dGLmRD">
+        <div class="sc-fzowVh hYRFqL rating">
+          <div class="rating-num">{{profiles.user.rate}}.0</div>
+          <span class="star" *ngFor="let i of globals.Arr(profiles.user.rate).fill(1)"><span class="sc-AxjAm egHItY"><svg
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <g fill-rule="nonzero" fill="none">
-                  <path d="M0 0h24v24H0z"></path>
-                  <path fill="#000"
-                    d="M18.99 2h-8.11a3 3 0 0 0-2.95 3v1a3.59 3.59 0 0 1 .6-.06h.16-.16a3.6 3.6 0 0 0 0 7.2 3.56 3.56 0 0 0 1.6-.39l.2-.1a2.63 2.63 0 0 0 .36-.08h-.19a3.59 3.59 0 0 0-1.18-6.52V5c0-.856.694-1.55 1.55-1.55h8.11c.856 0 1.55.694 1.55 1.55v6.11a1.55 1.55 0 0 1-1.55 1.55h-2.86c0-.13.09-.25.11-.39l.07-.34.8-3.77A1.75 1.75 0 0 0 15.74 6a2 2 0 0 0-.4 0 1.79 1.79 0 0 0-1.75 1.45l-.5 2.35-.08.37a4.83 4.83 0 0 1-2.12 3.21 4.24 4.24 0 0 1-2.25.66 4 4 0 0 1-2.2-.66 9.25 9.25 0 0 0-4 4.63c-.67 1.93-.8 4 1.25 4h9.87a1.12 1.12 0 0 0 1.13-1.14 8 8 0 0 0-.3-2.45 20.66 20.66 0 0 0-.91-2.11A7.55 7.55 0 0 0 15.53 14h3.45a3 3 0 0 0 2.95-2.95V5a3 3 0 0 0-2.94-3zm-8.25 7.55a2.2 2.2 0 1 1-.64-1.552 2.2 2.2 0 0 1 .64 1.562v-.01zm4.12 2.4a5.55 5.55 0 0 1-2.2 3.13l-1.06.68.56 1.13c.316.627.597 1.271.84 1.93a6.26 6.26 0 0 1 .23 1.74H3.65a2.07 2.07 0 0 1-.24 0 3.6 3.6 0 0 1 .31-2.11A7.5 7.5 0 0 1 6.5 15a5.3 5.3 0 0 0 2.13.45 5.67 5.67 0 0 0 3-.87 6.2 6.2 0 0 0 2.75-4.11l.08-.37.5-2.35a.4.4 0 0 1 .38-.34h.09a.36.36 0 0 1 .31.45l-.8 3.77-.08.32z">
-                  </path>
-                </g>
-              </svg></span><span class="text">{{profiles.user.user_type.user_type_name}}</span></div>
-        </span>
-      </span></div>
-    <div class="dGLmRD">
-      <div class="sc-fzowVh hYRFqL rating">
-        <div class="rating-num">{{profiles.user.rate}}.0</div>
-        <span class="star" *ngFor="let i of globals.Arr(profiles.user.rate).fill(1)"><span class="sc-AxjAm egHItY"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <g fill="none" fill-rule="evenodd">
-                <path d="M0 0h24v24H0z"></path>
-                <path fill="#231815" fill-rule="nonzero"
-                  d="M13.2 2.7l2.3 5 5.4.8c1 .2 1.5 1.4.7 2.2l-3.9 4.1.9 5.7c.2 1.1-1 1.9-1.9 1.3L12 19.2l-4.7 2.6c-.9.5-2.1-.3-1.9-1.3l.9-5.7-3.9-4.1c-.7-.8-.3-2 .7-2.2l5.4-.8 2.3-5c.5-.9 1.9-.9 2.4 0z">
-                </path>
-              </g>
-            </svg></span>
-        </span>
-            
-      </div>
-      <div class="review-count">(469 reviews)</div>
-    </div>
-  </div>
-
-  <div class="text-center pt-4">
-    <div class="MentorInfoContainer__StyledActionWrapper-sc-14u75og-2 llLYWd">
-        <button class="jBmtQD" routerLink="/mentor/profile/update">Edit profiles</button>
-      <span class="sc-AxhUy cfWcOo cui-tooltip">
-        <span class="cui-tooltip__trigger" data-tip="true" data-for="0.5018435845972133" data-place="bottom"
-          data-effect="solid" currentitem="false">
-          <button class="fiLHeR idcmWx">
-            <span class="sc-AxhCb eTmFYj"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24">
                 <g fill="none" fill-rule="evenodd">
-                  <path d="M.063 0h24v24h-24z">
-                  </path>
-                  <path fill="#000" fill-rule="nonzero"
-                    d="M14.556 9.322a5.708 5.708 0 0 1 0 8.062l-2.829 2.828a5.707 5.707 0 0 1-8.06 0 5.708 5.708 0 0 1 0-8.062L6.34 9.476a7.13 7.13 0 0 0-.013 1.995l-1.67 1.669a4.304 4.304 0 0 0 0 6.08 4.304 4.304 0 0 0 6.08 0l2.829-2.827a4.302 4.302 0 0 0 0-6.081 4.257 4.257 0 0 0-2.718-1.226c.125-.217.268-.425.454-.61l.636-.637a5.664 5.664 0 0 1 2.618 1.483zM11.94 16.04a5.664 5.664 0 0 1-2.618-1.483 5.708 5.708 0 0 1 0-8.062l2.829-2.828a5.705 5.705 0 0 1 8.06 0 5.705 5.705 0 0 1 0 8.061l-2.673 2.674a7.13 7.13 0 0 0 .015-1.995l1.669-1.67a4.305 4.305 0 0 0 0-6.08 4.304 4.304 0 0 0-6.081 0l-2.828 2.828a4.304 4.304 0 0 0 0 6.081 4.256 4.256 0 0 0 2.717 1.227 2.868 2.868 0 0 1-.453.61l-.637.637z">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path fill="#231815" fill-rule="nonzero"
+                    d="M13.2 2.7l2.3 5 5.4.8c1 .2 1.5 1.4.7 2.2l-3.9 4.1.9 5.7c.2 1.1-1 1.9-1.9 1.3L12 19.2l-4.7 2.6c-.9.5-2.1-.3-1.9-1.3l.9-5.7-3.9-4.1c-.7-.8-.3-2 .7-2.2l5.4-.8 2.3-5c.5-.9 1.9-.9 2.4 0z">
                   </path>
                 </g>
-              </svg></span></button></span>
-      </span>
+              </svg></span>
+          </span>
+              
+        </div>
+        <div class="review-count">(469 reviews)</div>
+      </div>
     </div>
-  </div>
 
-
+    <div class="text-center pt-4 pl-0">
+      <div class="MentorInfoContainer__StyledActionWrapper-sc-14u75og-2 llLYWd">
+          <button class="jBmtQD" routerLink="/mentor/profile/update">Edit profiles</button>
+        <span class="sc-AxhUy cfWcOo cui-tooltip">
+          <span class="cui-tooltip__trigger" data-tip="true" data-for="0.5018435845972133" data-place="bottom"
+            data-effect="solid" currentitem="false">
+            <button class="fiLHeR idcmWx">
+              <span class="sc-AxhCb eTmFYj"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <g fill="none" fill-rule="evenodd">
+                    <path d="M.063 0h24v24h-24z">
+                    </path>
+                    <path fill="#000" fill-rule="nonzero"
+                      d="M14.556 9.322a5.708 5.708 0 0 1 0 8.062l-2.829 2.828a5.707 5.707 0 0 1-8.06 0 5.708 5.708 0 0 1 0-8.062L6.34 9.476a7.13 7.13 0 0 0-.013 1.995l-1.67 1.669a4.304 4.304 0 0 0 0 6.08 4.304 4.304 0 0 0 6.08 0l2.829-2.827a4.302 4.302 0 0 0 0-6.081 4.257 4.257 0 0 0-2.718-1.226c.125-.217.268-.425.454-.61l.636-.637a5.664 5.664 0 0 1 2.618 1.483zM11.94 16.04a5.664 5.664 0 0 1-2.618-1.483 5.708 5.708 0 0 1 0-8.062l2.829-2.828a5.705 5.705 0 0 1 8.06 0 5.705 5.705 0 0 1 0 8.061l-2.673 2.674a7.13 7.13 0 0 0 .015-1.995l1.669-1.67a4.305 4.305 0 0 0 0-6.08 4.304 4.304 0 0 0-6.081 0l-2.828 2.828a4.304 4.304 0 0 0 0 6.081 4.256 4.256 0 0 0 2.717 1.227 2.868 2.868 0 0 1-.453.61l-.637.637z">
+                    </path>
+                  </g>
+                </svg></span></button></span>
+        </span>
+      </div>
+    </div>
+  </section>
 
   <section class="RateBlock__StyledBlock-sc-1ra49ga-0 khdmXn" *ngIf="(job$ | async) as jobData">
     <div class="RateBlock__StyledRateDetail-sc-1ra49ga-1 eOcDnx">
@@ -77,14 +80,14 @@
     </div>
   </section>
 
-
-  <section class="ExpertiseBlock__StyledExpertiseBlock-sc-11ycjkq-0 bMVRib">
+  <section class="ExpertiseBlock__StyledExpertiseBlock-sc-11ycjkq-0 bMVRib" *ngIf="(skills$ | async) as skills">
     <h2>TOP EXPERTISE</h2>
-    <div class="dKSaSe p-2" *ngFor="let skill of skills$ | async">
+    <div class="dKSaSe p-2" *ngFor="let skill of skills">
       <span class="sc-fzqAbL gjUHgO">
         <img [src]="skill.photo" loading="lazy">
       </span>
       <span>{{skill.skill_name}}</span>
     </div>
   </section>
+
 </section>

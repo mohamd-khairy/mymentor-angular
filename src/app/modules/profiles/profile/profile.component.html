@@ -1,67 +1,68 @@
-
 <div class="container">
     <div class="row col-md-12">
 
-        <div class="card o-hidden border-0 shadow-lg my-5 col-md-4"  style="height: 100%;">
+        <div class="card o-hidden border-0 shadow-lg my-5 col-md-4" style="height: 100%;">
             <div class="card-body p-0">
-               <app-image [job$]="job$" [profile$]="profile$" [skills$]="skills$"></app-image>
+
+                <app-image [job$]="job$" [profile$]="profile$" [skills$]="skills$"></app-image>
+
             </div>
-          </div>
-      
-          <div class="card o-hidden border-0 shadow-lg my-5 col-md-8">
-              <div class="card-body p-0">
-                  
-                    <section class="hrJVXQ">
+        </div>
 
-                        <div class="title">ABOUT ME</div>
+        <div class="card o-hidden border-0 shadow-lg my-5 col-md-8">
+            <div class="card-body p-0">
 
-                        <app-about [job$]="job$"></app-about>
+                <section class="hrJVXQ">
 
-                    </section>
+                    <div class="title">ABOUT ME</div>
 
-                    <section class="hrJVXQ">
+                    <app-about [job$]="job$"></app-about>
 
-                        <div class="title">Skills</div>
+                </section>
 
-                        <app-skills [skills$]="skills$"></app-skills>
+                <section class="hrJVXQ">
 
-                    </section>
+                    <div class="title">Skills</div>
 
-                    <section class="hrJVXQ">
+                    <app-skills [skills$]="skills$"></app-skills>
 
-                        <div class="title">Experience</div>
+                </section>
 
-                        <app-experience [experience$]="experience$"></app-experience>
+                <section class="hrJVXQ">
 
-                    </section>
+                    <div class="title">Experience</div>
 
-                    <section class="hrJVXQ">
+                    <app-experience [experience$]="experience$"></app-experience>
 
-                        <div class="title">Education</div>
+                </section>
 
-                        <app-education [education$]="education$"></app-education>
+                <section class="hrJVXQ">
 
-                    </section>
+                    <div class="title">Education</div>
 
-                    <section class="hrJVXQ">
+                    <app-education [education$]="education$"></app-education>
 
-                        <div class="title">REVIEWS FROM CLIENTS</div>
+                </section>
 
-                        <app-review [rates$]="rates$" [profile$]="profile$" ></app-review>
+                <section class="hrJVXQ">
 
-                    </section>
+                    <div class="title">REVIEWS FROM CLIENTS</div>
 
-                    <section class="hrJVXQ">
+                    <app-review [rates$]="rates$" [profile$]="profile$"></app-review>
 
-                        <div class="title">Social</div>
+                </section>
 
-                        <app-social></app-social>
+                <section class="hrJVXQ">
 
-                    </section>
-        
-              </div>
+                    <div class="title">Social</div>
+
+                    <app-social></app-social>
+
+                </section>
+
             </div>
+        </div>
     </div>
-   
 
-  </div>
+
+</div>

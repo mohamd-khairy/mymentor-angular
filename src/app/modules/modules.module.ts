@@ -24,6 +24,11 @@ import { ReviewComponent } from './profiles/profile/review/review.component';
 import { SocialComponent } from './profiles/profile/social/social.component';
 import { ImageComponent } from './profiles/profile/image/image.component';
 import { UpdateProfileModule } from './profiles/update-profile/update-profile.module';
+import { MyRequestComponent } from './my-request/my-request.component';
+import { MyScheduleComponent } from './my-schedule/my-schedule.component';
+import { CodeReviewComponent } from './code-review/code-review.component';
+import { SessionHistoryComponent } from './session-history/session-history.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 const routes: Routes = [
   {
@@ -32,6 +37,10 @@ const routes: Routes = [
     children: [
       {path: '',redirectTo: 'dashboard',pathMatch: 'full'},
       {path: 'dashboard',component: DashboradComponent},
+      {path: 'my-requests',component: MyRequestComponent},
+      {path: 'my-schedule',component: MyScheduleComponent},
+      {path: 'session-history',component: SessionHistoryComponent},
+      {path: 'code-review',component: CodeReviewComponent},
       {path: 'mentor',component: MentorsComponent},
       {path: 'mentor/profile', component: ProfileComponent},
       {path: 'session',component: SessionsComponent},
@@ -66,14 +75,20 @@ const routes: Routes = [
     ReviewComponent,
     SocialComponent,
     ImageComponent,
+    MyRequestComponent,
+    MyScheduleComponent,
+    CodeReviewComponent,
+    SessionHistoryComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forChild(routes),
-    UpdateProfileModule
+    UpdateProfileModule,
+    MatTabsModule,
   ],
+  exports: [MatTabsModule],
   providers: [Globals ]
 })
 export class ModulesModule { }
