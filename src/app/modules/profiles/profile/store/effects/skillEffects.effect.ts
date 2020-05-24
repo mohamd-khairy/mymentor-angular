@@ -15,14 +15,6 @@ import { ProfileService } from '../../profile.service';
 @Injectable()
 export class SkillEffect {
 
-    experience$ = createEffect(() => this.actions.pipe(
-        ofType(SkillActionsTypes.Loading),
-        mergeMap(() => this.profileService.get_skills_api()
-        .pipe(
-            map((data) => new Success(JSON.parse(JSON.stringify(data)).data)),
-            catchError((err) => of(new Fail(JSON.parse(JSON.stringify(err)))))
-        ))
-    ))
-
+   
     constructor(private actions: Actions , private profileService: ProfileService){}
 }

@@ -32,7 +32,7 @@ export class Globals {
         this.progressBar = false ;
     }
 
-    userData(){
+    get userData(){
         return this.authservice.userData;
     }
 

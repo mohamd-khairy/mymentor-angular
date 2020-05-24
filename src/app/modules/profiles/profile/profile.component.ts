@@ -7,6 +7,7 @@ import { StoreInterface } from '../../../shared/store';
 import { BehaviorSubject } from 'rxjs';
 import { ProfileService } from './profile.service';
 import { IEducationState, IExperienceState, ISkill } from './store/states/states.state';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -14,6 +15,7 @@ import { IEducationState, IExperienceState, ISkill } from './store/states/states
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  private userId;
   private _job = new BehaviorSubject<any>(null);
   private _education = new BehaviorSubject<IEducationState>(null);
   private _experience = new BehaviorSubject<IExperienceState>(null);
@@ -28,61 +30,63 @@ export class ProfileComponent implements OnInit {
   public rates$ = this._rates.asObservable();
   public skills$ = this._skills.asObservable();
 
-  constructor(public store: Store<StoreInterface>, private profileService: ProfileService) {     
-    // this.store.dispatch(new LoadingAction()) // education
-    // this.store.dispatch(new LOADINGACTIONEx()) // experience
-    // this.store.dispatch(new Loading()) // skill
+  constructor(public store: Store<StoreInterface>, private router: Router,
+     private profileService: ProfileService , private route: ActivatedRoute) {     
   }
 
   ngOnInit(): void {
+    this.userId = this.route.snapshot.params.userId;
+    this.profile_data();
     this.job_data();
     this.education_data();
     this.experience_data();
-    this.profile_data();
     this.rates_data();
     this.skills_data();
   }
 
+  profile_data(){
+    this.profileService.get_profile_api(this.userId).subscribe(
+      data => {
+        this._profile.next(JSON.parse(JSON.stringify(data)).data)
+      },
+      error => {
+        console.log(JSON.parse(JSON.stringify(error)));
+        if(JSON.parse(JSON.stringify(error)).status == 400){
+          alert("this action not allow to you !");
+          this.router.navigateByUrl('/mentor');
+        }
+      }
+    )
+  }
+
   job_data(){
-    this.profileService.get_job_details_api().subscribe(
+    this.profileService.get_job_details_api(this.userId).subscribe(
       data => this._job.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
   education_data(){
-    this.profileService.get_education_api().subscribe(
+    this.profileService.get_education_api(this.userId).subscribe(
       data => this._education.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
   experience_data(){
-    this.profileService.get_experience_api().subscribe(
+    this.profileService.get_experience_api(this.userId).subscribe(
       data => this._experience.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
-  profile_data(){
-    this.profileService.get_profile_api().subscribe(
-      data => this._profile.next(JSON.parse(JSON.stringify(data)).data)
-    )
-  }
-
   rates_data(){
-    this.profileService.get_rates_api().subscribe(
+    this.profileService.get_rates_api(this.userId).subscribe(
       data => this._rates.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
   skills_data(){
-    this.profileService.get_skills_api().subscribe(
+    this.profileService.get_skills_api(this.userId).subscribe(
       data => this._skills.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
-
-  education_data_store(){
-    this.store.select(state => state).subscribe(
-      data => this._education.next(JSON.parse(JSON.stringify(data)).data)
-    )
-  }
 }

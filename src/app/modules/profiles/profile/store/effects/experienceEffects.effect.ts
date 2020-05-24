@@ -12,14 +12,7 @@ import { ProfileService } from '../../profile.service';
 @Injectable()
 export class ExperienceEffect {
 
-    experience$ = createEffect(() => this.actions.pipe(
-        ofType(ActionTypes.LoadingDataEx),
-        mergeMap(() => this.profileService.get_experience_api()
-        .pipe(
-            map((data) => new SUCCESSACTIONEx(JSON.parse(JSON.stringify(data)).data)),
-            catchError((err) => of(new FAILACTIONEx(JSON.parse(JSON.stringify(err)))))
-        ))
-    ))
+
 
     constructor(private actions: Actions , private profileService: ProfileService){}
 }

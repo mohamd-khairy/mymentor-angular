@@ -10,14 +10,5 @@ import { ProfileService } from 'src/app/modules/profiles/profile/profile.service
 @Injectable()
 export class EducationEffect {
 
-    education$ = createEffect(() => this.actions.pipe(
-        ofType(ActionsTypes.LoadingData),
-        mergeMap(() => this.profileService.get_education_api()
-        .pipe(
-            map((data) => new SuccessAction(JSON.parse(JSON.stringify(data)).data)),
-            catchError((error) => of(new FailAction(JSON.parse(JSON.stringify(error)))))
-        ))
-    ))
-
     constructor(private actions: Actions , private profileService: ProfileService){}
 }

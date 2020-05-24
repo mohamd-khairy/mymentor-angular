@@ -42,7 +42,7 @@ const routes: Routes = [
       {path: 'session-history',component: SessionHistoryComponent},
       {path: 'code-review',component: CodeReviewComponent},
       {path: 'mentor',component: MentorsComponent},
-      {path: 'mentor/profile', component: ProfileComponent},
+      {path: 'mentor/profile/:userId', component: ProfileComponent},
       {path: 'session',component: SessionsComponent},
       {path: 'user/personal-data',component: PersonalDataComponent},
       {path: 'user/education-data',component: EducationDataComponent,},
