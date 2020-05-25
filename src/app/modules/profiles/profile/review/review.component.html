@@ -17,7 +17,7 @@
                 </div>
             </span>
         </div>
-        <span class="review-count">(469 reviews)</span>
+        <span class="review-count">({{countRates}} reviews)</span>
     </div>
    <div  *ngIf="(rates$ | async) as rates" >
     <div class="Review__StyledReview-l5no4r-0 dooKga" *ngFor="let rate of rates">

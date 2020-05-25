@@ -16,6 +16,7 @@ export class ImageComponent implements OnInit {
   @Input() skills$ : Observable<ISkill>;
   @Input() profile$ : Observable<any>;
   @Input() job$ : Observable<any>;
+  @Input() countRates : number;
 
 
   constructor(private store: Store<StoreInterface> , public globals: Globals , private profileService: ProfileService) {

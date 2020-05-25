@@ -10,6 +10,7 @@ import { Globals } from 'src/app/globals';
 export class ReviewComponent implements OnInit {
   @Input() rates$ : Observable<any>;
   @Input() profile$ : Observable<any>;
+  @Input() countRates : number;
 
   constructor(public globals: Globals) { }
 

@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  public countRates = 0;
   private userId;
   private _job = new BehaviorSubject<any>(null);
   private _education = new BehaviorSubject<IEducationState>(null);
@@ -79,7 +80,10 @@ export class ProfileComponent implements OnInit {
 
   rates_data(){
     this.profileService.get_rates_api(this.userId).subscribe(
-      data => this._rates.next(JSON.parse(JSON.stringify(data)).data)
+      data => {
+        this.countRates = JSON.parse(JSON.stringify(data)).data.length;
+        this._rates.next(JSON.parse(JSON.stringify(data)).data)
+      }
     )
   }
 

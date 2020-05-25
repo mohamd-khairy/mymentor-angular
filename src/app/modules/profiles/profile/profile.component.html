@@ -4,7 +4,7 @@
         <div class="card o-hidden border-0 shadow-lg my-5 col-md-4" >
             <div class="card-body p-0">
 
-                <app-image [job$]="job$" [profile$]="profile$" [skills$]="skills$"></app-image>
+                <app-image [job$]="job$" [profile$]="profile$" [skills$]="skills$" [countRates] = "countRates"></app-image>
 
             </div>
         </div>
@@ -48,7 +48,7 @@
 
                     <div class="title">REVIEWS FROM CLIENTS</div>
 
-                    <app-review [rates$]="rates$" [profile$]="profile$"></app-review>
+                    <app-review [rates$]="rates$" [profile$]="profile$" [countRates] = "countRates"></app-review>
 
                 </section>
 
