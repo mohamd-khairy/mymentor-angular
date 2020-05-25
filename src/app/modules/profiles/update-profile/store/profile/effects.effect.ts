@@ -30,7 +30,7 @@ export class profilesEffect {
         mergeMap((action) => this.updateProfileService.update_profile_api(action.payLoad , action.id)
         .pipe(
             map((data) => new SUCCESSACTION(JSON.parse(JSON.stringify(data)).data)),
-            tap(() => this.router.navigateByUrl('/mentor/profile')),
+            tap(() => this.router.navigateByUrl('/mentor/profile/'+action.id)),
             catchError(err => of(new FAILACTION(JSON.parse(JSON.stringify(err)))))
         ))
     ))
