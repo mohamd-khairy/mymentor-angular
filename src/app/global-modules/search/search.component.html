@@ -234,9 +234,11 @@
                   {{mentor.job ? (mentor.job.session_price | currency) : ''}}</strong>
                   <small>/{{mentor.job ? mentor.job.session_duration : ''}} {{mentor.job ? (mentor.job.session_duration_type | uppercase) : ''}}</small>
                 </div>
-                <div class="jsx-3823654774 actions"><a routerLink="/mentor/profile" target="_blank"
-                    class="jsx-3823654774 view-profile"><button class="sc-htpNat jWWepM">view
-                      profile</button></a><button class="compare-cta sc-htpNat dbwaLL">
+                <div class="jsx-3823654774 actions">
+                  <a routerLink="/mentor/profile/{{mentor.id}}" target="_blank" class="jsx-3823654774 view-profile">
+                    <button class="sc-htpNat jWWepM">view profile</button>
+                  </a>
+                  <button class="compare-cta sc-htpNat dbwaLL">
                     <div class="jsx-3823654774 compare-inner"><span class="sc-bdVaJa bKXyBy"><svg
                           xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                           <g fill="none" fill-rule="evenodd">
@@ -251,7 +253,7 @@
             </div>
 
           </div>
-          <div class="jsx-94813066 load-more" *ngIf="searchService.searchData.next_page_url">
+          <div class="jsx-94813066 load-more mb-2" *ngIf="searchService.searchData.next_page_url">
             <button (click)="paginate(searchService.searchData.next_page_url)" class="sc-htpNat fAwPfY">load more</button>
           </div>
 
