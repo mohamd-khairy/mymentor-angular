@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row col-md-12">
+        <div class="card o-hidden border-0 shadow-lg my-5 col-md-12">
+            <div class="card-body p-0">
+
+                <section class="hrJVXQ">
+
+                    <div class="title">Add Review</div>
+
+                    <form #reviewForm="ngForm" (ngSubmit)="addReview(reviewForm)">
+                        <div class="kLsSpO">
+                            <div class="sc-fzpjYC gJohPa">
+                                <div class="sc-fznxsB fZgLFv">
+                                    <div class="fkHeXT">Rate *</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <ul class="list-inline rating-list" 
+                                            *ngFor="let star of stars" style="display: inline-block" >
+                                                <li (click)="countStar(star)"
+                                                    [ngClass]="{'selected': (star <= selectedValue)}">
+                                                <i class="fa fa-star"></i>
+                                                </li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="kLsSpO">
+                            <div class="sc-fzpjYC gJohPa">
+                                <div class="sc-fznxsB fZgLFv">
+                                    <div class="fkHeXT">Short comment *</div>
+                                </div>
+                                <div class="jss62 jss65 sc-fzoLag gvRhAv">
+                                    <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85 jss105 jss90 jss51">
+                                        
+                                    <textarea ngModel #comment="ngModel" name="comment" aria-invalid="false" class="jss107 jss92 jss61 jss109 jss94"placeholder=""
+                                            required="" rows="3"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <button class="sc-AxirZ laHIhI BasicInformationForm__StyledButton-sc-2up9d7-0 bTGmWW" >Add</button>
+                    </form>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

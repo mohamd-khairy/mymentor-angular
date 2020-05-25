@@ -49,6 +49,12 @@ export class ProfileService {
     .pipe(catchError(this.errorHandler));
   }
 
+  add_rate_api(data)
+  {
+    return this.http.post(environment.apiUrl + 'rate' , data)
+    .pipe(catchError(this.errorHandler));
+  }
+
   errorHandler(error: HttpErrorResponse){
     return throwError(error);
   }

@@ -29,6 +29,7 @@ import { MyScheduleComponent } from './my-schedule/my-schedule.component';
 import { CodeReviewComponent } from './code-review/code-review.component';
 import { SessionHistoryComponent } from './session-history/session-history.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { AddReviewComponent } from './profiles/profile/review/add-review/add-review.component';
 
 const routes: Routes = [
   {
@@ -50,7 +51,9 @@ const routes: Routes = [
       {path: 'user/experience-data',component: ExperienceDataComponent},
       {path: 'user/experience-data/add', component: AddExperienceDataComponent},
       {path: 'user/payment-data',component: PaymentDataComponent},
-      {path: 'user/settings',component: SettingsComponent}
+      {path: 'user/settings',component: SettingsComponent},
+      {path: 'mentor/:userId/add/review', component: AddReviewComponent},
+
     ]
   }
 ];
@@ -79,6 +82,7 @@ const routes: Routes = [
     MyScheduleComponent,
     CodeReviewComponent,
     SessionHistoryComponent,
+    AddReviewComponent,
   ],
   imports: [
     CommonModule,

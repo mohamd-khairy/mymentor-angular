@@ -20,6 +20,8 @@ import { educationsEffect } from '../modules/profiles/update-profile/store/educa
 import { IinitialprofileState } from '../modules/profiles/update-profile/store/profile/states.state';
 import { profilesAddReducer } from '../modules/profiles/update-profile/store/profile/reducers.reducer';
 import { profilesEffect } from '../modules/profiles/update-profile/store/profile/effects.effect';
+import { AddReviewReducer } from '../modules/profiles/profile/review/store/reducers.reducer';
+import { AddreviewEffect } from '../modules/profiles/profile/review/store/effects.effect';
 
 export interface StoreInterface {
     education : IEducationState[],
@@ -29,7 +31,8 @@ export interface StoreInterface {
     about: IinitialAboutState,
     skills: initialSkillState,
     educations: IinitialEducationsState,
-    profile: IinitialprofileState
+    profile: IinitialprofileState,
+    addReview: any
 }
 
 
@@ -41,7 +44,8 @@ export const reducers: ActionReducerMap<StoreInterface> = {
     about: AboutReducer,
     skills: skillsAddReducer,
     educations: educationsAddReducer,
-    profile: profilesAddReducer
+    profile: profilesAddReducer,
+    addReview: AddReviewReducer
  };
 
 export const effects = [
@@ -52,5 +56,6 @@ export const effects = [
     AboutEffect,
     skillsEffect,
     educationsEffect,
-    profilesEffect
+    profilesEffect,
+    AddreviewEffect
 ];

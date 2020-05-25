@@ -37,6 +37,7 @@ const routes: Routes = [
           {path: 'educations',component: ShowEducationComponent},
           {path: 'education/:id',component: UpdateEducationComponent},
           {path: 'socials',component: UpdateSocialComponent},
+
         ]
       },
       {

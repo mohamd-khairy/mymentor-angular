@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
-import { RedirectIfAuthGuard } from '../redirect-if-auth.guard';
+import { RedirectIfAuthGuard } from '../guards/redirect-if-auth.guard';
 
 const routes: Routes = [
   {
