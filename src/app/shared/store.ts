@@ -22,6 +22,12 @@ import { profilesAddReducer } from '../modules/profiles/update-profile/store/pro
 import { profilesEffect } from '../modules/profiles/update-profile/store/profile/effects.effect';
 import { AddReviewReducer } from '../modules/profiles/profile/review/store/reducers.reducer';
 import { AddreviewEffect } from '../modules/profiles/profile/review/store/effects.effect';
+import { AddscheduleReducer } from '../modules/my-schedule/store/reducers.reducer';
+import { AddscheduleEffect } from '../modules/my-schedule/store/effects.effect';
+import { AddCodeReviewReducer } from '../modules/code-review/store/reducers.reducer';
+import { AddCodeReviewEffect } from '../modules/code-review/store/effects.effect';
+import { changeRequestStatusEffect } from '../modules/my-request/store/effects.effect';
+import { changeStatusRequestReducer } from '../modules/my-request/store/reducers.reducer';
 
 export interface StoreInterface {
     education : IEducationState[],
@@ -32,7 +38,10 @@ export interface StoreInterface {
     skills: initialSkillState,
     educations: IinitialEducationsState,
     profile: IinitialprofileState,
-    addReview: any
+    addReview: any,
+    addschedule:any,
+    addCodeReview:any,
+    changeStatus:any
 }
 
 
@@ -45,7 +54,10 @@ export const reducers: ActionReducerMap<StoreInterface> = {
     skills: skillsAddReducer,
     educations: educationsAddReducer,
     profile: profilesAddReducer,
-    addReview: AddReviewReducer
+    addReview: AddReviewReducer,
+    addschedule: AddscheduleReducer,
+    addCodeReview: AddCodeReviewReducer,
+    changeStatus: changeStatusRequestReducer
  };
 
 export const effects = [
@@ -57,5 +69,8 @@ export const effects = [
     skillsEffect,
     educationsEffect,
     profilesEffect,
-    AddreviewEffect
+    AddreviewEffect,
+    AddscheduleEffect,
+    AddCodeReviewEffect,
+    changeRequestStatusEffect
 ];

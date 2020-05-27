@@ -30,6 +30,8 @@ import { CodeReviewComponent } from './code-review/code-review.component';
 import { SessionHistoryComponent } from './session-history/session-history.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AddReviewComponent } from './profiles/profile/review/add-review/add-review.component';
+import { AddScheduleComponent } from './my-schedule/add-schedule/add-schedule.component';
+import { AddCodeReviewComponent } from './code-review/add-code-review/add-code-review.component';
 
 const routes: Routes = [
   {
@@ -53,6 +55,8 @@ const routes: Routes = [
       {path: 'user/payment-data',component: PaymentDataComponent},
       {path: 'user/settings',component: SettingsComponent},
       {path: 'mentor/:userId/add/review', component: AddReviewComponent},
+      {path: 'mentor/:userId/schedule-meeting', component: AddScheduleComponent},
+      {path: 'mentor/:userId/code-review', component: AddCodeReviewComponent},
 
     ]
   }
@@ -83,6 +87,8 @@ const routes: Routes = [
     CodeReviewComponent,
     SessionHistoryComponent,
     AddReviewComponent,
+    AddScheduleComponent,
+    AddCodeReviewComponent,
   ],
   imports: [
     CommonModule,

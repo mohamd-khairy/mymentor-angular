@@ -1,4 +1,98 @@
-<mat-tab-group>
-    <mat-tab label="OPEN">View 1</mat-tab>
-    <mat-tab label="Closed">View 2</mat-tab>
+<mat-tab-group class="dashboard__tab-bar" [selectedIndex]="selectedIndex">
+    <mat-tab label="Pending">
+        <div class="dashboard__articles-article-list" *ngIf="(PendingRequests$ | async) as requests">
+            <div class="dashboard__cmty-item" *ngFor="let request of requests">
+                <div class="cmty-item__header" style="background-image: url({{request.user_recieve.profile.photo}});"></div>
+                <div class="cmty-item__body">
+                    <div class="cmty-item__info">
+                        <div class="cmty-item__state published">{{request.session_type}}</div>
+                        <div class="cmty-item__updated-at">{{request.created_at}}</div>
+                    </div>
+                    
+                    <div class="cmty-item__content m-2">
+                        <div class="cmty-item__title">{{request.title}}</div>
+                    </div>
+                    
+                    <div class="cmty-item__categories m-2"><span class="cmty-item__category">{{request.details}}</span></div>
+                    
+                    <div class="row ml-2"  >
+                        <div class="col-md-1 alert alert-danger mr-2 p-2 text-center" style="width: 150px;" *ngFor="let day of request.day_ids">{{day}}</div>
+                    </div>
+
+                    <div class="alert alert-warning ml-2 text-center" style="width: 150px;">{{request.duration}}</div>
+
+                    <div class="cmty-item__actions m-2">
+                        <div class="cmty-item__actions-group-left">
+                            <button class="btn mr-2"  (click)="response_request(request.id,'accept')">Accept</button>
+                            <button class="btn mr-2"  (click)="response_request(request.id,'reject')" >Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Accepted">
+        <div class="dashboard__articles-article-list" *ngIf="(AcceptRequests$ | async) as requests">
+            <div class="dashboard__cmty-item" *ngFor="let request of requests">
+                <div class="cmty-item__header" style="background-image: url({{request.user_recieve.profile.photo}});"></div>
+                <div class="cmty-item__body">
+                    <div class="cmty-item__info">
+                        <div class="cmty-item__state published">{{request.session_type}}</div>
+                        <div class="cmty-item__updated-at">{{request.created_at}}</div>
+                    </div>
+                    
+                    <div class="cmty-item__content m-2">
+                        <div class="cmty-item__title">{{request.title}}</div>
+                    </div>
+                    
+                    <div class="cmty-item__categories m-2"><span class="cmty-item__category">{{request.details}}</span></div>
+                    
+                    <div class="row ml-2"  >
+                        <div class="col-md-1 alert alert-danger mr-2 p-2 text-center" style="width: 150px;" *ngFor="let day of request.day_ids">{{day}}</div>
+                    </div>
+
+                    <div class="alert alert-warning ml-2 text-center" style="width: 150px;">{{request.duration}}</div>
+
+                    <div class="cmty-item__actions m-2">
+                        <div class="cmty-item__actions-group-left">
+                            <button class="btn mr-2"  (click)="response_request(request.id,'accept')">Accept</button>
+                            <button class="btn mr-2"  (click)="response_request(request.id,'reject')" >Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Rejected">
+        <div class="dashboard__articles-article-list" *ngIf="(RejectRequests$ | async) as requests">
+            <div class="dashboard__cmty-item" *ngFor="let request of requests">
+                <div class="cmty-item__header" style="background-image: url({{request.user_recieve.profile.photo}});"></div>
+                <div class="cmty-item__body">
+                    <div class="cmty-item__info">
+                        <div class="cmty-item__state published">{{request.session_type}}</div>
+                        <div class="cmty-item__updated-at">{{request.created_at}}</div>
+                    </div>
+                    
+                    <div class="cmty-item__content m-2">
+                        <div class="cmty-item__title">{{request.title}}</div>
+                    </div>
+                    
+                    <div class="cmty-item__categories m-2"><span class="cmty-item__category">{{request.details}}</span></div>
+                    
+                    <div class="row ml-2"  >
+                        <div class="col-md-1 alert alert-danger mr-2 p-2 text-center" style="width: 150px;" *ngFor="let day of request.day_ids">{{day}}</div>
+                    </div>
+
+                    <div class="alert alert-warning ml-2 text-center" style="width: 150px;">{{request.duration}}</div>
+
+                    <div class="cmty-item__actions m-2">
+                        <div class="cmty-item__actions-group-left">
+                            <button class="btn mr-2"  (click)="response_request(request.id,'accept')">Accept</button>
+                            <button class="btn mr-2"  (click)="response_request(request.id,'reject')" >Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
 </mat-tab-group>

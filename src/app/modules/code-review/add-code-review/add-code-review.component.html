@@ -1,0 +1,142 @@
+<div class="container" *ngIf="(about$ | async) as about">
+    <form #scheduleForm="ngForm" (ngSubmit)="schedule_meeting(scheduleForm)">
+        <div class="row col-md-12">
+            <div class="intro">
+                <div class="mentorship-form__title">Post a code review request</div>
+                <div class="mentorship-form__description">Let our mentors know what you need help with. The more details you
+                    provide, the more quickly you'll be able to connect with a mentor who can help! Once your request is
+                    posted, you can check out mentors' profiles and chat with them to determine a good fit.</div>
+            </div>
+            <div class="Section__StyledSection-a4nid9-0 kfqwqp">
+                <div class="number">1</div>
+                <div class="Section__StyledContainer-a4nid9-1 eNiLqw">
+                    <div class="text">How would you like to get help?</div>
+                    <div class="section-content">
+                        <div class="EstimatedLengthField__StyledEstimatedLength-sc-1lwv2l1-0 iyEgsc">
+                            <div class="estimate-time-field__label">Estimated completion day*</div>
+                            <div class="estimate-time-field">
+                                <div (click)="days('1')"  [ngClass]="{'active': (dayList.indexOf('1') != -1) ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">Saturday</span>
+                                </div>
+                                <div (click)="days('2')" [ngClass]="{'active': (dayList.indexOf('2') != -1) ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">Sunday</span>
+                                </div>
+                                <div  (click)="days('3')" [ngClass]="{'active': (dayList.indexOf('3') != -1) ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">Monday</span>
+                                </div>
+                                <div  (click)="days('4')" [ngClass]="{'active': (dayList.indexOf('4') != -1) ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">Tusday</span>
+                                </div>
+                                <div  (click)="days('5')" [ngClass]="{'active': (dayList.indexOf('5') != -1) ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">Wednesday</span>
+                                </div>
+                                <div  (click)="days('6')" [ngClass]="{'active': (dayList.indexOf('6') != -1) ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">Thursday</span>
+                                </div>
+                                <div  (click)="days('7')" [ngClass]="{'active': (dayList.indexOf('7') != -1) ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">Friday</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="EstimatedLengthField__StyledEstimatedLength-sc-1lwv2l1-0 iyEgsc">
+                            <div class="estimate-time-field__label">Estimated completion duration by minute*</div>
+                            <div class="estimate-time-field">
+                                <div (click)="duration('15 minute')" [ngClass]="{'active': (durationTime == '15 minute') ? true : false}" class="estimate-time-option">
+                                    <span class="desktop">15 minute</span>
+                                </div>
+                                <div (click)="duration('30 minute')" [ngClass]="{'active': (durationTime == '30 minute') ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">30 minute</span>
+                                </div>
+                                <div (click)="duration('45 minute')" [ngClass]="{'active': (durationTime == '45 minute') ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">45 minute</span>
+                                </div>
+                                <div (click)="duration('other')" [ngClass]="{'active': (durationTime == 'other') ? true : false}" class="estimate-time-option ">
+                                    <span class="desktop">other</span>
+                                </div>
+                                <span class="unit"> ${{about.session_price}} / {{about.session_duration}} {{about.session_duration_type}}</span>
+
+                            </div>
+                        </div>
+
+                        <div class="jsx-987675265 deadline-field__wrapper iyEgsc" *ngIf="durationTime == 'other'">
+                            <div  class="estimate-time-field__label">Estimated completion duration by hour*</div>
+                            <div class="jsx-987675265 deadline-field">
+                                <div class="jss73">
+                                    <div class="sc-fzqARJ bOOGdv cui-day-picker">
+                                        <div class="cui-day-picker__inner">
+                                            <div class="DayPickerInput">
+                                                <div class="jss73">
+                                                    <div class="jss108 jss95 jss61 jss99 jss63 jss109 jss96">
+                                                        <input ngModel #duration="ngModel" name="duration"  type="number" aria-invalid="false" placeholder="Enter number of hours" class="jss118 jss103 jss72"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="Section__StyledSection-a4nid9-0 kfqwqp">
+                <div class="number">2</div>
+                <div class="Section__StyledContainer-a4nid9-1 eNiLqw">
+                    <div class="text">Tell us about what you need help with</div>
+                    <div class="section-content">
+                        <div name="title"></div>
+                        <div class="jsx-3294044885 text-field text-field-error">
+                            <div class="jss73 jss76 iyEgsc"><label
+                                    class="jss88 jss66 jss91 jss80 jss77 jss68 jss82 jss85 jss84 jss68"
+                                    data-shrink="true">link of project repository *</label>
+                                <div class="jss108 jss95 jss61 jss99 jss63 jss114 jss100 jss65 jss117 jss102 jss109 jss96">
+                                    <input aria-invalid="true" class="jss118 jss103 jss72" name="title" type="url"
+                                    #repository_url="ngModel" ngModel   name="repository_url"></div>
+                            </div>
+                        </div>
+            
+                        <div name="title"></div>
+                        <div class="jsx-3294044885 text-field text-field-error">
+                            <div class="jss73 jss76 iyEgsc"><label
+                                    class="jss88 jss66 jss91 jss80 jss77 jss68 jss82 jss85 jss84 jss68"
+                                    data-shrink="true">One sentence summary of your project *</label>
+                                <div class="jss108 jss95 jss61 jss99 jss63 jss114 jss100 jss65 jss117 jss102 jss109 jss96">
+                                    <input ngModel #title="ngModel" name="title" aria-invalid="true" class="jss118 jss103 jss72" name="title" type="text"
+                                        ></div>
+                                <p class="estimate-time-field__label">At least 25 characters</p>
+                            </div>
+                        </div>
+                        <div name="detail"></div>
+                        <section class="jsx-3927463283">
+                            <div class="jsx-3927463283 detail-field">
+                                <div class="jss73 jss76 sc-fzoyTs kkRMLv"><label
+                                        class="jss88 jss66 jss93 jss81 jss77 jss66 jss82 jss85 jss84"
+                                        data-shrink="true"><span class="jsx-3927463283">More information about your project
+                                       </span><span class="jss94">&thinsp;*</span></label>
+                                    <div
+                                        class="jss108 jss95 jss61 jss99 jss63 jss117 jss102 jss109 jss96 jss116 jss101 jss62">
+                                        <textarea ngModel #details="ngModel" name="details" aria-invalid="false" class="jss118 jss103 jss72 jss120 jss105" required=""
+                                            rows="5"></textarea></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dsLIjq">
+                <div class="submit-section__actions"><button class="sc-AxiKw dNpNOr submit-section__button">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
