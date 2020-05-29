@@ -24,6 +24,10 @@ export class Globals {
 
     public formData: string;
 
+    public modalDay;
+    dateTimeList: Array<any> = [];
+
+
     start(){
         this.progressBar = true ;
     }

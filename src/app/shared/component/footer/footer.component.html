@@ -5,3 +5,44 @@
       </div>
     </div>
   </footer>
+
+   <!-- Logout Modal-->
+   <div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form #dateForm="ngForm" (ngSubmit)="addDateTime(dateForm)">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Date and Time of {{globals.modalDay}} </h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label class="jss88 jss66 jss91 jss80 jss77 jss68 jss82 jss85 jss84 jss68" data-shrink="true">
+            Enter the valid date and time of your meeting *
+          </label>
+          <div class="row">
+
+            <div class="jss73 m-2">
+              Date: 
+                <div class="jss108 jss95 jss61 jss99 jss63 jss109 jss96">
+                    <input ngModel #date="ngModel" name="date" type="date" aria-invalid="false" class="jss118 jss103 jss72">
+                </div>
+            </div>
+            <div class="jss73 m-2">
+              Time: 
+                <div class="jss108 jss95 jss61 jss99 jss63 jss109 jss96">
+                    <input ngModel #time="ngModel" name="time"  type="time" aria-invalid="false" class="jss118 jss103 jss72">
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" #btnClose type="button" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-primary"  type="submit" >Add</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+

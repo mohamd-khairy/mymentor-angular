@@ -19,9 +19,12 @@ export class AddScheduleComponent implements OnInit {
   constructor(private store: Store<StoreInterface> , public globals: Globals
     , private codeReviewService: CodeReviewService 
     , private route: ActivatedRoute) { }
+
+  public week = {1:'saturday' , 2:'sunday' , 3:'monday' , 4:'tuesday' , 5: 'wednesday' , 6:'thursday' , 7:'friday'};
   userId: number;
   dayList: Array<any> = [];
   public durationTime: any;
+
   private _about = new BehaviorSubject(null);
   public about$ = this._about.asObservable();
   
@@ -34,8 +37,10 @@ export class AddScheduleComponent implements OnInit {
   days(day){
     
     if(this.dayList.indexOf(day) !== -1){ // found
+      this.globals.modalDay = '';
       this.dayList.splice(this.dayList.indexOf(day) , 1);
     }else{ // notFound
+      this.globals.modalDay = this.week[day];
       this.dayList.push(day);
     }
   }
@@ -65,9 +70,12 @@ export class AddScheduleComponent implements OnInit {
       day_ids: this.dayList,
       session_type: 'learn',
       user_give_id: this.userId,
-      user_recieve_id: this.globals.userData.id
+      user_recieve_id: this.globals.userData.id,
+      dateTime: this.globals.dateTimeList
     });
 
+    console.log(newData);
+    
     this.globals.isLoading$ = this.store.select(loadingSelector);
     this.store.dispatch(new scheduleADDACTION(newData));
   }
