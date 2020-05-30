@@ -159,7 +159,11 @@
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                  <a class="dropdown-item" routerLink="/mentor/profile/{{authService.userData.id}}" style="cursor: pointer;">
+                  <a *ngIf="globals.userData.user_type.user_type_name == 'mentor'" class="dropdown-item" routerLink="/mentor/profile/{{authService.userData.id}}" style="cursor: pointer;">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a *ngIf="globals.userData.user_type.user_type_name == 'user'" class="dropdown-item" routerLink="/user/personal-data" style="cursor: pointer;">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                   </a>

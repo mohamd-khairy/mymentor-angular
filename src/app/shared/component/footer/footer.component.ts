@@ -20,6 +20,7 @@ export class FooterComponent implements OnInit {
 
   addDateTime(formData: NgForm){
 
+
     this.globals.dateTimeList[this.globals.modalDay] = formData.value.date+' '+ formData.value.time;
     formData.reset();
     this.btnClose.nativeElement.click();

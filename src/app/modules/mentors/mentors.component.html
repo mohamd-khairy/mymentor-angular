@@ -39,7 +39,7 @@
                     <span *ngFor="let i of Arr(mentor.rate).fill(1)"> ★ </span>
                   </div>
 
-                    <span class="online">
+                    <span class="online" *ngIf="mentor.is_active">
                       <i class="fa fa-circle"></i>ONLINE
                     </span>
                 </div>

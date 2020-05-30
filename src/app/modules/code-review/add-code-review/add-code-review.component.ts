@@ -32,15 +32,17 @@ export class AddCodeReviewComponent implements OnInit {
     this.getAboutData(this.userId);
   }
 
+
   days(day){
     
     if(this.dayList.indexOf(day) !== -1){ // found
+      this.globals.modalDay = '';
       this.dayList.splice(this.dayList.indexOf(day) , 1);
     }else{ // notFound
+      this.globals.modalDay = this.globals.week[day];
       this.dayList.push(day);
     }
   }
-
   duration(time){
     this.durationTime = time;
   }
@@ -66,7 +68,8 @@ export class AddCodeReviewComponent implements OnInit {
       day_ids: this.dayList,
       session_type: 'code review',
       user_give_id: this.userId,
-      user_recieve_id: this.globals.userData.id
+      user_recieve_id: this.globals.userData.id,
+      dateTime: this.globals.dateTimeList
     });
 
     this.globals.isLoading$ = this.store.select(loadingSelector);

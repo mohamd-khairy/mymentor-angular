@@ -71,10 +71,10 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <!-- <li class="nav-item">
+    <li class="nav-item" *ngIf="globals.userData.user_type.user_type_name == 'user'">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-user-edit"></i>
-        <span>Profile</span>
+        <span>My Profile</span>
       </a>
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
@@ -85,10 +85,10 @@
           <a class="collapse-item" ></a>
         </div>
       </div>
-    </li> -->
+    </li>
 
      <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="globals.userData.user_type.user_type_name == 'mentor'">
       <a class="nav-link" routerLinkActive="active" routerLink="/mentor/profile/{{globals.userData.id}}">
         <i class="fas fa-fw fa-user-edit"></i>
         <span>My Profile</span></a>

@@ -13,9 +13,18 @@ export class CodeReviewService {
 
     constructor(private http: HttpClient,private router: Router,private authService: AuthService) { }
 
+
     get_about_api(id){
+
         return this.http.get(environment.apiUrl + 'job?user_id='+id)
                         .pipe(catchError(this.errorHandler))
+    }
+
+    get_CodeReview_meeting_for_mentor(id , status){
+        let condition = this.authService.userData.user_type.user_type_name == 'mentor' ? 'user_give_id' : 'user_recieve_id';
+
+        return this.http.get(environment.apiUrl + 'codeReview_session?codeReview_status='+status+'&'+condition+'='+id)
+                        .pipe(catchError(this.errorHandler)) 
     }
 
     add_CodeReview_meeting(data){

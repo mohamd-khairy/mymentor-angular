@@ -18,6 +18,12 @@ export class ScheduleService {
                  .pipe(catchError(this.errorHandler));
     }
 
+    get_schedule_meeting(data){
+        return this.http.get(environment.apiUrl + 'schedule_session?status='+data)
+                 .pipe(catchError(this.errorHandler));
+    }
+
+
     errorHandler(error: HttpErrorResponse){
         return throwError(error);
     }

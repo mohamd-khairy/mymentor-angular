@@ -2,7 +2,10 @@
     <mat-tab label="Pending">
         <div class="dashboard__articles-article-list" *ngIf="(PendingRequests$ | async) as requests">
             <div class="dashboard__cmty-item" *ngFor="let request of requests">
-                <div class="cmty-item__header" style="background-image: url({{request.user_recieve.profile.photo}});"></div>
+                <div class="item">
+                    <img src="{{request.user_recieve.profile.photo}}"/>
+                    <h5 class="text-center" style="display: block">{{request.user_recieve.name}}</h5>
+                </div>
                 <div class="cmty-item__body">
                     <div class="cmty-item__info">
                         <div class="cmty-item__state published">{{request.session_type}}</div>
@@ -16,12 +19,12 @@
                     <div class="cmty-item__categories m-2"><span class="cmty-item__category">{{request.details}}</span></div>
                     
                     <div class="row ml-2"  >
-                        <div class="col-md-1 alert alert-danger mr-2 p-2 text-center" style="width: 150px;" *ngFor="let day of request.day_ids">{{day}}</div>
+                        <div class="col-md-2 alert alert-danger mr-2 p-1 text-center"  *ngFor="let day of request.day_ids">{{day}}</div>
                     </div>
 
-                    <div class="alert alert-warning ml-2 text-center" style="width: 150px;">{{request.duration}}</div>
+                    <div class="col-md-2 mr-2 p-1 alert alert-warning ml-2 text-center" >{{request.duration}}</div>
 
-                    <div class="cmty-item__actions m-2">
+                    <div class="cmty-item__actions m-2" *ngIf="globals.userData.user_type.user_type_name == 'mentor'">
                         <div class="cmty-item__actions-group-left">
                             <button class="btn mr-2"  (click)="response_request(request.id,'accept')">Accept</button>
                             <button class="btn mr-2"  (click)="response_request(request.id,'reject')" >Reject</button>
@@ -34,7 +37,10 @@
     <mat-tab label="Accepted">
         <div class="dashboard__articles-article-list" *ngIf="(AcceptRequests$ | async) as requests">
             <div class="dashboard__cmty-item" *ngFor="let request of requests">
-                <div class="cmty-item__header" style="background-image: url({{request.user_recieve.profile.photo}});"></div>
+                <div class="item">
+                    <img src="{{request.user_recieve.profile.photo}}"/>
+                    <h5 class="text-center" style="display: block">{{request.user_recieve.name}}</h5>
+                </div>
                 <div class="cmty-item__body">
                     <div class="cmty-item__info">
                         <div class="cmty-item__state published">{{request.session_type}}</div>
@@ -48,14 +54,13 @@
                     <div class="cmty-item__categories m-2"><span class="cmty-item__category">{{request.details}}</span></div>
                     
                     <div class="row ml-2"  >
-                        <div class="col-md-1 alert alert-danger mr-2 p-2 text-center" style="width: 150px;" *ngFor="let day of request.day_ids">{{day}}</div>
+                        <div class="col-md-2 alert alert-danger mr-2 p-1 text-center"  *ngFor="let day of request.day_ids">{{day}}</div>
                     </div>
 
-                    <div class="alert alert-warning ml-2 text-center" style="width: 150px;">{{request.duration}}</div>
+                    <div class="col-md-2 mr-2 p-1 alert alert-warning ml-2 text-center" >{{request.duration}}</div>
 
-                    <div class="cmty-item__actions m-2">
+                    <div class="cmty-item__actions m-2" *ngIf="globals.userData.user_type.user_type_name == 'mentor'">
                         <div class="cmty-item__actions-group-left">
-                            <button class="btn mr-2"  (click)="response_request(request.id,'accept')">Accept</button>
                             <button class="btn mr-2"  (click)="response_request(request.id,'reject')" >Reject</button>
                         </div>
                     </div>
@@ -66,7 +71,10 @@
     <mat-tab label="Rejected">
         <div class="dashboard__articles-article-list" *ngIf="(RejectRequests$ | async) as requests">
             <div class="dashboard__cmty-item" *ngFor="let request of requests">
-                <div class="cmty-item__header" style="background-image: url({{request.user_recieve.profile.photo}});"></div>
+                <div class="item">
+                    <img src="{{request.user_recieve.profile.photo}}"/>
+                    <h5 class="text-center" style="display: block">{{request.user_recieve.name}}</h5>
+                </div>
                 <div class="cmty-item__body">
                     <div class="cmty-item__info">
                         <div class="cmty-item__state published">{{request.session_type}}</div>
@@ -85,10 +93,9 @@
 
                     <div class="alert alert-warning ml-2 text-center" style="width: 150px;">{{request.duration}}</div>
 
-                    <div class="cmty-item__actions m-2">
+                    <div class="cmty-item__actions m-2" *ngIf="globals.userData.user_type.user_type_name == 'mentor'">
                         <div class="cmty-item__actions-group-left">
                             <button class="btn mr-2"  (click)="response_request(request.id,'accept')">Accept</button>
-                            <button class="btn mr-2"  (click)="response_request(request.id,'reject')" >Reject</button>
                         </div>
                     </div>
                 </div>

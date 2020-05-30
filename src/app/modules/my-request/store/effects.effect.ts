@@ -20,7 +20,7 @@ export class changeRequestStatusEffect{
         mergeMap((action) => this.RequestService.change_request_status_api(action.payLoad,action.id)
         .pipe(
             map((data) => new SuccessAction(JSON.parse(JSON.stringify(data)).data)),
-            tap(() => window.location.href="/my-requests"),
+            tap(() => window.location.reload()),
             catchError((err) => of(new FailAction(JSON.parse(JSON.stringify(err)))))
         ))
     ))

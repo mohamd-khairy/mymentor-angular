@@ -12,6 +12,8 @@ export class Globals {
 
     constructor(public authservice: AuthService,private router: Router, private http: HttpClient){}
 
+    public week = {1:'saturday' , 2:'sunday' , 3:'monday' , 4:'tuesday' , 5: 'wednesday' , 6:'thursday' , 7:'friday'};
+
     public searchData;
 
     public isLoading$: Observable<boolean>;
@@ -25,7 +27,7 @@ export class Globals {
     public formData: string;
 
     public modalDay;
-    dateTimeList: Array<any> = [];
+    dateTimeList = {};
 
 
     start(){

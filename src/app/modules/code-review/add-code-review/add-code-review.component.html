@@ -15,25 +15,25 @@
                         <div class="EstimatedLengthField__StyledEstimatedLength-sc-1lwv2l1-0 iyEgsc">
                             <div class="estimate-time-field__label">Estimated completion day*</div>
                             <div class="estimate-time-field">
-                                <div (click)="days('1')"  [ngClass]="{'active': (dayList.indexOf('1') != -1) ? true : false}" class="estimate-time-option ">
+                                <div (click)="days('1')" [attr.data-toggle]="(dayList.indexOf('1') != -1) ? 'modal' : ''" data-target="#dateModal"  [ngClass]="{'active': (dayList.indexOf('1') != -1) ? true : false}" class="estimate-time-option ">
                                     <span class="desktop">Saturday</span>
                                 </div>
-                                <div (click)="days('2')" [ngClass]="{'active': (dayList.indexOf('2') != -1) ? true : false}" class="estimate-time-option ">
+                                <div (click)="days('2')" [attr.data-toggle]="(dayList.indexOf('2') != -1) ? 'modal' : ''" data-target="#dateModal" [ngClass]="{'active': (dayList.indexOf('2') != -1) ? true : false}" class="estimate-time-option ">
                                     <span class="desktop">Sunday</span>
                                 </div>
-                                <div  (click)="days('3')" [ngClass]="{'active': (dayList.indexOf('3') != -1) ? true : false}" class="estimate-time-option ">
+                                <div  (click)="days('3')" [attr.data-toggle]="(dayList.indexOf('3') != -1) ? 'modal' : ''" data-target="#dateModal" [ngClass]="{'active': (dayList.indexOf('3') != -1) ? true : false}" class="estimate-time-option ">
                                     <span class="desktop">Monday</span>
                                 </div>
-                                <div  (click)="days('4')" [ngClass]="{'active': (dayList.indexOf('4') != -1) ? true : false}" class="estimate-time-option ">
+                                <div  (click)="days('4')" [attr.data-toggle]="(dayList.indexOf('4') != -1) ? 'modal' : ''" data-target="#dateModal" [ngClass]="{'active': (dayList.indexOf('4') != -1) ? true : false}" class="estimate-time-option ">
                                     <span class="desktop">Tusday</span>
                                 </div>
-                                <div  (click)="days('5')" [ngClass]="{'active': (dayList.indexOf('5') != -1) ? true : false}" class="estimate-time-option ">
+                                <div  (click)="days('5')" [attr.data-toggle]="(dayList.indexOf('5') != -1) ? 'modal' : ''" data-target="#dateModal" [ngClass]="{'active': (dayList.indexOf('5') != -1) ? true : false}" class="estimate-time-option ">
                                     <span class="desktop">Wednesday</span>
                                 </div>
-                                <div  (click)="days('6')" [ngClass]="{'active': (dayList.indexOf('6') != -1) ? true : false}" class="estimate-time-option ">
+                                <div  (click)="days('6')" [attr.data-toggle]="(dayList.indexOf('6') != -1) ? 'modal' : ''" data-target="#dateModal" [ngClass]="{'active': (dayList.indexOf('6') != -1) ? true : false}" class="estimate-time-option ">
                                     <span class="desktop">Thursday</span>
                                 </div>
-                                <div  (click)="days('7')" [ngClass]="{'active': (dayList.indexOf('7') != -1) ? true : false}" class="estimate-time-option ">
+                                <div  (click)="days('7')" [attr.data-toggle]="(dayList.indexOf('7') != -1) ? 'modal' : ''" data-target="#dateModal" [ngClass]="{'active': (dayList.indexOf('7') != -1) ? true : false}" class="estimate-time-option ">
                                     <span class="desktop">Friday</span>
                                 </div>
                             </div>

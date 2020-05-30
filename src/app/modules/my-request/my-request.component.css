@@ -145,3 +145,17 @@ a {
 .fa-globe:before {
     content: "\f0ac";
 }
+
+.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    margin-right: 10px;
+
+}
+img {
+    width: 150px;
+    height: 150px;
+    background-color: grey;
+}

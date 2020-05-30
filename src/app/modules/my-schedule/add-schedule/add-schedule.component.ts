@@ -20,7 +20,6 @@ export class AddScheduleComponent implements OnInit {
     , private codeReviewService: CodeReviewService 
     , private route: ActivatedRoute) { }
 
-  public week = {1:'saturday' , 2:'sunday' , 3:'monday' , 4:'tuesday' , 5: 'wednesday' , 6:'thursday' , 7:'friday'};
   userId: number;
   dayList: Array<any> = [];
   public durationTime: any;
@@ -40,7 +39,7 @@ export class AddScheduleComponent implements OnInit {
       this.globals.modalDay = '';
       this.dayList.splice(this.dayList.indexOf(day) , 1);
     }else{ // notFound
-      this.globals.modalDay = this.week[day];
+      this.globals.modalDay = this.globals.week[day];
       this.dayList.push(day);
     }
   }

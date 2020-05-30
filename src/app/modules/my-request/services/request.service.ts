@@ -13,18 +13,25 @@ export class RequestService{
 
     constructor(private http: HttpClient,private router: Router,private authService: AuthService) { }
 
+
     get_my_pending_request_for_mentor_api(id){
-        return this.http.get(environment.apiUrl + 'session?status=pending&user_give_id='+id)
+        let condition = this.authService.userData.user_type.user_type_name == 'mentor' ? 'user_give_id' : 'user_recieve_id';
+
+        return this.http.get(environment.apiUrl + 'session?status=pending&'+condition+'='+id)
                         .pipe(catchError(this.errorHandler))
     }
 
     get_my_accept_request_for_mentor_api(id){
-        return this.http.get(environment.apiUrl + 'session?status=accept&user_give_id='+id)
+        let condition = this.authService.userData.user_type.user_type_name == 'mentor' ? 'user_give_id' : 'user_recieve_id';
+
+        return this.http.get(environment.apiUrl + 'session?status=accept&'+condition+'='+id)
                         .pipe(catchError(this.errorHandler))
     }
 
     get_my_reject_request_for_mentor_api(id){
-        return this.http.get(environment.apiUrl + 'session?status=reject&user_give_id='+id)
+        let condition = this.authService.userData.user_type.user_type_name == 'mentor' ? 'user_give_id' : 'user_recieve_id';
+
+        return this.http.get(environment.apiUrl + 'session?status=reject&'+condition+'='+id)
                         .pipe(catchError(this.errorHandler))
     }
 
