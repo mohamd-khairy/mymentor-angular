@@ -28,6 +28,8 @@ import { AddCodeReviewReducer } from '../modules/code-review/store/reducers.redu
 import { AddCodeReviewEffect } from '../modules/code-review/store/effects.effect';
 import { changeRequestStatusEffect } from '../modules/my-request/store/effects.effect';
 import { changeStatusRequestReducer } from '../modules/my-request/store/reducers.reducer';
+import { ChatReducer } from './component/stores/chatStore/reducers.reducer';
+import { ChatEffect } from './component/stores/chatStore/effects.effect';
 
 export interface StoreInterface {
     education : IEducationState[],
@@ -41,7 +43,8 @@ export interface StoreInterface {
     addReview: any,
     addschedule:any,
     addCodeReview:any,
-    changeStatus:any
+    changeStatus:any,
+    chat:any
 }
 
 
@@ -57,7 +60,8 @@ export const reducers: ActionReducerMap<StoreInterface> = {
     addReview: AddReviewReducer,
     addschedule: AddscheduleReducer,
     addCodeReview: AddCodeReviewReducer,
-    changeStatus: changeStatusRequestReducer
+    changeStatus: changeStatusRequestReducer,
+    chat: ChatReducer
  };
 
 export const effects = [
@@ -72,5 +76,6 @@ export const effects = [
     AddreviewEffect,
     AddscheduleEffect,
     AddCodeReviewEffect,
-    changeRequestStatusEffect
+    changeRequestStatusEffect,
+    ChatEffect
 ];

@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 import { ProfileService } from './profile.service';
 import { IEducationState, IExperienceState, ISkill } from './store/states/states.state';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-profile',
@@ -31,7 +32,7 @@ export class ProfileComponent implements OnInit {
   public rates$ = this._rates.asObservable();
   public skills$ = this._skills.asObservable();
 
-  constructor(public store: Store<StoreInterface>, private router: Router,
+  constructor(public store: Store<StoreInterface>, private router: Router, public globals:Globals ,
      private profileService: ProfileService , private route: ActivatedRoute) {     
   }
 

@@ -97,7 +97,7 @@
 
                                 <div class="jss97 jss84 jss50 jss88 jss52 jss106 jss91 jss98 jss85">
                                     <select multiple class="jss107 jss92 jss61" [(ngModel)]="aboutData.available_langs" #available_langs="ngModel" name="available_langs"  *ngIf="(languages$ | async) as language">
-                                        <option *ngFor="let lang of language"  value="{{lang.id}}">{{lang.name_1}}</option>
+                                        <option *ngFor="let lang of language"  value="{{lang.id}}">{{lang.name}}</option>
                                     </select>
                                 </div>
                             </div>

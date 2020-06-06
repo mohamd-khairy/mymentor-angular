@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { Globals } from '../globals';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChatComponent } from './component/chat/chat.component';
 
 
 
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    ChatComponent,
   ],
   imports: [
     CommonModule,

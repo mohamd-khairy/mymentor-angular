@@ -89,6 +89,11 @@ export class AuthService {
                     .pipe(catchError(this.errorHandler));
   }
 
+  get_user_data_by_user_id(id){
+    return this.http.get(environment.apiUrl + 'user/'+id)
+                    .pipe(catchError(this.errorHandler));
+  }
+
   get user() {
     return JSON.parse(localStorage.getItem('user'));
   }
