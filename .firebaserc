@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "my-mentor-2cff4": {
+      "hosting": {
+        "mymentor": [
+          "my-mentor-2cff4"
+        ]
+      }
+    }
+  }
+}

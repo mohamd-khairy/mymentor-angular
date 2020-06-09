@@ -18,7 +18,7 @@
                                         {{errorMsg}}
                                     </div>
                                 </div>
-                                <form class="user" #formData="ngForm"  (ngSubmit)="login(formData)">
+                                <form class="user" #formData="ngForm" (ngSubmit)="login(formData)">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user" required
                                             id="exampleInputEmail" aria-describedby="emailHelp"
@@ -26,8 +26,8 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" required
-                                            id="exampleInputPassword" 
-                                            placeholder="Password" name="password" #password="ngModel" ngModel>
+                                            id="exampleInputPassword" placeholder="Password" name="password"
+                                            #password="ngModel" ngModel>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
@@ -35,26 +35,28 @@
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
                                     </div>
-                                    <button type="submit"  class="btn btn-primary btn-user btn-block">
-                                        <div  *ngIf="!globals.progressBar">Login</div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <div *ngIf="!globals.progressBar">Login</div>
                                         <div style="text-align: center;" *ngIf="globals.progressBar">
                                             <div class="loader">Loading...</div>
                                         </div>
                                     </button>
                                     <hr>
-                                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <button type="button" (click)="socialLogin('google')"
+                                        class="btn btn-google btn-user btn-block">
                                         <i class="fab fa-google fa-fw"></i> Login with Google
-                                    </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                    </button>
+                                    <button type="button" (click)="socialLogin('facebook')"
+                                        class="btn btn-facebook btn-user btn-block">
                                         <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                    </a>
+                                    </button>
                                 </form>
                                 <hr>
                                 <div class="text-center">
                                     <a class="small" routerLink="/forgot-password">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" routerLink="/register" >Create an Account!</a>
+                                    <a class="small" routerLink="/register">Create an Account!</a>
                                 </div>
                             </div>
                         </div>

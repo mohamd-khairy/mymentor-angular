@@ -17,18 +17,18 @@ import { ChatServiceService } from './shared/component/chat/chat-service.service
 })
 export class Globals {
 
-    constructor(public store:Store<StoreInterface>,
-        private profileService:ProfileService,
+    constructor(public store: Store<StoreInterface>,
+        private profileService: ProfileService,
         private chatService: ChatServiceService,
-        public authservice: AuthService,private router: Router, private http: HttpClient){}
+        public authservice: AuthService, private router: Router, private http: HttpClient) { }
 
-    public week = {1:'saturday' , 2:'sunday' , 3:'monday' , 4:'tuesday' , 5: 'wednesday' , 6:'thursday' , 7:'friday'};
+    public week = { 1: 'saturday', 2: 'sunday', 3: 'monday', 4: 'tuesday', 5: 'wednesday', 6: 'thursday', 7: 'friday' };
 
     public searchData;
 
     public isLoading$: Observable<boolean>;
 
-    public progressBar= false;
+    public progressBar = false;
 
     public Arr = Array;
 
@@ -45,25 +45,25 @@ export class Globals {
     public chatUserBox = false;
 
     public open = false;
-    
+
     public chatUserdata;
     public chatId;
     public chatMessages;
 
-    openChatBox(id)
-    {
+    openChatBox(id) {
         this.profileService.get_profile_api(id).subscribe(
             (data) => {
                 this.chatUserdata = JSON.parse(JSON.stringify(data)).data;
             }
         );
 
-        this.chatService.createChat(id , this.userData.user_type.user_type_name).subscribe(
+        this.chatService.createChat(id, this.userData.user_type.user_type_name).subscribe(
             (data) => {
                 console.log(data);
 
                 this.chatId = JSON.parse(JSON.stringify(data)).data.id;
-                this.chatMessages=JSON.parse(JSON.stringify(data)).data.messages;
+                this.chatMessages = JSON.parse(JSON.stringify(data)).data.messages;
+
             }
         );
 
@@ -71,23 +71,21 @@ export class Globals {
         this.open = true;
     }
 
-    closeChatBox()
-    {
+    closeChatBox() {
         this.chatUserBox = false;
         this.open = false;
     }
 
-    start(){
-        this.progressBar = true ;
+    start() {
+        this.progressBar = true;
     }
 
-    stop(){
-        this.progressBar = false ;
+    stop() {
+        this.progressBar = false;
     }
 
-    get userData(){
+    get userData() {
         return this.authservice.userData;
     }
 
-   
 }

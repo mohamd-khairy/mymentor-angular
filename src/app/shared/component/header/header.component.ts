@@ -5,6 +5,7 @@ import { Globals } from 'src/app/globals';
 import { NgForm } from '@angular/forms';
 import { HeaderService } from './header.service';
 import { Router } from '@angular/router';
+import { ChatServiceService } from '../chat/chat-service.service';
 
 @Component({
   selector: 'app-header',
@@ -12,27 +13,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
-  constructor(public authService: AuthService , public searchService: SearchService,
-     public headerService: HeaderService, public globals: Globals, private router: Router) { }
+
+  constructor(public authService: AuthService, public searchService: SearchService,
+    private chatService: ChatServiceService,
+    public headerService: HeaderService, public globals: Globals, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  search(formData: NgForm){
+  search(formData: NgForm) {
     this.globals.start();
     this.searchService.getsearchData(formData.value.q);
   }
 
-  logout(){
+
+
+  logout() {
     this.globals.start();
     this.authService.logout_api().subscribe(
-      data => { 
+      data => {
         console.log(data);
         this.authService.logout_ui();
         this.globals.stop();
       },
-      err => { 
+      err => {
       }
     )
   }

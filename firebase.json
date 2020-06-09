@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "mymentor",
+      "public": "dist/mymentor",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

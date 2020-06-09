@@ -14,25 +14,29 @@ export class ChatComponent implements OnInit {
 
   public msgg;
   public chats;
-  
-  constructor(public globals: Globals , private chatService: ChatServiceService) { }
 
-  ngOnInit() { 
+  constructor(public globals: Globals, private chatService: ChatServiceService) { }
+
+  ngOnInit() {
     this.scrollToBottom();
     this.getChats();
+
   }
 
-  ngAfterViewChecked() {        
-      this.scrollToBottom();        
-  } 
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+
+
 
   scrollToBottom(): void {
-      try {
-          this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-      } catch(err) { }                 
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
   }
 
-  sendMsg(formData: NgForm){
+  sendMsg(formData: NgForm) {
     const newData = Object.assign({}, formData.value, {
       chat_id: this.globals.chatId
     });
@@ -47,12 +51,12 @@ export class ChatComponent implements OnInit {
     )
   }
 
-  getChats(){
+  getChats() {
 
-    this.chatService.getChats(this.globals.userData.user_type.user_type_name , this.globals.userData.id).subscribe(
+    this.chatService.getChats(this.globals.userData.user_type.user_type_name, this.globals.userData.id).subscribe(
       (data) => {
         this.chats = JSON.parse(JSON.stringify(data)).data;
-        console.log( this.chats );
+        console.log(this.chats);
       }
     )
   }

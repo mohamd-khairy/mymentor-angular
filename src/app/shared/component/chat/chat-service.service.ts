@@ -12,44 +12,44 @@ export class ChatServiceService {
 
   constructor(private http: HttpClient) { }
 
-  createChat(id , type){
+  createChat(id, type) {
     let data;
-    if(type == 'mentor'){
-      data = {'user_id': id};
-    }else{
-      data = {'mentor_id': id};
+    if (type == 'mentor') {
+      data = { 'user_id': id };
+    } else {
+      data = { 'mentor_id': id };
     }
 
-    return this.http.post(environment.apiUrl+"chat", data)  
-                       .pipe(catchError(this.errorHandler));
+    return this.http.post(environment.apiUrl + "chat", data)
+      .pipe(catchError(this.errorHandler));
 
   }
-  getChats(type , id){
+  getChats(type, id) {
     let col;
-    if(type == 'mentor'){
-       col = 'mentor_id';
-    }else{
-       col = 'user_id';
+    if (type == 'mentor') {
+      col = 'mentor_id';
+    } else {
+      col = 'user_id';
     }
 
-    return this.http.get(environment.apiUrl+"chat?"+col+'='+ id)  
-                       .pipe(catchError(this.errorHandler));
+    return this.http.get(environment.apiUrl + "chat?" + col + '=' + id)
+      .pipe(catchError(this.errorHandler));
 
   }
 
-  sendMsg(data){
-    return this.http.post(environment.apiUrl+"message", data)  
-                       .pipe(catchError(this.errorHandler));
+  sendMsg(data) {
+    return this.http.post(environment.apiUrl + "message", data)
+      .pipe(catchError(this.errorHandler));
 
   }
 
-  getAllMessages(data){
-    return this.http.get(environment.apiUrl+"message?chat_id="+data)  
-                       .pipe(catchError(this.errorHandler));
+  getAllMessages(data) {
+    return this.http.get(environment.apiUrl + "message?chat_id=" + data)
+      .pipe(catchError(this.errorHandler));
 
   }
 
-  errorHandler(error: HttpErrorResponse){
+  errorHandler(error: HttpErrorResponse) {
     return throwError(error);
   }
 

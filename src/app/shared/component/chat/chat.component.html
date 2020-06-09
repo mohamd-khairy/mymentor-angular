@@ -85,8 +85,7 @@
             </span></div>
         </div>
         <div class="_3YY5U1" *ngIf="globals.chatUserdata">
-          <a class="_2AMUkg mr-4" 
-            routerLink="/mentor/profile/{{globals.chatUserdata.user.id}}" target="_blank">
+          <a class="_2AMUkg mr-4" routerLink="/mentor/profile/{{globals.chatUserdata.user.id}}" target="_blank">
             <div class="_3xZ50G _7MnW7Z">
               <div class="_31OLHU"
                 style="top:-11px; left:-15;width:45px;height:45px;background-image: url({{globals.chatUserdata.photo}});">
@@ -114,7 +113,8 @@
               <span style="font-size: 0px;"></span>
 
               <div *ngFor="let message of globals.chatMessages">
-                <div class="_1Uuj6e _35DM2v" title="{{message.created_at}}" *ngIf="message.user_id == globals.userData.id">
+                <div class="_1Uuj6e _35DM2v" title="{{message.created_at}}"
+                  *ngIf="message.user_id == globals.userData.id">
                   <div class="_2AwFpM">{{message.created_at}}</div>
                   <div class="_3Q6MKh">
                     <div class="_3kB_fK"><span>{{message.message}}</span></div>
@@ -123,16 +123,17 @@
 
                 <div class="_1Uuj6e pl-2" title="{{message.created_at}}" *ngIf="message.user_id != globals.userData.id">
                   <div class="_3Q6MKh">
-                    <a routerLink="/mentor/profile/{{message.user_id}}" target="_blank" *ngIf="message.user.user_type.user_type_name == 'mentor'">
+                    <a routerLink="/mentor/profile/{{message.user_id}}" target="_blank"
+                      *ngIf="message.user.user_type.user_type_name == 'mentor'">
                       <div class="_3xZ50G _2IMJnk">
                         <div class="_31OLHU" style="background-image: url({{message.user.profile.photo}});">
                         </div>
                       </div>
                     </a>
-                      <div class="_3xZ50G _2IMJnk" *ngIf="message.user.user_type.user_type_name != 'mentor'">
-                        <div class="_31OLHU" style="background-image: url({{message.user.profile.photo}});">
-                        </div>
+                    <div class="_3xZ50G _2IMJnk" *ngIf="message.user.user_type.user_type_name != 'mentor'">
+                      <div class="_31OLHU" style="background-image: url({{message.user.profile.photo}});">
                       </div>
+                    </div>
                     <div class="_3kB_fKk"><span>{{message.message}}</span></div>
                   </div>
                 </div>
@@ -192,51 +193,55 @@
           <div class="_2liRVR">Favorite</div>
         </div>
         <div class="_1OlQUU">
-          <div  *ngFor="let chat of chats">
-            <div class="_19Zah1" *ngIf="globals.userData.user_type.user_type_name == 'mentor'" (click)="globals.openChatBox(chat.user_id)">
-              <div class="_1cs4mq">
-                <div class="_3xZ50G">
-                  <div class="_31OLHU" 
-                    style="background-image: url({{chat.user.profile.photo}});">
+          <div *ngIf="chats">
+            <div *ngFor="let chat of chats">
+              <div class="_19Zah1" *ngIf="globals.userData.user_type.user_type_name == 'mentor'"
+                (click)="globals.openChatBox(chat.user_id)">
+                <div class="_1cs4mq">
+                  <div class="_3xZ50G">
+                    <div class="_31OLHU" style="background-image: url({{chat.user.profile.photo}});">
+                    </div>
+                  </div>
+                  <div class="_1dTO0S _3jKZje"><span class="_3mGUPj"></span><span class="_3D1XiM">online</span></div>
+                </div>
+                <div class="_2R9CSa">{{chat.user.name}}<div class="_4rRep5 ContactItem__datetime">a few seconds ago
                   </div>
                 </div>
-                <div class="_1dTO0S _3jKZje"><span class="_3mGUPj"></span><span class="_3D1XiM">online</span></div>
+                <div><span class="sc-Axmtr kzWwuZ _3Bz2bc"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                      height="24" viewBox="0 0 24 24">
+                      <g fill="none" fill-rule="evenodd">
+                        <path d="M0 0h24v24H0z"></path>
+                        <path fill="#231815" fill-rule="nonzero"
+                          d="M4.442 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442C3.047 14.884 2 13.837 2 12.442 2 11.047 3.047 10 4.442 10zM12 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442C9.558 11.047 10.605 10 12 10zm7.558 0C20.953 10 22 11.047 22 12.442c0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442 0-1.395 1.047-2.442 2.442-2.442zM4.442 13.256a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814z">
+                        </path>
+                      </g>
+                    </svg></span></div>
               </div>
-              <div class="_2R9CSa">{{chat.user.name}}<div class="_4rRep5 ContactItem__datetime">a few seconds ago</div>
-              </div>
-              <div><span class="sc-Axmtr kzWwuZ _3Bz2bc"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24">
-                    <g fill="none" fill-rule="evenodd">
-                      <path d="M0 0h24v24H0z"></path>
-                      <path fill="#231815" fill-rule="nonzero"
-                        d="M4.442 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442C3.047 14.884 2 13.837 2 12.442 2 11.047 3.047 10 4.442 10zM12 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442C9.558 11.047 10.605 10 12 10zm7.558 0C20.953 10 22 11.047 22 12.442c0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442 0-1.395 1.047-2.442 2.442-2.442zM4.442 13.256a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814z">
-                      </path>
-                    </g>
-                  </svg></span></div>
-            </div>
-            <div class="_19Zah1" *ngIf="globals.userData.user_type.user_type_name == 'user'" (click)="globals.openChatBox(chat.mentor_id)">
-              <div class="_1cs4mq">
-                <div class="_3xZ50G">
-                  <div class="_31OLHU" 
-                    style="background-image: url({{chat.mentor.profile.photo}});">
+              <div class="_19Zah1" *ngIf="globals.userData.user_type.user_type_name == 'user'"
+                (click)="globals.openChatBox(chat.mentor_id)">
+                <div class="_1cs4mq">
+                  <div class="_3xZ50G">
+                    <div class="_31OLHU" style="background-image: url({{chat.mentor.profile.photo}});">
+                    </div>
+                  </div>
+                  <div class="_1dTO0S _3jKZje"><span class="_3mGUPj"></span><span class="_3D1XiM">online</span></div>
+                </div>
+                <div class="_2R9CSa">{{chat.mentor.name}}<div class="_4rRep5 ContactItem__datetime">a few seconds ago
                   </div>
                 </div>
-                <div class="_1dTO0S _3jKZje"><span class="_3mGUPj"></span><span class="_3D1XiM">online</span></div>
+                <div><span class="sc-Axmtr kzWwuZ _3Bz2bc"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                      height="24" viewBox="0 0 24 24">
+                      <g fill="none" fill-rule="evenodd">
+                        <path d="M0 0h24v24H0z"></path>
+                        <path fill="#231815" fill-rule="nonzero"
+                          d="M4.442 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442C3.047 14.884 2 13.837 2 12.442 2 11.047 3.047 10 4.442 10zM12 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442C9.558 11.047 10.605 10 12 10zm7.558 0C20.953 10 22 11.047 22 12.442c0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442 0-1.395 1.047-2.442 2.442-2.442zM4.442 13.256a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814z">
+                        </path>
+                      </g>
+                    </svg></span></div>
               </div>
-              <div class="_2R9CSa">{{chat.mentor.name}}<div class="_4rRep5 ContactItem__datetime">a few seconds ago</div>
-              </div>
-              <div><span class="sc-Axmtr kzWwuZ _3Bz2bc"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24">
-                    <g fill="none" fill-rule="evenodd">
-                      <path d="M0 0h24v24H0z"></path>
-                      <path fill="#231815" fill-rule="nonzero"
-                        d="M4.442 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442C3.047 14.884 2 13.837 2 12.442 2 11.047 3.047 10 4.442 10zM12 10c1.395 0 2.442 1.047 2.442 2.442 0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442C9.558 11.047 10.605 10 12 10zm7.558 0C20.953 10 22 11.047 22 12.442c0 1.395-1.047 2.442-2.442 2.442-1.395 0-2.442-1.047-2.442-2.442 0-1.395 1.047-2.442 2.442-2.442zM4.442 13.256a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814zm7.558 0a.795.795 0 0 0 .814-.814.795.795 0 0 0-.814-.814.795.795 0 0 0-.814.814c0 .465.349.814.814.814z">
-                      </path>
-                    </g>
-                  </svg></span></div>
             </div>
           </div>
-          <!-- <div class="_1hL2BZ"><svg class="_3nUe2g" width="60" height="60" viewBox="0 0 60 60"
+          <div *ngIf="chats" class="_1hL2BZ"><svg class="_3nUe2g" width="60" height="60" viewBox="0 0 60 60"
               xmlns="http://www.w3.org/2000/svg">
               <g fill="none" fill-rule="evenodd">
                 <path d="M0 0h60v60H0z"></path>
@@ -257,7 +262,7 @@
             </svg>
             <div class="_2a2LAc">No message yet</div><a class="_3bEXPY" href="https://www.codementor.io/experts">Find
               mentors to chat</a>
-          </div> -->
+          </div>
         </div>
         <div class="NWVi2w"><span class="sc-AxjAm JzibA _1Gmr5d"><svg xmlns="http://www.w3.org/2000/svg" width="24"
               height="24" viewBox="0 0 24 24">
