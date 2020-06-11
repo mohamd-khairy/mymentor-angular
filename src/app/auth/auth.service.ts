@@ -49,8 +49,14 @@ export class AuthService {
     private router: Router
   ) { }
 
-  social_login_service() {
-    return this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  social_login_service(provider) {
+    if (provider == 'google') {
+      return this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    }
+
+    if (provider == 'twitter') {
+      return this.auth.signInWithPopup(new auth.TwitterAuthProvider());
+    }
   }
 
   social_login_api(data) {

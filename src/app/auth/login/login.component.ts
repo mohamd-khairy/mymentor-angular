@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   socialLogin(provider: string) {
-    this.authService.social_login_service().then(
+    this.authService.social_login_service(provider).then(
       (data) => {
         this.handleSocialLoginRespone(data, 'google');
       }
