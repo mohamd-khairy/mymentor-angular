@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
   socialLogin(provider: string) {
     this.authService.social_login_service(provider).then(
       (data) => {
+        console.log(data);
+
         this.handleSocialLoginRespone(data, 'google');
       }
     )
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   handleSocialLoginRespone(result, type) {
     const postedData = {
-      email: result.user.email,
+      email: result.user.email ? result.user.email : result.additionalUserInfo.profile["id"] + "@test.com",
       name: result.user.displayName,
       provider: result.credential.providerId,
       provider_id: result.additionalUserInfo.profile["id"],
