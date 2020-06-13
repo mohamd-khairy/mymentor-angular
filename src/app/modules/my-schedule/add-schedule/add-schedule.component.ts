@@ -16,8 +16,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AddScheduleComponent implements OnInit {
 
-  constructor(private store: Store<StoreInterface> , public globals: Globals
-    , private codeReviewService: CodeReviewService 
+  constructor(private store: Store<StoreInterface>, public globals: Globals
+    , private codeReviewService: CodeReviewService
     , private route: ActivatedRoute) { }
 
   userId: number;
@@ -26,46 +26,46 @@ export class AddScheduleComponent implements OnInit {
 
   private _about = new BehaviorSubject(null);
   public about$ = this._about.asObservable();
-  
+
   ngOnInit(): void {
     this.userId = this.route.snapshot.params.userId;
     this.globals.start();
     this.getAboutData(this.userId);
   }
 
-  days(day){
-    
-    if(this.dayList.indexOf(day) !== -1){ // found
+  days(day) {
+
+    if (this.dayList.indexOf(day) !== -1) { // found
       this.globals.modalDay = '';
-      this.dayList.splice(this.dayList.indexOf(day) , 1);
-    }else{ // notFound
+      this.dayList.splice(this.dayList.indexOf(day), 1);
+    } else { // notFound
       this.globals.modalDay = this.globals.week[day];
       this.dayList.push(day);
     }
   }
 
-  duration(time){
+  duration(time) {
     this.durationTime = time;
   }
 
-  schedule_meeting(formData: NgForm){
-    if(this.dayList.length <= 0){
+  schedule_meeting(formData: NgForm) {
+    if (this.dayList.length <= 0) {
       alert('you should choose at least one day !');
       return;
     }
 
-    if(this.durationTime == undefined || formData.value.duration == ''){
+    if (this.durationTime == undefined || formData.value.duration == '') {
       alert('you should add duration time !');
       return;
     }
 
-    if(formData.value.title == '' || formData.value.details == ''){
+    if (formData.value.title == '' || formData.value.details == '') {
       alert('there is field is empty !');
       return;
     }
 
     const newData = Object.assign({}, formData.value, {
-      duration: this.durationTime != 'other' ? this.durationTime : formData.value.duration+" hour" ,
+      duration: this.durationTime != 'other' ? this.durationTime : formData.value.duration + " hour",
       day_ids: this.dayList,
       session_type: 'learn',
       user_give_id: this.userId,
@@ -73,20 +73,19 @@ export class AddScheduleComponent implements OnInit {
       dateTime: this.globals.dateTimeList
     });
 
-    console.log(newData);
-    
+
     this.globals.isLoading$ = this.store.select(loadingSelector);
     this.store.dispatch(new scheduleADDACTION(newData));
   }
 
-  getAboutData(id){
+  getAboutData(id) {
     this.codeReviewService.get_about_api(id).subscribe(
-        data => { 
-          if(JSON.parse(JSON.stringify(data)).data){
-            this._about.next(JSON.parse(JSON.stringify(data)).data);
-            this.globals.stop();
-          }          
-        } 
+      data => {
+        if (JSON.parse(JSON.stringify(data)).data) {
+          this._about.next(JSON.parse(JSON.stringify(data)).data);
+          this.globals.stop();
+        }
+      }
     )
   }
 }

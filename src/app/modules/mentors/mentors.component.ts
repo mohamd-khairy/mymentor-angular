@@ -11,7 +11,7 @@ export class MentorsComponent implements OnInit {
 
   mentorDate;
 
-  Arr= Array;
+  Arr = Array;
 
   constructor(private mentorService: MentorsService, public globals: Globals) { }
 
@@ -20,15 +20,12 @@ export class MentorsComponent implements OnInit {
     this.getMentors_api();
   }
 
-  getMentors_api(){
-    
+  getMentors_api() {
+
     this.mentorService.getMentors().subscribe(
       res => {
         this.globals.stop();
-        this.mentorDate =  JSON.parse(JSON.stringify(res)).data;
-      },
-      err => {
-        console.log(err);
+        this.mentorDate = JSON.parse(JSON.stringify(res)).data;
       }
     )
   }

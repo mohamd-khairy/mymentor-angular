@@ -26,7 +26,7 @@ export class SearchService {
 
   public searchKey;
 
-  constructor(private http: HttpClient, public globals: Globals, private router: Router , public headerService:HeaderService) { }
+  constructor(private http: HttpClient, public globals: Globals, private router: Router, public headerService: HeaderService) { }
 
   getsearchData(formData) {
 
@@ -34,11 +34,9 @@ export class SearchService {
       res => {
         this.searchData = JSON.parse(JSON.stringify(res)).data;
         this.SearchComponent.stop();
-        console.log(this.searchData);
         this.successMsg = "Search Data returned Successfully";
       },
       err => {
-        console.log(err);
         this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message;
       }
     )

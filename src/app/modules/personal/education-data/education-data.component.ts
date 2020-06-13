@@ -7,7 +7,7 @@ import { Globals } from 'src/app/globals';
   templateUrl: './education-data.component.html',
   styleUrls: ['./education-data.component.css']
 })
-export class  EducationDataComponent implements OnInit {
+export class EducationDataComponent implements OnInit {
 
   public errorMsg = '';
   public successMsg = '';
@@ -21,18 +21,16 @@ export class  EducationDataComponent implements OnInit {
     this.educations();
   }
 
-  educations(){
+  educations() {
     this.educationService.get_education_api().subscribe(
       res => {
         this.educationsData = JSON.parse(JSON.stringify(res)).data;
 
-        console.log(this.educationsData);
         this.globals.stop();
         this.successMsg = "Education Data returned Successfully";
       },
       err => {
-        console.log(err);
-        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message ;
+        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message;
       }
     )
   }

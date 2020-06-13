@@ -10,14 +10,14 @@ import { Globals } from 'src/app/globals';
 })
 export class MyScheduleComponent implements OnInit {
 
-  
+
   private _upcomingMeetings = new BehaviorSubject(null);
   private _pastMeetings = new BehaviorSubject(null);
 
   public upcomingMeetings$ = this._upcomingMeetings.asObservable();
   public PastMeetings$ = this._pastMeetings.asObservable();
 
-  constructor(public globals:Globals , private scheduleService: ScheduleService ) { }
+  constructor(public globals: Globals, private scheduleService: ScheduleService) { }
 
   ngOnInit(): void {
     this.globals.start();
@@ -25,20 +25,19 @@ export class MyScheduleComponent implements OnInit {
     this.get_schedule_sessions('past');
   }
 
-  get_schedule_sessions(status){
+  get_schedule_sessions(status) {
     this.scheduleService.get_schedule_meeting(status).subscribe(
-     (data) => { 
-       console.log(data);
-       
-        if(JSON.parse(JSON.stringify(data)).data){
-          if(status == 'upcoming'){
+      (data) => {
+
+        if (JSON.parse(JSON.stringify(data)).data) {
+          if (status == 'upcoming') {
             this._upcomingMeetings.next(JSON.parse(JSON.stringify(data)).data);
-          }else if(status == 'past'){
+          } else if (status == 'past') {
             this._pastMeetings.next(JSON.parse(JSON.stringify(data)).data);
           }
           this.globals.stop();
         }
-      }   
+      }
     )
   }
 

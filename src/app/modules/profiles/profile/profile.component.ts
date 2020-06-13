@@ -32,8 +32,8 @@ export class ProfileComponent implements OnInit {
   public rates$ = this._rates.asObservable();
   public skills$ = this._skills.asObservable();
 
-  constructor(public store: Store<StoreInterface>, private router: Router, public globals:Globals ,
-     private profileService: ProfileService , private route: ActivatedRoute) {     
+  constructor(public store: Store<StoreInterface>, private router: Router, public globals: Globals,
+    private profileService: ProfileService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -46,14 +46,13 @@ export class ProfileComponent implements OnInit {
     this.skills_data();
   }
 
-  profile_data(){
+  profile_data() {
     this.profileService.get_profile_api(this.userId).subscribe(
       data => {
         this._profile.next(JSON.parse(JSON.stringify(data)).data)
       },
       error => {
-        console.log(JSON.parse(JSON.stringify(error)));
-        if(JSON.parse(JSON.stringify(error)).status == 400){
+        if (JSON.parse(JSON.stringify(error)).status == 400) {
           alert("this action not allow to you !");
           this.router.navigateByUrl('/mentor');
         }
@@ -61,25 +60,25 @@ export class ProfileComponent implements OnInit {
     )
   }
 
-  job_data(){
+  job_data() {
     this.profileService.get_job_details_api(this.userId).subscribe(
       data => this._job.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
-  education_data(){
+  education_data() {
     this.profileService.get_education_api(this.userId).subscribe(
       data => this._education.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
-  experience_data(){
+  experience_data() {
     this.profileService.get_experience_api(this.userId).subscribe(
       data => this._experience.next(JSON.parse(JSON.stringify(data)).data)
     )
   }
 
-  rates_data(){
+  rates_data() {
     this.profileService.get_rates_api(this.userId).subscribe(
       data => {
         this.countRates = JSON.parse(JSON.stringify(data)).data.length;
@@ -88,7 +87,7 @@ export class ProfileComponent implements OnInit {
     )
   }
 
-  skills_data(){
+  skills_data() {
     this.profileService.get_skills_api(this.userId).subscribe(
       data => this._skills.next(JSON.parse(JSON.stringify(data)).data)
     )

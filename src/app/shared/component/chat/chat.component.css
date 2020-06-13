@@ -176,11 +176,11 @@
     padding: 12px 0px 12px 12px;
     min-height: 40px;
     max-height: 126px;
+    margin-right: 100px;
 }
 ._1M2c2P .bSKs2P {
     display: inline-flex;
     align-items: center;
-    margin-left: 10px;
 }
 ._1M2c2P .bSKs2P > * {
     display: inline-flex;
@@ -425,6 +425,7 @@
     border-radius: 50%;
     background-color: #00A3CB;
     cursor: pointer;
+    margin-left: 70px;
 }
 .dOTcts svg {
     width: 14px;

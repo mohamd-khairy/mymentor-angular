@@ -2,6 +2,10 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Globals } from 'src/app/globals';
 import { NgForm } from '@angular/forms';
 import { ChatServiceService } from './chat-service.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-chat',
@@ -14,8 +18,15 @@ export class ChatComponent implements OnInit {
 
   public msgg;
   public chats;
+  public items: Observable<any[]>;
+  private itemCollection: AngularFirestoreCollection;
 
-  constructor(public globals: Globals, private chatService: ChatServiceService) { }
+
+  constructor(public db: AngularFirestore, public globals: Globals, private chatService: ChatServiceService) {
+
+    this.itemCollection = this.db.collection('chats');
+
+  }
 
   ngOnInit() {
     this.scrollToBottom();
@@ -27,9 +38,6 @@ export class ChatComponent implements OnInit {
     this.scrollToBottom();
   }
 
-
-
-
   scrollToBottom(): void {
     try {
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
@@ -37,28 +45,43 @@ export class ChatComponent implements OnInit {
   }
 
   sendMsg(formData: NgForm) {
+
+    this.sendMsgbackend(formData)
+
     const newData = Object.assign({}, formData.value, {
+      user_id: this.globals.userData.id,
+      type: this.globals.userData.user_type.user_type_name,
+      photo: this.globals.userData.profile.photo,
+      name: this.globals.userData.name,
+      created_at: moment(new Date()).format("YYYY/MM/DD hh:mm:ss"),
       chat_id: this.globals.chatId
+    });
+
+    this.itemCollection.add(newData);
+    formData.reset();
+  }
+
+  sendMsgbackend(formData: NgForm) {
+    const newData = Object.assign({}, formData.value, {
+      chat_id: this.globals.backendchatId
     });
 
     this.chatService.sendMsg(newData).subscribe(
       (data) => {
-        this.msgg = JSON.parse(JSON.stringify(data)).data;
-        this.globals.chatMessages.push(this.msgg);
-        console.log(this.globals.chatMessages);
-        formData.reset();
       }
     )
   }
 
   getChats() {
 
-    this.chatService.getChats(this.globals.userData.user_type.user_type_name, this.globals.userData.id).subscribe(
-      (data) => {
-        this.chats = JSON.parse(JSON.stringify(data)).data;
-        console.log(this.chats);
-      }
-    )
+    if (this.globals.userData) {
+      this.chatService.getChats(this.globals.userData.user_type.user_type_name, this.globals.userData.id).subscribe(
+        (data) => {
+          this.chats = JSON.parse(JSON.stringify(data)).data;
+        }
+      )
+    }
+
   }
 
 }

@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   socialLogin(provider: string) {
     this.authService.social_login_service(provider).then(
       (data) => {
-        console.log(data);
 
         this.handleSocialLoginRespone(data, 'google');
       }
@@ -45,11 +44,9 @@ export class LoginComponent implements OnInit {
   }
 
   doSicailLogin(data) {
-    console.log(data);
     this.globals.start();
     this.authService.social_login_api(data).subscribe(
       (data) => {
-        console.log(data);
         this.authService.login_ui(data);
         this.globals.stop();
       }
@@ -58,15 +55,12 @@ export class LoginComponent implements OnInit {
 
   login(formData: NgForm) {
     this.globals.start();
-    console.log(formData.value);
     this.authService.login_api(formData.value).subscribe(
       data => {
-        console.log(data);
         this.authService.login_ui(data);
         this.globals.stop();
       },
       err => {
-        console.log(err.error.message);
         this.errorMsg = err.error.message;
         this.globals.stop();
       }

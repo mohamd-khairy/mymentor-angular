@@ -1,78 +1,80 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" [class]="toggle" id="accordionSidebar">
-  
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/">
-      <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
-      </div>
-      <div class="sidebar-brand-text mx-3">LiveMentor</div>
-    </a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fas fa-laugh-wink"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">LiveMentor</div>
+  </a>
 
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item ">
-      <a class="nav-link"  routerLink="/dashboard" routerLinkActive="active">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
-    </li>
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
 
-    <li class="nav-item ">
-      <a class="nav-link"  routerLink="/my-requests" routerLinkActive="active">
-        <i class="fas fa-fw fa-window-restore"></i>
-        <span>My Requests</span></a>
-    </li>
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item ">
+    <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span></a>
+  </li>
 
-    <li class="nav-item ">
-      <a class="nav-link"  routerLink="/my-schedule" routerLinkActive="active">
-        <i class="fas fa-fw fa-calendar-week"></i>
-        <span>My schedule</span></a>
-    </li>
-<!-- 
+  <li class="nav-item ">
+    <a class="nav-link" routerLink="/my-requests" routerLinkActive="active">
+      <i class="fas fa-fw fa-window-restore"></i>
+      <span>My Requests</span></a>
+  </li>
+
+  <li class="nav-item ">
+    <a class="nav-link" routerLink="/my-schedule" routerLinkActive="active">
+      <i class="fas fa-fw fa-calendar-week"></i>
+      <span>My schedule</span></a>
+  </li>
+  <!-- 
     <li class="nav-item ">
       <a class="nav-link"  routerLink="/session-history" routerLinkActive="active">
         <i class="fas fa-fw fa-history"></i>
         <span>Session History</span></a>
     </li> -->
 
-    <li class="nav-item ">
-      <a class="nav-link"  routerLink="/code-review" routerLinkActive="active">
-        <i class="fas fa-fw fa-laptop-code"></i>
-        <span>Code Reviews</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+  <li class="nav-item ">
+    <a class="nav-link" routerLink="/code-review" routerLinkActive="active">
+      <i class="fas fa-fw fa-laptop-code"></i>
+      <span>Code Reviews</span></a>
+  </li>
+  <!-- Divider -->
+  <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Mentor
-    </div>
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Mentor
+  </div>
 
-    <li class="nav-item ">
-      <a class="nav-link"   routerLink="/mentor" routerLinkActive="active">
-        <i class="fas fa-fw fa-chalkboard-teacher"></i>
-        <span>Popular Mentors</span></a>
-    </li>
+  <li class="nav-item ">
+    <a class="nav-link" routerLink="/mentor" routerLinkActive="active">
+      <i class="fas fa-fw fa-chalkboard-teacher"></i>
+      <span>Popular Mentors</span></a>
+  </li>
 
-    <li class="nav-item ">
-      <a class="nav-link"  routerLink="/session" routerLinkActive="active">
-        <i class="fas fa-fw fa-chalkboard"></i>
-        <span>Sessions</span></a>
-    </li>
+  <li class="nav-item ">
+    <a class="nav-link" routerLink="/session" routerLinkActive="active">
+      <i class="fas fa-fw fa-chalkboard"></i>
+      <span>Sessions</span></a>
+  </li>
 
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+  <!-- Divider -->
+  <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Addons
-    </div>
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Addons
+  </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item" *ngIf="globals.userData.user_type.user_type_name == 'user'">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item" *ngIf="globals.userData">
+    <div *ngIf="globals.userData.user_type.user_type_name == 'user'">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+        aria-controls="collapsePages">
         <i class="fas fa-fw fa-user-edit"></i>
         <span>My Profile</span>
       </a>
@@ -82,38 +84,41 @@
           <a class="collapse-item" routerLinkActive="active" routerLink="/user/personal-data">Personal Data</a>
           <a class="collapse-item" routerLinkActive="active" routerLink="/user/education-data">Education Data</a>
           <a class="collapse-item" routerLinkActive="active" routerLink="/user/experience-data">Experience Data</a>
-          <a class="collapse-item" ></a>
+          <a class="collapse-item"></a>
         </div>
       </div>
-    </li>
+    </div>
+  </li>
 
-     <!-- Nav Item - Charts -->
-    <li class="nav-item" *ngIf="globals.userData.user_type.user_type_name == 'mentor'">
+  <!-- Nav Item - Charts -->
+  <li class="nav-item" *ngIf="globals.userData">
+    <div *ngIf="globals.userData.user_type.user_type_name == 'mentor'">
       <a class="nav-link" routerLinkActive="active" routerLink="/mentor/profile/{{globals.userData.id}}">
         <i class="fas fa-fw fa-user-edit"></i>
         <span>My Profile</span></a>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="/user/payment-data">
-        <i class="fas fa-fw fa-credit-card"></i>
-        <span>Payment</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="/user/settings">
-        <i class="fas fa-fw fa-cogs"></i>
-        <span>Account & Settings</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-      <button class="rounded-circle border-0" id="sidebarToggle" (click)="toggleSideBar()"></button>
     </div>
+  </li>
 
-  </ul>
+  <!-- Nav Item - Charts -->
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" routerLink="/user/payment-data">
+      <i class="fas fa-fw fa-credit-card"></i>
+      <span>Payment</span></a>
+  </li>
+
+  <!-- Nav Item - Tables -->
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" routerLink="/user/settings">
+      <i class="fas fa-fw fa-cogs"></i>
+      <span>Account & Settings</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider d-none d-md-block">
+
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle" (click)="toggleSideBar()"></button>
+  </div>
+
+</ul>

@@ -1,12 +1,12 @@
 import { ISkill } from '../states/states.state';
 import { SkillActionsTypes } from '../actions/skillActions.action';
 
-interface CustomAction{
+interface CustomAction {
     type: string,
     payload: any
 }
 
-export function SkillReducer(state: ISkill[] , action: CustomAction){
+export function SkillReducer(state: ISkill[], action: CustomAction) {
     switch (action.type) {
         case SkillActionsTypes.Success:
             return action.payload;
@@ -14,19 +14,18 @@ export function SkillReducer(state: ISkill[] , action: CustomAction){
 
         case SkillActionsTypes.Fail:
             let error;
-            if(action.payload.status == 400){
+            if (action.payload.status == 400) {
                 error = action.payload.error.message;
             }
-            if(action.payload.status == 401){
+            if (action.payload.status == 401) {
                 error = action.payload.error.message;
             }
-            if(action.payload.status == 422){
+            if (action.payload.status == 422) {
                 error = action.payload.error.errors[Object.keys(action.payload.error.errors)[0]][0];
             }
 
-            console.log(error);
             return [];
-            
+
             break;
         default:
             break;

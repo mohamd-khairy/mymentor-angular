@@ -14,26 +14,24 @@ export class SessionsComponent implements OnInit {
   public successMsg = '';
   public sessionData;
   public Arr = Array;
-  
-  constructor(private sessionService: SessionsService, private router: Router , public globals: Globals) { }
+
+  constructor(private sessionService: SessionsService, private router: Router, public globals: Globals) { }
 
   ngOnInit(): void {
     this.globals.start();
     this.get_sessions();
   }
 
-  get_sessions(){
+  get_sessions() {
     this.sessionService.get_sessions_api().subscribe(
       res => {
         this.sessionData = JSON.parse(JSON.stringify(res)).data;
 
-        console.log(this.sessionData);
         this.globals.stop();
         this.successMsg = "Sessions Data returned Successfully";
       },
       err => {
-        console.log(err);
-        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message ;
+        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message;
       }
     )
   }

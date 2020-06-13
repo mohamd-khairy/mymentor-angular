@@ -14,12 +14,12 @@ export class AddExperienceDataComponent implements OnInit {
   public errorMsg = '';
   public successMsg = '';
 
-  constructor(private experienceService: ExperienceService, private router: Router , public globals: Globals) { }
+  constructor(private experienceService: ExperienceService, private router: Router, public globals: Globals) { }
 
   ngOnInit(): void {
   }
 
-  add_experience_data(formData: NgForm){
+  add_experience_data(formData: NgForm) {
     const newData = Object.assign({}, formData.value, {
       present: formData.value.present1 ? true : false
     });
@@ -28,7 +28,6 @@ export class AddExperienceDataComponent implements OnInit {
 
     this.experienceService.add_experience_api(newData).subscribe(
       res => {
-        console.log(res);
         this.successMsg = "expreience Data Saved Successfully";
         setTimeout(() => {
           this.router.navigateByUrl('user/experience-data');
@@ -36,8 +35,7 @@ export class AddExperienceDataComponent implements OnInit {
         }, 2000);
       },
       err => {
-        console.log(err);
-        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message ;
+        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message;
       }
     )
   }

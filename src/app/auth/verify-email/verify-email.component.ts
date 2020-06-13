@@ -14,17 +14,16 @@ export class VerifyEmailComponent implements OnInit {
   errorMsg = '';
   successMsg = '';
 
-  constructor(private authService: AuthService, private router: Router ,   public globals: Globals) { }
+  constructor(private authService: AuthService, private router: Router, public globals: Globals) { }
 
   ngOnInit(): void {
   }
 
-  verifyEmail(formData: NgForm){
+  verifyEmail(formData: NgForm) {
     this.globals.start();
 
     this.authService.verifyEmail_api(formData.value.token).subscribe(
       res => {
-        console.log(res);
         let response = JSON.parse(JSON.stringify(res));
         this.successMsg = response.message;
         setTimeout(() => {
@@ -35,8 +34,7 @@ export class VerifyEmailComponent implements OnInit {
 
       },
       err => {
-        console.log(err);
-        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message ;
+        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message;
         setTimeout(() => {
           this.errorMsg = '';
         }, 5000);

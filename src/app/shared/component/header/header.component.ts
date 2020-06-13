@@ -32,11 +32,8 @@ export class HeaderComponent implements OnInit {
     this.globals.start();
     this.authService.logout_api().subscribe(
       data => {
-        console.log(data);
         this.authService.logout_ui();
         this.globals.stop();
-      },
-      err => {
       }
     )
   }

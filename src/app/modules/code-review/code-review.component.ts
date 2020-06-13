@@ -23,7 +23,7 @@ export class CodeReviewComponent implements OnInit {
   public codeReviewsCompleted$ = this._codeReviewCompleted.asObservable();
   public codeReviewsCanceled$ = this._codeReviewCanceled.asObservable();
 
-  constructor(private store: Store,public globals: Globals ,private codeReviewService: CodeReviewService) { }
+  constructor(private store: Store, public globals: Globals, private codeReviewService: CodeReviewService) { }
 
   ngOnInit(): void {
     this.globals.start();
@@ -33,19 +33,18 @@ export class CodeReviewComponent implements OnInit {
     this.get_codeReview('canceled');
   }
 
-  get_codeReview(status){
-    this.codeReviewService.get_CodeReview_meeting_for_mentor(this.globals.userData.id , status).subscribe(
+  get_codeReview(status) {
+    this.codeReviewService.get_CodeReview_meeting_for_mentor(this.globals.userData.id, status).subscribe(
       (data) => {
-        console.log(data);
-       
-        if(JSON.parse(JSON.stringify(data)).data){
-          if(status == 'inProgress'){
+
+        if (JSON.parse(JSON.stringify(data)).data) {
+          if (status == 'inProgress') {
             this._codeReviewInProgress.next(JSON.parse(JSON.stringify(data)).data);
-          }else if(status == 'pending'){
+          } else if (status == 'pending') {
             this._codeReviewPending.next(JSON.parse(JSON.stringify(data)).data);
-          }else if(status == 'completed'){
+          } else if (status == 'completed') {
             this._codeReviewCompleted.next(JSON.parse(JSON.stringify(data)).data);
-          }else if(status == 'canceled'){
+          } else if (status == 'canceled') {
             this._codeReviewCanceled.next(JSON.parse(JSON.stringify(data)).data);
           }
           this.globals.stop();
@@ -54,8 +53,8 @@ export class CodeReviewComponent implements OnInit {
     )
   }
 
-  response_request(id,status){    
+  response_request(id, status) {
     this.globals.isLoading$ = this.store.select(loadingSelector);
-    this.store.dispatch(new RequestSTATUSACTION(id , {status: status}));
+    this.store.dispatch(new RequestSTATUSACTION(id, { status: status }));
   }
 }

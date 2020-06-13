@@ -13,8 +13,8 @@ import { loadingSelector } from './store/selectors.selector';
 })
 export class MyRequestComponent implements OnInit {
 
-  selectedIndex=0;
-  
+  selectedIndex = 0;
+
   private _PendingRequests = new BehaviorSubject(null);
   private _AcceptRequests = new BehaviorSubject(null);
   private _RejectRequests = new BehaviorSubject(null);
@@ -23,7 +23,7 @@ export class MyRequestComponent implements OnInit {
   public AcceptRequests$ = this._AcceptRequests.asObservable();
   public RejectRequests$ = this._RejectRequests.asObservable();
 
-  constructor(private store: Store,public globals: Globals ,private requestService: RequestService) { }
+  constructor(private store: Store, public globals: Globals, private requestService: RequestService) { }
 
   ngOnInit(): void {
     this.globals.start();
@@ -32,47 +32,44 @@ export class MyRequestComponent implements OnInit {
     this.get_my_reject_request_for_mentor(this.globals.userData.id);
   }
 
-  get_my_pending_request_for_mentor(id){
+  get_my_pending_request_for_mentor(id) {
     this.requestService.get_my_pending_request_for_mentor_api(id).subscribe(
-     (data) => { 
-       console.log(data);
-       
-        if(JSON.parse(JSON.stringify(data)).data){
+      (data) => {
+
+        if (JSON.parse(JSON.stringify(data)).data) {
           this._PendingRequests.next(JSON.parse(JSON.stringify(data)).data);
           this.globals.stop();
         }
-      }   
+      }
     )
   }
 
-  get_my_accept_request_for_mentor(id){
+  get_my_accept_request_for_mentor(id) {
     this.requestService.get_my_accept_request_for_mentor_api(id).subscribe(
-     (data) => { 
-       console.log(data);
-       
-        if(JSON.parse(JSON.stringify(data)).data){
+      (data) => {
+
+        if (JSON.parse(JSON.stringify(data)).data) {
           this._AcceptRequests.next(JSON.parse(JSON.stringify(data)).data);
           this.globals.stop();
         }
-      }   
+      }
     )
   }
 
-  get_my_reject_request_for_mentor(id){
+  get_my_reject_request_for_mentor(id) {
     this.requestService.get_my_reject_request_for_mentor_api(id).subscribe(
-     (data) => { 
-       console.log(data);
-       
-        if(JSON.parse(JSON.stringify(data)).data){
+      (data) => {
+
+        if (JSON.parse(JSON.stringify(data)).data) {
           this._RejectRequests.next(JSON.parse(JSON.stringify(data)).data);
           this.globals.stop();
         }
-      }   
+      }
     )
   }
 
-  response_request(id,status){    
+  response_request(id, status) {
     this.globals.isLoading$ = this.store.select(loadingSelector);
-    this.store.dispatch(new RequestSTATUSACTION(id , {status: status}));
+    this.store.dispatch(new RequestSTATUSACTION(id, { status: status }));
   }
 }

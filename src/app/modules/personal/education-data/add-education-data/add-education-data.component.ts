@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './add-education-data.component.html',
   styleUrls: ['./add-education-data.component.css']
 })
-export class AddEducationDataComponent  implements OnInit {
+export class AddEducationDataComponent implements OnInit {
 
   errorMsg = '';
   successMsg = '';
@@ -21,8 +21,8 @@ export class AddEducationDataComponent  implements OnInit {
   }
 
 
-  update_education_data(formData: NgForm){
-    
+  update_education_data(formData: NgForm) {
+
     const newData = Object.assign({}, formData.value, {
       present: formData.value.present1 ? true : false
     });
@@ -31,7 +31,6 @@ export class AddEducationDataComponent  implements OnInit {
 
     this.educationService.education_api(newData).subscribe(
       res => {
-        console.log(res);
         this.successMsg = "Education Data Saved Successfully";
         setTimeout(() => {
           this.router.navigateByUrl('user/education-data');
@@ -39,8 +38,7 @@ export class AddEducationDataComponent  implements OnInit {
         }, 2000);
       },
       err => {
-        console.log(err);
-        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message ;
+        this.errorMsg = err.status == 422 ? err.error.errors[Object.keys(err.error.errors)[0]][0] : err.error.message;
       }
     )
   }

@@ -4,8 +4,8 @@
     <div class="_12osw9 _3o7L-N">
       <div class="_3VMvfD">
         <div class="lEBkWX fzNMeV"><span class="MSdg4Z"></span><span class="vPtPpX">in session</span></div>
-        <div class="cPHra0" *ngIf="globals.chatUserdata">{{globals.chatUserdata.user.name}}</div><span
-          class="sc-AxjAm dJeooa _3yW0a6" (click)="globals.closeChatBox()"><svg xmlns="http://www.w3.org/2000/svg"
+        <div class="cPHra0" *ngIf="globals.chatUserdata">{{globals.chatUserdata.user.name}}</div>
+        <span class="sc-AxjAm dJeooa _3yW0a6" (click)="globals.closeChatBox()"><svg xmlns="http://www.w3.org/2000/svg"
             width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" fill-rule="evenodd">
               <path d="M0 0h24v24H0z"></path>
@@ -16,7 +16,6 @@
       </div>
     </div>
   </div>
-
 
 
   <div class="_2Tmo8w mr-4" *ngIf="globals.open" [hidden]="!globals.chatUserBox">
@@ -86,19 +85,20 @@
         </div>
         <div class="_3YY5U1" *ngIf="globals.chatUserdata">
           <a class="_2AMUkg mr-4" routerLink="/mentor/profile/{{globals.chatUserdata.user.id}}" target="_blank">
-            <div class="_3xZ50G _7MnW7Z">
+            <div class="_3xZ50G _7MnW7Z mr-2">
               <div class="_31OLHU"
                 style="top:-11px; left:-15;width:45px;height:45px;background-image: url({{globals.chatUserdata.photo}});">
               </div>
             </div>
           </a>
           <div class="cdmlid mr-4" *ngIf="globals.chatUserdata">
-            <div class="_1eJvtL"><a href="https://www.codementor.io/gabrielalmeida"
-                target="_blank">{{globals.chatUserdata.user.name}}</a>
+            <div class="_1eJvtL">
+              <a href="#" target="_blank">{{globals.chatUserdata.user.name}}</a>
             </div>
-            <div class="_3CDOXy" title="Jun 5, 11:17 AM (UTC-3:00)">Jun 5, 11:17 AM (UTC-3:00)</div>
-          </div><span class="sc-AxjAm dOTcts -kZf95"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24">
+            <div class="_3CDOXy" title="Jun 5, 11:17 AM (UTC-3:00)">{{globals.openChatTime}}</div>
+          </div>
+          <span class="sc-AxjAm dOTcts -kZf95">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill-rule="nonzero" fill="none">
                 <path fill="none" d="M0 0h24v24H0z"></path>
                 <path fill="#000"
@@ -112,10 +112,9 @@
             <div class="_32Pwec" #scrollMe>
               <span style="font-size: 0px;"></span>
 
-              <div *ngFor="let message of globals.chatMessages">
+              <div *ngFor="let message of globals.items | async">
                 <div class="_1Uuj6e _35DM2v" title="{{message.created_at}}"
                   *ngIf="message.user_id == globals.userData.id">
-                  <div class="_2AwFpM">{{message.created_at}}</div>
                   <div class="_3Q6MKh">
                     <div class="_3kB_fK"><span>{{message.message}}</span></div>
                   </div>
@@ -124,14 +123,14 @@
                 <div class="_1Uuj6e pl-2" title="{{message.created_at}}" *ngIf="message.user_id != globals.userData.id">
                   <div class="_3Q6MKh">
                     <a routerLink="/mentor/profile/{{message.user_id}}" target="_blank"
-                      *ngIf="message.user.user_type.user_type_name == 'mentor'">
+                      *ngIf="message.type == 'mentor'">
                       <div class="_3xZ50G _2IMJnk">
-                        <div class="_31OLHU" style="background-image: url({{message.user.profile.photo}});">
+                        <div class="_31OLHU" style="background-image: url({{message.photo}});">
                         </div>
                       </div>
                     </a>
-                    <div class="_3xZ50G _2IMJnk" *ngIf="message.user.user_type.user_type_name != 'mentor'">
-                      <div class="_31OLHU" style="background-image: url({{message.user.profile.photo}});">
+                    <div class="_3xZ50G _2IMJnk" *ngIf="message.type != 'mentor'">
+                      <div class="_31OLHU" style="background-image: url({{message.photo}});">
                       </div>
                     </div>
                     <div class="_3kB_fKk"><span>{{message.message}}</span></div>
@@ -181,7 +180,6 @@
       </div>
     </div>
   </div>
-
 
 
   <div class="_1Cs2f5">
@@ -241,7 +239,7 @@
               </div>
             </div>
           </div>
-          <div *ngIf="chats" class="_1hL2BZ"><svg class="_3nUe2g" width="60" height="60" viewBox="0 0 60 60"
+          <div *ngIf="chats == ''" class="_1hL2BZ"><svg class="_3nUe2g" width="60" height="60" viewBox="0 0 60 60"
               xmlns="http://www.w3.org/2000/svg">
               <g fill="none" fill-rule="evenodd">
                 <path d="M0 0h60v60H0z"></path>
@@ -260,7 +258,7 @@
                 </g>
               </g>
             </svg>
-            <div class="_2a2LAc">No message yet</div><a class="_3bEXPY" href="https://www.codementor.io/experts">Find
+            <div class="_2a2LAc">No message yet</div><a class="_3bEXPY" routerLink="/mentor">Find
               mentors to chat</a>
           </div>
         </div>

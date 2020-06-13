@@ -10,6 +10,8 @@ import { AllDataSelector } from './shared/component/stores/chatStore/selectors.s
 import { environment } from 'src/environments/environment';
 import { ProfileService } from './modules/profiles/profile/profile.service';
 import { ChatServiceService } from './shared/component/chat/chat-service.service';
+import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
+import * as moment from 'moment';
 
 
 @Injectable({
@@ -17,10 +19,12 @@ import { ChatServiceService } from './shared/component/chat/chat-service.service
 })
 export class Globals {
 
-    constructor(public store: Store<StoreInterface>,
+    constructor(public store: Store<StoreInterface>, public db: AngularFirestore,
         private profileService: ProfileService,
         private chatService: ChatServiceService,
-        public authservice: AuthService, private router: Router, private http: HttpClient) { }
+        public authservice: AuthService, private router: Router, private http: HttpClient,
+    ) {
+    }
 
     public week = { 1: 'saturday', 2: 'sunday', 3: 'monday', 4: 'tuesday', 5: 'wednesday', 6: 'thursday', 7: 'friday' };
 
@@ -49,26 +53,80 @@ export class Globals {
     public chatUserdata;
     public chatId;
     public chatMessages;
+    public backendchatId;
+
+    ChatGroupCollection: AngularFirestoreCollection;
+    ChatGroupCollection2: AngularFirestoreCollection;
+    chatGroup: Observable<any>;
+
+    public items: Observable<any[]>;
+    private itemCollection: AngularFirestoreCollection;
+
+    public openChatTime;
 
     openChatBox(id) {
+
         this.profileService.get_profile_api(id).subscribe(
             (data) => {
+
                 this.chatUserdata = JSON.parse(JSON.stringify(data)).data;
+
             }
         );
 
         this.chatService.createChat(id, this.userData.user_type.user_type_name).subscribe(
             (data) => {
-                console.log(data);
-
-                this.chatId = JSON.parse(JSON.stringify(data)).data.id;
-                this.chatMessages = JSON.parse(JSON.stringify(data)).data.messages;
-
+                this.backendchatId = JSON.parse(JSON.stringify(data)).data.id;
             }
         );
 
+        let user1 = id;
+        let user2 = this.userData.id;
+
+        this.ChatGroupCollection = this.db.collection('chat_groups',
+            ref => ref.where('user1', '==', user1).where('user2', '==', user2));
+
+        this.ChatGroupCollection2 = this.db.collection('chat_groups',
+            ref => ref.where('user2', '==', user1).where('user1', '==', user2));
+
+
+        this.ChatGroupCollection.snapshotChanges().subscribe(res => {
+            if (res.length > 0) {
+                res.map(action => {
+                    this.chatId = action.payload.doc.id;
+                    this.getMessages();
+
+                });
+            }
+            else {
+                this.ChatGroupCollection2.snapshotChanges().subscribe(res => {
+                    if (res.length > 0) {
+                        res.map(action => {
+                            this.chatId = action.payload.doc.id;
+                            this.getMessages();
+
+                        });
+                    } else {
+                        this.ChatGroupCollection.add({ user1, user2 }).then(docRef => {
+                            this.chatId = docRef.id;
+                            this.getMessages();
+
+                        })
+                    }
+                });
+            }
+        });
+
+        this.openChatTime = moment(new Date()).format("MMM d, h:mm A");
         this.chatUserBox = true;
         this.open = true;
+    }
+
+    getMessages() {
+
+        this.itemCollection = this.db.collection('chats', ref => ref.orderBy('created_at', 'asc').where('chat_id', '==', this.chatId));
+        this.items = this.itemCollection.valueChanges();
+
     }
 
     closeChatBox() {
