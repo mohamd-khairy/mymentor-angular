@@ -41,4 +41,17 @@ export class MyScheduleComponent implements OnInit {
     )
   }
 
+
+  generate_meeting(id) {
+    this.globals.start();
+    this.scheduleService.generate_meeting(id)
+      .subscribe(
+        (data) => {
+          console.log(JSON.parse(JSON.stringify(data)).data);
+          this.globals.stop();
+        }
+      )
+  }
+
+
 }

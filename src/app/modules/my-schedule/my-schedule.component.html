@@ -3,6 +3,7 @@
     <mat-tab label="UPCOMING">
         <div class="dashboard__articles-article-list" *ngIf="(upcomingMeetings$ | async) as requests">
             <div class="dashboard__cmty-item " *ngFor="let request of requests">
+
                 <div class="item">
                     <img src="{{request.session.user_recieve.profile.photo}}"/>
                     <h5 class="text-center" style="display: block">{{request.session.user_recieve.name}}</h5>
@@ -27,6 +28,20 @@
                     </div>
 
                     <div class="col-md-2 mr-2 p-1 alert alert-warning ml-2 text-center" >{{request.session.duration}}</div>
+
+                    <div class="cmty-item__actions m-2" *ngIf="globals.userData.user_type.user_type_name == 'mentor'">
+                        <div class="cmty-item__actions-group-left">
+                            <button class="btn mr-2"  (click)="generate_meeting(request.id)">Generate Meeting</button>
+                        </div>
+                    </div>
+
+                    <div class="cmty-item__actions m-2"  *ngIf="request.join_url" >
+                        <div class="cmty-item__actions-group-left">
+                            <a class="btn mr-2" target="_blank" href="{{request.join_url}}" >Join Meeting</a>
+                        </div>
+                    </div>
+
+
 
                 </div>
             </div>

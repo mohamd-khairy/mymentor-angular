@@ -11,20 +11,24 @@ import { catchError } from 'rxjs/operators';
 })
 export class ScheduleService {
 
-    constructor(private http: HttpClient,private router: Router,private authService: AuthService) { }
+    constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
 
-    add_schedule_meeting(data){
-        return this.http.post(environment.apiUrl + 'session' , data)
-                 .pipe(catchError(this.errorHandler));
+    add_schedule_meeting(data) {
+        return this.http.post(environment.apiUrl + 'session', data)
+            .pipe(catchError(this.errorHandler));
     }
 
-    get_schedule_meeting(data){
-        return this.http.get(environment.apiUrl + 'schedule_session?status='+data)
-                 .pipe(catchError(this.errorHandler));
+    get_schedule_meeting(data) {
+        return this.http.get(environment.apiUrl + 'schedule_session?status=' + data)
+            .pipe(catchError(this.errorHandler));
     }
 
+    generate_meeting(id) {
+        return this.http.get(environment.apiUrl + 'zoom/create?id=' + id)
+            .pipe(catchError(this.errorHandler));
+    }
 
-    errorHandler(error: HttpErrorResponse){
+    errorHandler(error: HttpErrorResponse) {
         return throwError(error);
     }
 }
