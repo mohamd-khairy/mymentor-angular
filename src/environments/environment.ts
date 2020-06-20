@@ -5,9 +5,6 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost/my-mentor/public/api/v1/',
-  zoom_client_id: 'Y4--nsCwQi-1w1wFqeNd-w',
-  zoom_client_secret: 'naaLrscMCfcFQZILEmGvkGCFZHAmkwGMlCdu',
-  zoom_redirect_url: '/zoom/callback'
 };
 
 export const firebaseConfig = {

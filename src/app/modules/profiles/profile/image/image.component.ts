@@ -19,10 +19,6 @@ export class ImageComponent implements OnInit {
   @Input() job$: Observable<any>;
   @Input() countRates: number;
 
-  public CLIENT_ID = environment.zoom_client_id;
-  public REDIRECT_URI = environment.zoom_redirect_url;
-
-
   constructor(private store: Store<StoreInterface>, public globals: Globals, private profileService: ProfileService) {
   }
 
