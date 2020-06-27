@@ -84,7 +84,7 @@
             </span></div>
         </div>
         <div class="_3YY5U1" *ngIf="globals.chatUserdata">
-          <a class="_2AMUkg mr-4" routerLink="/mentor/profile/{{globals.chatUserdata.user.id}}" target="_blank">
+          <a class="_2AMUkg mr-3" routerLink="/mentor/profile/{{globals.chatUserdata.user.id}}" target="_blank">
             <div class="_3xZ50G _7MnW7Z mr-2">
               <div class="_31OLHU"
                 style="top:-11px; left:-15;width:45px;height:45px;background-image: url({{globals.chatUserdata.photo}});">
@@ -147,6 +147,8 @@
         </div>
         <div class="_1M2c2P">
           <form #chatForm="ngForm" (ngSubmit)="sendMsg(chatForm)">
+            <input type="hidden" *ngIf="globals.chatUserdata" #user_will_notify="ngModel"
+              [ngModel]="globals.chatUserdata.user.id" name="user_will_notify">
             <textarea (keyup.enter)="sendMsg(chatForm)" #message="ngModel" ngModel name="message" required
               class="k9uTqT" rows="1" placeholder="Send a message..."
               style="overflow: hidden; overflow-wrap: break-word; height: 40px;"></textarea>

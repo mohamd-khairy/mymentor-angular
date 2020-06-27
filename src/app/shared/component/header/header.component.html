@@ -51,48 +51,39 @@
         aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-bell fa-fw"></i>
         <!-- Counter - Alerts -->
-        <span class="badge badge-danger badge-counter">3+</span>
+        <span class="badge badge-danger badge-counter"
+          *ngIf="globals.notifications | async as notifications">{{notifications.length}}</span>
       </a>
       <!-- Dropdown - Alerts -->
       <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
         aria-labelledby="alertsDropdown">
         <h6 class="dropdown-header">
-          Alerts Center
+          Notifications Center
         </h6>
-        <a class="dropdown-item d-flex align-items-center" href="#">
-          <div class="mr-3">
-            <div class="icon-circle bg-primary">
-              <i class="fas fa-file-alt text-white"></i>
+        <div *ngFor="let noti of globals.notifications | async">
+          <div *ngIf="noti.type=='chat'" class="dropdown-item d-flex align-items-center" style="cursor: pointer;"
+            (click)="globals.openChatBox(noti.from_user_id); readed(noti.id , noti.user_id);">
+            <div class="mr-3">
+              <img style="width: 50px;" src="{{noti.image}}">
+            </div>
+            <div>
+              <div class="small text-gray-500">{{noti.created_at}}</div>
+              <span class="font-weight-bold">{{noti.title}}</span>
             </div>
           </div>
-          <div>
-            <div class="small text-gray-500">December 12, 2019</div>
-            <span class="font-weight-bold">A new monthly report is ready to download!</span>
-          </div>
-        </a>
-        <a class="dropdown-item d-flex align-items-center" href="#">
-          <div class="mr-3">
-            <div class="icon-circle bg-success">
-              <i class="fas fa-donate text-white"></i>
+
+          <a *ngIf="noti.type=='request'" (click)="readed(noti.id, noti.user_id)"
+            class="dropdown-item d-flex align-items-center" routerLink="/my-requests">
+            <div class="mr-3">
+              <img style="width: 50px;" src="{{noti.image}}">
             </div>
-          </div>
-          <div>
-            <div class="small text-gray-500">December 7, 2019</div>
-            $290.29 has been deposited into your account!
-          </div>
-        </a>
-        <a class="dropdown-item d-flex align-items-center" href="#">
-          <div class="mr-3">
-            <div class="icon-circle bg-warning">
-              <i class="fas fa-exclamation-triangle text-white"></i>
+            <div>
+              <div class="small text-gray-500">{{noti.created_at}}</div>
+              <span class="font-weight-bold">{{noti.title}}</span>
             </div>
-          </div>
-          <div>
-            <div class="small text-gray-500">December 2, 2019</div>
-            Spending Alert: We've noticed unusually high spending for your account.
-          </div>
-        </a>
-        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+          </a>
+        </div>
+
       </div>
     </li>
 

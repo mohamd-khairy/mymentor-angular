@@ -15,6 +15,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { firebaseConfig } from 'src/environments/environment';
+import { ToastrModule } from 'ngx-toastr';
+import { MessagingService } from './messaging.service';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AsyncPipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -32,14 +37,21 @@ import { firebaseConfig } from 'src/environments/environment';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
-
+    AngularFirestoreModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      progressBar: false,
+      enableHtml: true,
+      preventDuplicates: true,
+    }),
+    AngularFireMessagingModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorInterceptor,
     multi: true
-  }],
+  }, MessagingService, AsyncPipe],
+
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

@@ -29,7 +29,8 @@ import { ChatComponent } from './component/chat/chat.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    ChatComponent
   ],
   providers: [Globals]
 })

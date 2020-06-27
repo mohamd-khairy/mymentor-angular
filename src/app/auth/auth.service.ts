@@ -73,7 +73,7 @@ export class AuthService {
   login_ui(data) {
     localStorage.setItem('user', JSON.stringify(data));
     this.me();
-    this.router.navigateByUrl('/dashboard');
+    // this.router.navigateByUrl('/dashboard');
   }
 
   logout_api() {
@@ -132,6 +132,7 @@ export class AuthService {
       data => {
         let AlluserData = JSON.parse(JSON.stringify(data))
         localStorage.setItem('userData', JSON.stringify(AlluserData.data));
+        window.location.href = '/dashboard';
       }
     )
   }

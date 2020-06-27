@@ -12,6 +12,7 @@ import { ProfileService } from './modules/profiles/profile/profile.service';
 import { ChatServiceService } from './shared/component/chat/chat-service.service';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -23,6 +24,7 @@ export class Globals {
         private profileService: ProfileService,
         private chatService: ChatServiceService,
         public authservice: AuthService, private router: Router, private http: HttpClient,
+        private toastr: ToastrService
     ) {
     }
 
@@ -57,10 +59,12 @@ export class Globals {
 
     ChatGroupCollection: AngularFirestoreCollection;
     ChatGroupCollection2: AngularFirestoreCollection;
-    chatGroup: Observable<any>;
+    NotificationCollection: AngularFirestoreCollection;
+    itemCollection: AngularFirestoreCollection;
 
+    public hatGroup: Observable<any>;
     public items: Observable<any[]>;
-    private itemCollection: AngularFirestoreCollection;
+    public notifications: Observable<any[]>;
 
     public openChatTime;
 
@@ -122,11 +126,43 @@ export class Globals {
         this.open = true;
     }
 
-    getMessages() {
 
+    add_notification(data) {
+
+        this.NotificationCollection = this.db.collection('notifications');
+        this.NotificationCollection.add(data).then(docRef => { })
+    }
+
+    get_notifications() {
+        this.NotificationCollection = this.db.collection('notifications', ref =>
+            ref.where('readed', '==', false).where('user_id', '==', this.userData.id));
+        this.notifications = this.NotificationCollection.valueChanges();
+
+
+
+        this.NotificationCollection.snapshotChanges().subscribe(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data();
+                if (data.created_at == moment(new Date()).format("YYYY/MM/DD hh:mm:ss")) {
+                    this.toastr.info(data.title);
+                }
+            });
+        });
+
+    }
+
+    read_notification(id) {
+        this.NotificationCollection = this.db.collection('notifications', ref => ref.where('id', '==', id));
+        this.NotificationCollection.snapshotChanges().subscribe((res: any) => {
+            let id = res[0].payload.doc.id;
+            this.NotificationCollection.doc(id).update({ readed: true });
+        });
+    }
+
+
+    getMessages() {
         this.itemCollection = this.db.collection('chats', ref => ref.orderBy('created_at', 'asc').where('chat_id', '==', this.chatId));
         this.items = this.itemCollection.valueChanges();
-
     }
 
     closeChatBox() {

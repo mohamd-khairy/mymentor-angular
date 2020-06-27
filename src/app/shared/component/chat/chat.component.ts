@@ -46,6 +46,7 @@ export class ChatComponent implements OnInit {
 
   sendMsg(formData: NgForm) {
 
+
     this.sendMsgbackend(formData)
 
     const newData = Object.assign({}, formData.value, {
@@ -58,6 +59,20 @@ export class ChatComponent implements OnInit {
     });
 
     this.itemCollection.add(newData);
+
+    const noti = {
+      id: Math.random().toString(36).substring(7),
+      user_id: this.globals.chatUserdata.user.id,//formData.value.user_will_notify,
+      from_user_id: this.globals.userData.id,
+      type: 'chat',
+      image: this.globals.userData.profile.photo,
+      title: this.globals.userData.name + ' send message to you',
+      body: formData.value.message,
+      readed: false,
+      created_at: moment(new Date()).format("YYYY/MM/DD hh:mm:ss"),
+    };
+
+    this.globals.add_notification(noti);
     formData.reset();
   }
 

@@ -14,11 +14,15 @@ import { ChatServiceService } from '../chat/chat-service.service';
 })
 export class HeaderComponent implements OnInit {
 
+  // public notifications;
+
   constructor(public authService: AuthService, public searchService: SearchService,
     private chatService: ChatServiceService,
     public headerService: HeaderService, public globals: Globals, private router: Router) { }
 
   ngOnInit(): void {
+    // this.notification();
+    this.globals.get_notifications();
   }
 
   search(formData: NgForm) {
@@ -27,6 +31,20 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  notification() {
+    if (this.authService.userData) {
+      this.globals.start();
+      this.headerService.get_my_notification_api(this.authService.userData.id).subscribe(data => {
+        // this.notifications = JSON.parse(JSON.stringify(data)).data;
+        this.globals.stop();
+      });
+    }
+  }
+
+  readed(id, user_id) {
+    this.globals.read_notification(id);
+    this.headerService.read_notification_api(user_id).subscribe(data => { });
+  }
 
   logout() {
     this.globals.start();

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashborad',
@@ -10,6 +11,7 @@ export class DashboradComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
