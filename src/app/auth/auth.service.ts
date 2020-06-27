@@ -132,7 +132,7 @@ export class AuthService {
       data => {
         let AlluserData = JSON.parse(JSON.stringify(data))
         localStorage.setItem('userData', JSON.stringify(AlluserData.data));
-        window.location.href = '/dashboard';
+        window.location.href = 'dashboard';
       }
     )
   }

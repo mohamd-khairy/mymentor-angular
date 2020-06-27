@@ -44,11 +44,9 @@ export class LoginComponent implements OnInit {
   }
 
   doSicailLogin(data) {
-    this.globals.start();
     this.authService.social_login_api(data).subscribe(
       (data) => {
         this.authService.login_ui(data);
-        this.globals.stop();
       }
     )
   }
