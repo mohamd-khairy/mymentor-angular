@@ -19,11 +19,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { MessagingService } from './messaging.service';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AsyncPipe } from '@angular/common';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

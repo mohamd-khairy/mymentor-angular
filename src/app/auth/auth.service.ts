@@ -86,7 +86,9 @@ export class AuthService {
     localStorage.removeItem('user');
     localStorage.clear();
     this.auth.signOut();
-    this.router.navigateByUrl('login');
+    // this.router.navigateByUrl('login');
+    window.location.href = '/';
+
   }
 
 
