@@ -1,0 +1,319 @@
+.content-bucket {
+    position: relative;
+    max-width: 1272px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.eds-g-cell-9-12 {
+    width: 75%;
+}
+.eds-g-cell {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+body .eds-text-color--grey-700 {
+    color: #4b4d63;
+}
+
+.browse-cards-container>div {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
+}
+
+.eds-g-cell.eds-g-cell--has-overflow {
+    overflow: visible;
+}
+.eds-g-cell.eds-g-cell--has-overflow {
+    overflow: visible;
+}
+.eds-g-cell-3-12 {
+    width: 25%;
+}
+.eds-g-cell {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+.content-bucket .search-event-card {
+    padding: 16px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.browse-cards-container>div, .content-bucket .search-event-card, .mobile-card-carousel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.content-bucket .search-event-card {
+    padding: 16px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.eds-l-mar-vert-1 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.eds-l-mar-vert-1 {
+    margin-top: 4px;
+
+    margin-bottom: 4px;
+}
+
+.content-bucket .search-event-card .eds-card, .content-bucket .search-event-card .eds-event-card--consumer {
+    width: 100%;
+    height: 100%;
+}
+.content-bucket .search-event-card .eds-card, .content-bucket .search-event-card .eds-event-card--consumer {
+    width: 100%;
+    height: 100%;
+}
+.eds-event-card-content--grid.eds-event-card-content--standard.eds-event-card-content {
+    overflow: visible;
+}
+.eds-event-card-content {
+    border-radius: 4px;
+    width: 100%;
+}
+
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__image-container {
+    display: block;
+}
+.eds-event-card-content__action-link {
+    display: block;
+    outline: none;
+    width: 100%;
+}
+.eds-event-card-content__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.eds-event-card-content--fixed .eds-event-card-content__image-content {
+    width: 100%;
+    padding-top: 50%;
+}
+.eds-event-card-content__image-placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.eds-event-card-content__image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.eds-max-img {
+    max-width: 100%;
+    height: auto;
+}
+.eds-event-card-content__image-wrapper--sharp-corners:after {
+    border-radius: 0;
+}
+.eds-event-card-content__image-wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 4px;
+    border: 1px solid #dbdae3;
+    border: 1px solid var(--eds-ui-300,#dbdae3);
+    -webkit-transition: border-radius .24s cubic-bezier(.4,0,.3,1),border .24s cubic-bezier(.4,0,.3,1);
+    transition: border-radius .24s cubic-bezier(.4,0,.3,1),border .24s cubic-bezier(.4,0,.3,1);
+}
+.eds-event-card-content__image-container .eds-event-card-content__flag {
+    width: 87px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    top: 12px;
+    right: -12px;
+    -webkit-box-shadow: 0 4px 15px 0 rgba(40,44,53,.06), 0 2px 2px 0 rgba(40,44,53,.08);
+    box-shadow: 0 4px 15px 0 rgba(40,44,53,.06), 0 2px 2px 0 rgba(40,44,53,.08);
+    z-index: 3;
+}
+body .eds-text-color--grey-700 {
+    color: #4b4d63;
+}
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__content-container--consumer {
+    padding: 24px 16px;
+}
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__content-container {
+    display: block;
+    overflow: visible;
+    position: relative;
+    padding: 24px;
+}
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__content__principal {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+body .eds-text-color--ui-600 {
+    color: #6f7287;
+    color: var(--eds-ui-600,var(--eds-ui-600,#6f7287));
+}
+body .eds-text-color--primary-brand {
+    color: #d1410c;
+    color: var(--eds-primary-brand,var(--eds-primary-brand,#d1410c));
+}
+body .eds-text-color--primary-brand {
+    color: var(--eds-primary-brand,var(--eds-primary-brand,#d1410c));
+}
+.eds-l-pad-bot-1 {
+    padding-bottom: 4px;
+}
+.eds-text-weight--heavy, .eds-text-weight--semibold {
+    font-weight: 600;
+}
+.eds-event-card-content__action-link {
+    display: block;
+    outline: none;
+    width: 100%;
+}
+.eds-event-card-content__action-link {
+    display: block;
+    outline: none;
+    width: 100%;
+}
+
+.eds-is-hidden-accessible {
+    position: absolute;
+    left: -999999px;
+}
+.eds-event-card__formatted-name--is-clamped-three {
+    -webkit-line-clamp: 3;
+}
+.eds-event-card__formatted-name--is-clamped {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.eds-text-weight--heavy, .eds-text-weight--semibold {
+    font-weight: 600;
+}
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__actions-container--consumer {
+    top: -24px;
+}
+.eds-l-mar-right-2 {
+    margin-right: 8px;
+}
+.eds-l-pad-all-1 {
+    padding: 4px;
+}
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__actions-container__action .eds-icon-button {
+    border-radius: 50%;
+    border: 1px solid #dbdae3;
+    border: 1px solid var(--eds-ui-300,#dbdae3);
+    padding: 1px;
+}
+.eds-icon-button button {
+    border-radius: 40px;
+    height: 40px;
+    padding: 8px;
+    -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
+    transition: all .4s cubic-bezier(.4,0,.3,1);
+    width: 40px;
+}
+.eds-vector-image--block {
+    display: block;
+}
+.eds-vector-image {
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: middle;
+    background-size: contain;
+    line-height: 0;
+}
+.eds-brand--small, .eds-brand--small svg, .eds-icon--small, .eds-icon--small svg {
+    width: 24px;
+    height: 24px;
+}
+.eds-brand--small, .eds-brand--small svg, .eds-icon--small, .eds-icon--small svg {
+    width: 24px;
+    height: 24px;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+.eds-is-hidden-accessible {
+    position: absolute;
+    left: -999999px;
+}
+.eds-l-pad-all-1 {
+    padding: 4px;
+}
+
+.eds-event-card-content--grid.eds-event-card-content--standard .eds-event-card-content__actions-container__action .eds-icon-button {
+    border-radius: 50%;
+    border: 1px solid #dbdae3;
+    border: 1px solid var(--eds-ui-300,#dbdae3);
+    padding: 1px;
+}
+.eds-icon-button button {
+    border-radius: 40px;
+    height: 40px;
+    padding: 8px;
+    -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
+    transition: all .4s cubic-bezier(.4,0,.3,1);
+    width: 40px;
+}
+.eds-vector-image--block {
+    display: block;
+}
+.eds-vector-image {
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: middle;
+    background-size: contain;
+    line-height: 0;
+}
+.eds-brand--small, .eds-brand--small svg, .eds-icon--small, .eds-icon--small svg {
+    width: 24px;
+    height: 24px;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.eds-is-hidden-accessible {
+    position: absolute;
+    left: -999999px;
+}

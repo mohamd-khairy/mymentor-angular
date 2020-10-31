@@ -20,12 +20,18 @@ import { MessagingService } from './messaging.service';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AsyncPipe } from '@angular/common';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { EventsComponent } from './landing-page/events/events.component';
+import { HomeComponent } from './landing-page/home/home.component';
+import { OnlineClassPageComponent } from './landing-page/online-class-page/online-class-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+    EventsComponent,
+    HomeComponent,
+    OnlineClassPageComponent,
   ],
   imports: [
     BrowserModule,

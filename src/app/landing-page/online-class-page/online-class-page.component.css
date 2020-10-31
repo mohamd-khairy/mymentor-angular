@@ -1,0 +1,959 @@
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.notification-box--listing {
+    position: relative;
+    z-index: 10000;
+}
+
+.event-listing--has-image .event-listing__header {
+    height: 66vh;
+    max-height: inherit;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.event-listing__header {
+    position: absolute;
+    top: 61px;
+    width: 100%;
+    z-index: -1;
+}
+
+.css-transform-support .fx--delay-4 {
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+.css-transform-support .fx--hide, .css-transform-support .fx--fade-in-down, .css-transform-support .fx--fade-in-up, .css-transform-support .fx--fade-in-left, .css-transform-support .fx--fade-in-right, .css-transform-support .fx--fade-out-down, .css-transform-support .fx--fade-out-up, .css-transform-support .fx--fade-in, .css-transform-support .fx--fade-out {
+    opacity: 0;
+}
+
+.listing-hero-image__blurry-background .listing-hero-image {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-filter: blur(50px) brightness(.9);
+    -ms-filter: blur(50px) brightness(.9);
+    filter: blur(50px) brightness(.9);
+    display: inline-block;
+    width: 200%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+
+img {
+    border: 0;
+}
+
+.clrfix:after, .list-card:after, .list-card-v2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.g-grid, .overlay-dialog__frame {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.elevation-2, .event-listing__body {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+@media only screen and (min-width: 1080px) {
+    .event-listing__body {
+        margin-top: 40px;
+    }
+    .event-listing__body {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 50px;
+        padding-top: 0;
+    }
+}
+
+.css-transform-support .fx--delay-4 {
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+.g-group, .g-grid, .overlay-dialog__frame, .g-vertical-group, .dialog-frame-content, .timeline__item, .breakdown__item {
+    font-size: 0;
+    letter-spacing: 0;
+}
+
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.g-cell.g-cell--no-gutters, .timeline__content, .g-cell--no-gutters.timeline__date, .timeline__indicator {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media only screen and (min-width: 1080px) {
+    .listing-hero--image-container {
+        border-top-left-radius: 4px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .text-medium, .text-body-medium, .g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+        font-size: .9333333333rem;
+        line-height: 1.25rem;
+    }
+}
+
+.listing-hero__badge-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.listing-hero__badge-container .badge-price {
+    display: none;
+}
+
+.badge--overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.badge-status {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .92);
+    color: #1e0a3c;
+    color: #1E0A3C;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    display: inline;
+    z-index: 100;
+}
+
+@media only screen and (min-width: 800px) {
+    .hide-large {
+        display: none!important;
+    }
+}
+
+.css-transform-support .fx--delay-6 {
+    -webkit-animation-delay: .6s;
+    -moz-animation-delay: .6s;
+    animation-delay: .6s;
+}
+
+.css-transform-support .fx--hide, .css-transform-support .fx--fade-in-down, .css-transform-support .fx--fade-in-up, .css-transform-support .fx--fade-in-left, .css-transform-support .fx--fade-in-right, .css-transform-support .fx--fade-out-down, .css-transform-support .fx--fade-out-up, .css-transform-support .fx--fade-in, .css-transform-support .fx--fade-out {
+    opacity: 0;
+}
+
+@media only screen and (min-width: 800px) {
+    .text-medium, .text-body-medium, .g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+        font-size: .9333333333rem;
+        line-height: 1.25rem;
+    }
+}
+
+.text-medium, .text-body-medium, .g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+    font-weight: 400;
+    font-size: 1.0666666667rem;
+    line-height: 1.5rem;
+}
+
+.g-cell, .timeline__content, .timeline__date, .timeline__indicator {
+    letter-spacing: .5px;
+}
+
+@media only screen and (min-width: 1080px) {
+    .listing-image--main {
+        height: 360px;
+    }
+}
+
+.listing-image--main {
+    display: block;
+    width: 100%;
+}
+
+.clrfix:after, .list-card:after, .list-card-v2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.g-cell.g-cell--no-gutters, .timeline__content, .g-cell--no-gutters.timeline__date, .timeline__indicator {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.listing-hero__detailed-info {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media only screen and (min-width: 1080px) {
+    .listing-hero__detailed-info {
+        border-top-right-radius: 4px;
+    }
+}
+
+.listing-hero__detailed-info {
+    position: absolute;
+    height: 100%;
+    right: 0;
+}
+.listing-hero-details__main-container .listing-panel-actions {
+    right: 15px;
+}
+.listing-panel-actions {
+    display: none;
+}
+@media only screen and (min-width: 800px){
+.hide-large {
+    display: none!important;
+}}
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (min-width: 800px){
+.btn--target.btn--collapsible {
+    border-radius: 50%;
+    background-color: #FFF;
+    border-color: #FFF;
+    background-clip: unset;
+    padding: 9px 8px 0;
+    fill: #4B4D63;
+    color: #4B4D63;
+}}
+
+@media only screen and (min-width: 800px){
+.btn--target.btn--collapsible i {
+    margin-right: 0;
+    font-weight: 600;
+    fill: #4B4D63;
+    color: #4B4D63;
+}}
+.btn--target.is-collapsed i {
+    margin-right: 0;
+    font-weight: 600;
+    fill: #4B4D63;
+    color: #4B4D63;
+}
+
+@media only screen and (min-width: 800px){
+.l-lg-pad-bot-4 {
+    padding-bottom: 20px;
+}}
+.l-pad-top-6, .list-selection-builder__error-image {
+    padding-top: 30px;
+}
+.l-pad-hor-6 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.l-pad-bot-2 {
+    padding-bottom: 10px;
+}
+.listing-hero__detailed-info .listing-hero-header {
+    position: absolute;
+}
+.listing-hero__detailed-info .listing-hero-date {
+    text-align: center;
+}
+.listing-hero__detailed-info .listing-hero-image--month {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+.listing-hero__detailed-info .listing-hero-image--day {
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.25em;
+    letter-spacing: 1px;
+}
+.listing-hero__detailed-info .listing-hero-body {
+    padding-top: 64px;
+}
+.listing-hero__detailed-info .listing-hero-title {
+    padding-bottom: 2px;
+}
+.listing-hero__detailed-info .listing-hero-title {
+    display: block;
+    display: -webkit-box;
+    max-height: 125;
+    margin: 0 auto;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #1E0A3C;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 21px;
+    letter-spacing: .5px;
+    word-break: break-word;
+}
+meta {
+    display: none;
+}
+.l-mar-top-3 {
+    margin-top: 15px;
+}
+.l-media>:first-child, .list-card>:first-child, .list-card-v2 .list-card__main>:first-child {
+    float: left;
+    margin-right: 10px;
+    overflow: visible;
+}
+.l-media>*, .list-card>*, .list-card-v2 .list-card__main>* {
+    overflow: hidden;
+    zoom: 1;
+}
+.l-align-left {
+    text-align: left;
+}
+.listing-hero__detailed-info a.listing-organizer-name {
+    margin-bottom: 5px !important;
+    margin-right: 5px !important;
+    color: #6F7287;
+    display: inline-block;
+}
+@media only screen and (min-width: 800px){
+.text-default, .slat__primary-text, .modal__body {
+    font-size: .9333333333rem;
+    line-height: 1.25rem;
+}}
+.text-default, .slat__primary-text, .modal__body {
+    font-size: 1.0666666667rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+}
+.follow-organizer__mini-container {
+    display: inline-block;
+}
+.l-align-left {
+    text-align: left;
+}
+.eds-btn--follow.eds-btn--follow-mini {
+    height: 24px;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+.eds-btn--follow {
+    color: #3659e3;
+    color: var(--eds-control,#3659e3);
+    fill: #3659e3;
+    fill: var(--eds-control,#3659e3);
+    background: #fff;
+    background: var(--eds-background,#fff);
+    border-color: #3659e3;
+    border-color: var(--eds-control,#3659e3);
+}
+.eds-btn:before {
+    z-index: -190;
+}
+.eds-btn:after, .eds-btn:before {
+    content: "";
+    position: absolute;
+    z-index: -200;
+    left: -2px;
+    right: -2px;
+    top: -2px;
+    bottom: -2px;
+    -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
+    transition: all .4s cubic-bezier(.4,0,.3,1);
+    border-radius: 4px;
+    background: #fff;
+    background: var(--eds-background,#fff);
+    opacity: 0;
+}
+.eds-btn:after, .eds-btn:before {
+    content: "";
+    position: absolute;
+    z-index: -200;
+    left: -2px;
+    right: -2px;
+    top: -2px;
+    bottom: -2px;
+    -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
+    transition: all .4s cubic-bezier(.4,0,.3,1);
+    border-radius: 4px;
+    background: #fff;
+    background: var(--eds-background,#fff);
+    opacity: 0;
+}
+.clrfix:after, .list-card:after, .list-card-v2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.listing-hero__detailed-info .listing-hero-footer {
+    position: absolute;
+    bottom: 20px;
+}
+
+.listing-panel-wrapper {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.sticky-listing-panel-placeholder {
+    width: 100%;
+    height: 66px;
+    border: none;
+}
+.listing-panel {
+    border-style: solid;
+    border-color: #DBDAE3;
+    border-width: 1px 0;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+.clrfix:after, .list-card:after, .list-card-v2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media only screen and (min-width: 800px){
+.sticky-listing-panel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-height: inherit;
+    height: 66px;
+}}
+.sticky-listing-panel {
+    position: relative;
+    z-index: 10000;
+}
+.listing-panel {
+    border-style: solid;
+    border-color: #DBDAE3;
+    border-width: 1px 0;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+.listing-panel-info__buttons-and-status {
+    display: flex;
+    align-items: center;
+}
+.listing-panel__g-cell {
+    position: relative;
+}
+@media only screen and (min-width: 800px){
+.text-medium, .text-body-medium, .g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+    font-size: .9333333333rem;
+    line-height: 1.25rem;
+}}
+.is-hidden-accessible, .skip-links, .ui-helper-hidden-accessible {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+.listing-panel .listing-panel-actions {
+    display: inline-block;
+}
+.listing-panel-actions {
+    display: none;
+}
+.listing-panel .listing-panel-actions li {
+    display: inline;
+}
+.css-transform-support .fx--delay-12 {
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+@media only screen and (min-width: 800px){
+.btn--target.btn--collapsible {
+    border-radius: 50%;
+    background-color: #FFF;
+    border-color: #FFF;
+    background-clip: unset;
+    padding: 9px 8px 0;
+    fill: #4B4D63;
+    color: #4B4D63;
+}}
+.btn--target:link, .btn--target:visited {
+    color: #3659E3;
+}
+.listing-panel .listing-panel-actions li {
+    display: inline;
+}
+.css-transform-support .fx--delay-14 {
+    -webkit-animation-delay: 1.4s;
+    -moz-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+}
+@media only screen and (min-width: 800px){
+.btn--target.btn--collapsible {
+    border-radius: 50%;
+    background-color: #FFF;
+    border-color: #FFF;
+    background-clip: unset;
+    padding: 9px 8px 0;
+    fill: #4B4D63;
+    color: #4B4D63;
+}}
+.btn--target.is-collapsed {
+    border-radius: 50%;
+    background-color: #FFF;
+    border-color: #FFF;
+    background-clip: unset;
+    padding: 9px 8px 0;
+    fill: #4B4D63;
+    color: #4B4D63;
+}
+.btn--target:link, .btn--target:visited {
+    color: #3659E3;
+}
+.listing-panel__g-cell {
+    position: relative;
+}
+@media only screen and (min-width: 800px){
+.text-medium, .text-body-medium, .g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+    font-size: .9333333333rem;
+    line-height: 1.25rem;
+}}
+
+@media only screen and (min-width: 800px){
+.l-lg-pad-right-2 {
+    padding-right: 10px;
+}}
+@media only screen and (min-width: 800px){
+.l-lg-pad-vert-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}}
+.l-pad-vert-1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.listing-panel-info__price-or-status {
+    text-align: right;
+}
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+.listing-panel-info__display-price {
+    line-height: 44px;
+}
+.is-truncated {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@media only screen and (min-width: 800px){
+.hide-large {
+    display: none!important;
+}}
+.css-transform-support .fx--delay-18 {
+    -webkit-animation-delay: 1.8s;
+    -moz-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+}
+.micro-ticket-box__body {
+    text-align: center;
+}
+
+.micro-ticket-box .micro-ticket-box__btn-wrapper {
+    width: 100%;
+}
+.micro-ticket-box__body:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.listing-info {
+    position: relative;
+}
+.listing-info .listing-info__header {
+    background-color: #fff;
+}
+@media only screen and (min-width: 800px){
+.text-medium, .text-body-medium, .g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+    font-size: .9333333333rem;
+    line-height: 1.25rem;
+}}
+.is-hidden-accessible, .skip-links, .ui-helper-hidden-accessible {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+.l-mar-vert-6 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.g-cell.g-cell--no-gutters, .timeline__content, .g-cell--no-gutters.timeline__date, .timeline__indicator {
+    padding-left: 0;
+    padding-right: 0;
+}
+.ico--medium {
+    font-size: 22px;
+    line-height: 1;
+}
+[class^=ico-], [class*=" ico-"], .ico {
+    font-family: briteicons,"Neue Plak",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: inherit;
+    display: inline;
+    vertical-align: baseline;
+}
+.is-hidden-accessible, .skip-links, .ui-helper-hidden-accessible {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+.label-primary, .responsive-form .responsive-form__label--primary, .responsive-form label.responsive-form__label--primary, label.label-primary, .responsive-form label.responsive-form__label--primary {
+    color: #1E0A3C;
+    line-height: 1.4rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.l-mar-bot-2, .responsive-table--sticky__wrapper {
+    margin-bottom: 10px;
+}
+
+meta {
+    display: none;
+}
+.listing-info__body {
+    position: relative;
+    background-color: #fff;
+}
+.text-medium, .text-body-medium, .g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+    font-weight: 400;
+    font-size: 1.0666666667rem;
+    line-height: 1.5rem;
+}
+.g-cell, .timeline__content, .timeline__date, .timeline__indicator {
+    letter-spacing: .5px;
+}
+.g-cell, .timeline__content, .timeline__date, .timeline__indicator, .discount-ticket .discount-ticket-name, .discount-ticket .discount-ticket-price, .original-ticket-price, .list-person__name {
+    font-weight: 400;
+    font-size: 1.0666666667rem;
+    line-height: 1.5rem;
+}
+.g-cell.g-cell--no-gutters, .timeline__content, .g-cell--no-gutters.timeline__date, .timeline__indicator {
+    padding-left: 0;
+    padding-right: 0;
+}
+.label-primary, .responsive-form .responsive-form__label--primary, .responsive-form label.responsive-form__label--primary, label.label-primary, .responsive-form label.responsive-form__label--primary {
+    color: #1E0A3C;
+    line-height: 1.4rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.l-mar-bot-2, .responsive-table--sticky__wrapper {
+    margin-bottom: 10px;
+}
+.event-details__data:not(:last-child) {
+    margin-bottom: 50px;
+}
+.label-primary, .responsive-form .responsive-form__label--primary, .responsive-form label.responsive-form__label--primary, label.label-primary, .responsive-form label.responsive-form__label--primary {
+    color: #1E0A3C;
+    line-height: 1.4rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.l-mar-bot-2, .responsive-table--sticky__wrapper {
+    margin-bottom: 10px;
+}
+.eds-text-weight--heavy, .eds-text-weight--semibold {
+    font-weight: 600;
+}
+.clrfix:after, .list-card:after, .list-card-v2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.elevation-2, .event-listing__body {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+}
+.listing-organizer {
+    position: relative;
+    background-color: #fff;
+}
+.l-pad-vert-6 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.l-section {
+    border-top: 1px solid #DBDAE3;
+}
+@media only screen and (min-width: 800px){
+.g-offset-lg-1-12 {
+    margin-left: 8.3333333333%;
+}}
+@media only screen and (min-width: 800px){
+.g-cell-lg-10-12 {
+    width: 83.3333333333%;
+}}
+.g-grid, .overlay-dialog__frame {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.related-events.show {
+    padding-bottom: 60px;
+    max-height: 500px;
+}
+.g-cell.g-cell--no-gutters, .timeline__content, .g-cell--no-gutters.timeline__date, .timeline__indicator {
+    padding-left: 0;
+    padding-right: 0;
+}
+.related-events {
+    -webkit-transition: max-height 0.8s ease-in;
+    -moz-transition: max-height 0.8s ease-in;
+    transition: max-height 0.8s ease-in;
+    overflow: hidden;
+    background: #F8F7FA;
+    max-height: 0;
+    clear: both;
+    display: block;
+}
+.g-group, .g-grid, .overlay-dialog__frame, .g-vertical-group, .dialog-frame-content, .timeline__item, .breakdown__item {
+    font-size: 0;
+    letter-spacing: 0;
+}
+.related-events-title {
+    position: relative;
+}
+.text--truncated {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+.text-body--significant, .responsive-table th a, .text-significant, .heading-secondary-responsive {
+    font-weight: 600;
+}
+.event-list {
+    position: relative;
+}
+.l-mar-top-2, .list-selection-builder__error-message, .list-selection-builder__error-link {
+    margin-top: 10px;
+}
+.scroll-control.scroll-control-left {
+    left: 0;
+}
+.scroll-control {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    z-index: 1000;
+}
+.scroll-control .ico-arrow-left, .scroll-control .ico-arrow-right {
+    opacity: 0;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    color: #39364F;
+    zoom: 1;
+}
+.ico--xlarge {
+    font-size: 50px;
+    line-height: 55px;
+}
+.scroll-control.scroll-control-right {
+    right: 0;
+}
+.scroll-control {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    z-index: 1000;
+}
+.scroll-control .ico-arrow-left, .scroll-control .ico-arrow-right {
+    opacity: 0;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    color: #39364F;
+    zoom: 1;
+}
+.ico--xlarge {
+    font-size: 50px;
+    line-height: 55px;
+}
+.scroll-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.elevation-2, .event-listing__body {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+}
+.event-listing__body {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-top: 0;
+}
+sticky-listing-panel-placeholder {
+    width: 100%;
+    height: 66px;
+    border: none;
+}
+.listing-panel {
+    border-style: solid;
+    border-color: #DBDAE3;
+    border-width: 1px 0;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+element.style {
+}
+@media only screen and (min-width: 800px){
+.sticky-listing-panel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-height: inherit;
+    height: 66px;
+}}
+.sticky-listing-panel {
+    z-index: 10000;
+}
+.listing-panel {
+    border-style: solid;
+    border-color: #DBDAE3;
+    border-width: 1px 0;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+.listing-panel-info__buttons-and-status {
+    display: flex;
+    align-items: center;
+}
+.g-group, .g-grid, .overlay-dialog__frame, .g-vertical-group, .dialog-frame-content, .timeline__item, .breakdown__item {
+    font-size: 0;
+    letter-spacing: 0;
+}
+.listing-panel__g-cell {
+    position: relative;
+}
+.is-hidden-accessible, .skip-links, .ui-helper-hidden-accessible {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+
+.listing-panel .listing-panel-actions {
+    display: inline-block;
+}
+.listing-panel .listing-panel-actions li {
+    display: inline;
+}
+.css-transform-support .fx--delay-12 {
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+.btn--target:link, .btn--target:visited {
+    color: #3659E3;
+}
+.listing-panel__g-cell {
+    position: relative;
+}
+.listing-panel-info__price-or-status {
+    text-align: right;
+}
+.listing-panel-info__display-price {
+    line-height: 44px;
+}
+.is-truncated {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.css-transform-support .fx--delay-18 {
+    -webkit-animation-delay: 1.8s;
+    -moz-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+}
+.micro-ticket-box .micro-ticket-box__btn-wrapper {
+    width: 100%;
+}
+.micro-ticket-box__body .micro-ticket-box__btn {
+    width: 100%;
+    max-width: 320px;
+    float: none;
+}
+.micro-ticket-box .micro-ticket-box__btn {
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 0;
+}
+.btn--epic {
+    font-weight: 600;
+    color: #FFF;
+    background-color: #0D8547;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}

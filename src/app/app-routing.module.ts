@@ -3,11 +3,20 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponent } from './auth/not-found/not-found.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { EventsComponent } from './landing-page/events/events.component';
+import { HomeComponent } from './landing-page/home/home.component';
+import { OnlineClassPageComponent } from './landing-page/online-class-page/online-class-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingPageComponent
+    component: LandingPageComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'events', component: EventsComponent },
+      { path: 'online-class', component: OnlineClassPageComponent },
+    ]
   },
   {
     path: '',
