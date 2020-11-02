@@ -110,7 +110,7 @@
                 <div class="ForTeams__Content-sc-1a0e56x-2 dqJVXG">
                     <h3 class="shared__H3-ly630s-0 gTazMQ">Help your team move faster</h3>
                     <p>LiveMentor for Teams brings expert programming help right to your screen.</p><a
-                        href="/teams"><strong>Learn more</strong><span class="sc-bdVaJa jJAKVR"><svg
+                        href="/mentor"><strong>Learn more</strong><span class="sc-bdVaJa jJAKVR"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <g fill-rule="nonzero" fill="none">
                                     <path d="M0 0h24v24H0z"></path>
@@ -136,7 +136,7 @@
                     <h3 class="shared__H3-ly630s-0 VisitArc__H3-iwqk5j-1 dxTbbN">Hiring for a bigger project?</h3>
                     <p>Arc helps you find senior developers for both permanent full-time roles and 40+ hour contract
                         projects.
-                    </p><a href="https://arc.dev"><strong>Visit Arc to learn more</strong><span
+                    </p><a href="#"><strong>Visit Arc to learn more</strong><span
                             class="sc-bdVaJa kWimTe"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24">
                                 <g fill-rule="nonzero" fill="none">
@@ -156,7 +156,7 @@
             <div class="jsx-1823890159 devs__list">
 
                 <a *ngFor="let mentor of mentors" class="Developers__Mentor-sc-1j155-0 cegVVx"
-                    routerLink="/@bengottlieb">
+                    routerLink="/mentor/profile/{{mentor.id}}">
                     <div class="jsx-1823890159 devs__photo"><img src="{{mentor.profile.photo}}" alt="{{mentor.name}}"
                             class="jsx-1823890159"></div>
                     <div class="jsx-1823890159 devs__info">

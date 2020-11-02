@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from '../globals';
 import { MentorsService } from '../modules/mentors/mentors.service';
 import { LandingPageServiceService } from './services/landing-page-service.service';
 
@@ -11,7 +12,7 @@ export class LandingPageComponent implements OnInit {
 
   public mentors;
 
-  constructor(private landingPageServiceService: LandingPageServiceService) { }
+  constructor(private landingPageServiceService: LandingPageServiceService , public globals: Globals) { }
 
   ngOnInit(): void {
     this.get_mentors();

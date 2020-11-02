@@ -18,6 +18,15 @@ export class LandingPageServiceService {
   errorHandler(error: HttpErrorResponse) {
     return throwError(error);
   }
+
+
+  getevents(){
+    return this.http.get(environment.apiUrl + 'online_event').pipe(catchError(this.errorHandler));
+  }
+
+  getevent(id){
+    return this.http.get(environment.apiUrl + 'online_event/'+id).pipe(catchError(this.errorHandler));
+  }
 }
 
 
